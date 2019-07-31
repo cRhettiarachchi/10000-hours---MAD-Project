@@ -1,8 +1,8 @@
 # 10000 Hours App 
 
 ## Collaborators 
-* https://github.com/cRhettiarachchi - automatic!
-* https://github.com/Danushka2 - automatic!
-* https://github.com/sasika1109 - automatic!
-* https://github.com/khan9920 - automatic!
+* [Charith Hettiarachchi](https://github.com/cRhettiarachchi)
+* [Dhanushka Alwis](https://github.com/Danushka2)
+* [Sasika Jayasundara](https://github.com/sasika1109)
+* [Shafkhan Mohammad](https://github.com/khan9920)
 
