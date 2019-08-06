@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
-    android:backgroundTint="#B3B3B3"
-    tools:context=".MainActivity">
+    android:background="@drawable/background2"
+    tools:context=".MainActivity"
+    tools:visibility="visible">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="108dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:background="@color/headerColor"
         android:orientation="horizontal"
@@ -26,9 +26,12 @@
             android:layout_width="42dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Date"
+            android:padding="10dp"
+            android:paddingTop="15dp"
+            android:text="06th Aug"
             android:textAlignment="center"
-            android:textSize="36sp"
+            android:textColor="@color/textColor"
+            android:textSize="24sp"
             android:textStyle="italic" />
 
         <TextView
@@ -36,86 +39,21 @@
             android:layout_width="39dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Time"
+            android:padding="10dp"
+            android:paddingTop="15dp"
+            android:text="16:20"
             android:textAlignment="center"
-            android:textSize="36sp"
+            android:textColor="@color/textColor"
+            android:textSize="24sp"
             android:textStyle="italic" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="134dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[18]" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="20dp"
-        android:text="Web Design"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="8dp"
-        android:text="No of hours"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="13dp"
-        android:background="@drawable/rounded_red_border"
-        android:backgroundTint="#688DC4"
-        android:text="Edit"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/rounded_red_border"
-        android:text="Delete"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="407dp"
         android:layout_height="56dp"
-        android:background="@color/footerColor"
+        android:background="@color/headerColor"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,25 +62,89 @@
 
         <ImageView
             android:id="@+id/HomePage"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="this should redirect to home page"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/home"
+            tools:srcCompat="@drawable/home" />
 
         <ImageView
             android:id="@+id/Statistics"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@drawable/stat3" />
 
         <ImageView
             android:id="@+id/Account"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/acc2" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#011235"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.51">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_margin="10dp"
+            app:srcCompat="@drawable/pro2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="Web Development"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:text="10.5 Hours"
+            android:textColor="#333232"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_red_border"
+            android:backgroundTint="#D35BB10E"
+            android:text="Edit" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_red_border"
+            android:backgroundTint="#E3972A2A"
+            android:text="Delete" />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
