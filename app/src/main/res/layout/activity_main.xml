@@ -22,7 +22,32 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/historyToolbar"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/historyToolbar">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:paddingLeft="20dp"
+            android:text="3rd Friday"
+            android:textSize="30sp"
+            app:fontFamily="sans-serif-condensed-medium" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:paddingRight="20dp"
+            android:text="18:09"
+            android:textSize="30sp"
+            app:fontFamily="sans-serif-condensed-medium" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -35,6 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"></LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="446dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
@@ -45,8 +71,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
+            android:layout_marginTop="17dp"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -57,6 +83,11 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
+                android:layout_centerHorizontal="true"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -69,20 +100,22 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="25dp"
                     android:gravity="center"
-                    android:text="TextView" />
+                    android:text="game development"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="15dp"
                     android:layout_height="match_parent"
-                    android:background="#515266" />
+                    android:background="#3D3D44" />
 
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/addtime" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -94,6 +127,10 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -106,20 +143,65 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="25dp"
                     android:gravity="center"
-                    android:text="TextView" />
+                    android:text="web development"
+                    android:textSize="24dp" />
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="15dp"
                     android:layout_height="match_parent"
-                    android:background="#515266" />
+                    android:background="#3D3D44" />
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/addtime" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/historyToolbar">
+
+                <TextView
+                    android:id="@+id/textView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="25dp"
+                    android:gravity="center"
+                    android:text="Gaming"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/textView51"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:background="#3D3D44" />
+
+                <ImageView
+                    android:id="@+id/imageView41"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/addtime" />
             </androidx.cardview.widget.CardView>
 
 
