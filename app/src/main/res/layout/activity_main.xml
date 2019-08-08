@@ -4,147 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
-    tools:context=".MainActivity"
-    tools:visibility="visible">
+    android:background="#FFEBEE"
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@color/headerColor"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+<include layout="@layout/tool_bar" android:id ="@+id/historyToolbar"></include>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="42dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:paddingTop="15dp"
-            android:text="06th Aug"
-            android:textAlignment="center"
-            android:textColor="@color/textColor"
-            android:textSize="24sp"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="39dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:paddingTop="15dp"
-            android:text="16:20"
-            android:textAlignment="center"
-            android:textColor="@color/textColor"
-            android:textSize="24sp"
-            android:textStyle="italic" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="407dp"
-        android:layout_height="56dp"
-        android:background="@color/headerColor"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/HomePage"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="this should redirect to home page"
-            app:srcCompat="@drawable/home"
-            tools:srcCompat="@drawable/home" />
-
-        <ImageView
-            android:id="@+id/Statistics"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/stat3" />
-
-        <ImageView
-            android:id="@+id/Account"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/acc2" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <Button
+        android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#001549"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.51">
+        app:layout_constraintTop_toBottomOf="@+id/historyToolbar" />
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="389dp">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:layout_margin="10dp"
-            app:srcCompat="@drawable/pro2" />
-
-        <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:text="Web Development"
-            android:textColor="#000000"
-            android:textSize="24sp" />
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/ic_launcher_round" />
 
-        <TextView
-            android:id="@+id/textView"
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:text="10.5 Hours"
-            android:textColor="#333232"
-            android:textSize="18sp" />
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/ic_launcher_round" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/rounded_red_border"
-            android:backgroundTint="#D35BB10E"
-            android:text="Edit" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_red_border"
-            android:backgroundTint="#E3972A2A"
-            android:text="Delete" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/ic_launcher_round" />
     </LinearLayout>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+

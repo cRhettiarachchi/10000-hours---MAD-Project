@@ -1,4 +1,4 @@
-package com.example.projectmad;
+package com.example.a10000hours;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.projectmad", appContext.getPackageName());
+        assertEquals("com.example.a10000hours", appContext.getPackageName());
     }
 }

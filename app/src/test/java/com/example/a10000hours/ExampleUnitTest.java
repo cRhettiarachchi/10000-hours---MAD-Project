@@ -1,4 +1,4 @@
-package com.example.projectmad;
+package com.example.a10000hours;
 
 import org.junit.Test;
 
