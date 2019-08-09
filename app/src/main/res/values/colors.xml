@@ -15,4 +15,8 @@
     <color name="heading">#3797CF</color>
     <color name="grey">#E5E5E5</color>
     <color name="newGrey">#F6F6F6</color>
+
+    <!-- Colors by Shafkhan -->
+    <color name="dashboardStatTitle"></color>
+    <color name="toolBlue">#c2d3ed</color>
 </resources>
