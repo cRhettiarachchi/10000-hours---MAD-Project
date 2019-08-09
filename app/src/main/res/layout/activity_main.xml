@@ -151,7 +151,7 @@
                     android:background="#3D3D44" />
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/addBtn1"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -194,7 +194,7 @@
                     android:background="#3D3D44" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/addBtn2"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -237,7 +237,7 @@
                     android:background="#3D3D44" />
 
                 <ImageView
-                    android:id="@+id/imageView41"
+                    android:id="@+id/addBtn3"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
