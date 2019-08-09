@@ -3,6 +3,6 @@
 <corners android:radius="50dp"></corners>
     <padding android:bottom="15dp" android:left="15dp" android:right="15dp"
         android:top="15dp"/>
-    <solid android:color="@color/cardview_shadow_end_color"/>
+    <solid android:color="@color/newGrey"/>
 
 </shape>

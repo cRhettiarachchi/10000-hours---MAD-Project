@@ -42,7 +42,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="50dp"
                 android:text="--10000Hour--"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -53,7 +53,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="100dp"
                 android:background="@drawable/buttonstyle"
-                android:text="Sing UP"
+                android:text="@string/signup"
                 android:textColor="@color/cardview_light_background"
                 android:textColorHighlight="@android:color/holo_blue_dark" />
 
@@ -64,7 +64,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/buttonstyle2"
-                android:text="Sing In"
+                android:text="@string/signin"
                 android:textColor="@color/cardview_dark_background"
                 android:textColorHighlight="@android:color/holo_blue_dark" />
 
