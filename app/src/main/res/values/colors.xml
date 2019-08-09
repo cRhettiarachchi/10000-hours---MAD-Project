@@ -15,4 +15,5 @@
     <color name="heading">#3797CF</color>
     <color name="grey">#E5E5E5</color>
     <color name="newGrey">#F6F6F6</color>
+    <color name="colorWorkedHours">#585858</color>
 </resources>

@@ -103,20 +103,21 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="@dimen/profileHeight"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginLeft="@dimen/cardViewMargin"
+        android:layout_marginTop="@dimen/cardViewMargin"
         android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginRight="@dimen/cardViewMargin"
 
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/cardViewMargin"
         android:innerRadius="10dp"
         android:shape="rectangle"
         android:thicknessRatio="1.9"
-        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/white"
 
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -125,16 +126,16 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="122dp"
-            android:layout_height="135dp"
+            android:layout_width="@dimen/prfImgLayoutWidth"
+            android:layout_height="@dimen/prfImgLayoutHeight"
             android:layout_gravity="center|top"
             android:layout_marginTop="10dp"
             app:srcCompat="@drawable/icon6" />
 
         <TextView
             android:id="@+id/textView41"
-            android:layout_width="269dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/projectNameWidthPrf"
+            android:layout_height="@dimen/projectNameHeightPrf"
             android:layout_gravity="center|top"
             android:layout_margin="140dp"
             android:gravity="center"
@@ -157,6 +158,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
             android:layout_margin="15dp"
+            android:background="@drawable/boarder"
             android:text="@string/edit" />
 
         <Button
@@ -165,6 +167,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_margin="15dp"
+            android:background="@drawable/boarder"
             android:text="@string/delete" />
     </androidx.cardview.widget.CardView>
 

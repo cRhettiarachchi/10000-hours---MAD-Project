@@ -11,18 +11,13 @@
     <dimen name="footerImgWidth">65dp</dimen>
     <dimen name="iconSize">80dp</dimen>
     <dimen name="cardConerRadious">20dp</dimen>
+    <dimen name="cardViewMargin">50dp</dimen>
+    <dimen name="profileHeight">300dp</dimen>
+    <dimen name="projectNameWidth">200dp</dimen>
+    <dimen name="prfImgLayoutWidth">122dp</dimen>
+    <dimen name="prfImgLayoutHeight">135dp</dimen>
 
-    <dimen name="paddingRight">30dp</dimen>
-    <dimen name="paddingBottom">10dp</dimen>
-    <dimen name="paddingTop">10dp</dimen>
-    <dimen name="btnpaddingr">20dp</dimen>
-    <dimen name="btnpaddingl">20dp</dimen>
-    <dimen name="app_bar_height">180dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="text_margin">16dp</dimen>
-    <dimen name="btntop">30dp</dimen>
-    <dimen name="btnbottom">30dp</dimen>
-    <dimen name="txtsize">20dp</dimen>
-    <dimen name="btnmarginleftRight">100dp</dimen>
+    <dimen name="projectNameWidthPrf">269dp</dimen>
+    <dimen name="projectNameHeightPrf">40dp</dimen>
 
 </resources>
