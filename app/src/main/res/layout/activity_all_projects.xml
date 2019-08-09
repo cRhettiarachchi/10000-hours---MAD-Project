@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView24"
+            android:id="@+id/homeImage"
             android:layout_width="65dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -34,7 +34,7 @@
             app:srcCompat="@drawable/home" />
 
         <ImageView
-            android:id="@+id/imageView26"
+            android:id="@+id/allProjectsImg"
             android:layout_width="65dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -42,7 +42,7 @@
             app:srcCompat="@drawable/newproject" />
 
         <ImageView
-            android:id="@+id/imageView27"
+            android:id="@+id/newProjectImg"
             android:layout_width="65dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -50,7 +50,7 @@
             app:srcCompat="@drawable/addproject" />
 
         <ImageView
-            android:id="@+id/imageView25"
+            android:id="@+id/userAccImg"
             android:layout_width="65dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -58,7 +58,7 @@
             app:srcCompat="@drawable/user" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/settingsImg"
             android:layout_width="65dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
