@@ -10,6 +10,19 @@
     <string name="testTitle">Title 1</string>
     <string name="testDate">07/05</string>
 
+    <string name="dummyProject1">MobileApp development</string>
+    <string name="dummyProject2">Web development</string>
+    <string name="dummyProject3">Gaming</string>
+    <string name="dummyProject4">Game development</string>
+    <string name="dummyProject5">Study</string>
+    <string name="dummyProject6">Spring Boot App</string>
+    <string name="dummyProject7">PHP App</string>
+
+    <string name="dummyTime">16:20</string>
+    <string name="dummyDate">3rd Friday</string>
+    <string name="dummyHours">6.5 Hours</string>
+
+
 
     <!--menu strings-->
     <string name="edit">Edit</string>
@@ -17,4 +30,7 @@
     <string name="done">Done</string>
     <string name="addItem">Add Item</string>
     <string name="showHistory">Show History</string>
+
+    <string name="inputPname">Project Name</string>
+
 </resources>

@@ -18,7 +18,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="@dimen/footerHeight"
         android:background="#FFFFFF"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +27,7 @@
 
         <ImageView
             android:id="@+id/homeImage"
-            android:layout_width="65dp"
+            android:layout_width="@dimen/footerImgWidth"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="15dp"
@@ -35,7 +35,7 @@
 
         <ImageView
             android:id="@+id/allProjectsImg"
-            android:layout_width="65dp"
+            android:layout_width="@dimen/footerImgWidth"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="15dp"
@@ -43,7 +43,7 @@
 
         <ImageView
             android:id="@+id/newProjectImg"
-            android:layout_width="65dp"
+            android:layout_width="@dimen/footerImgWidth"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="15dp"
@@ -51,7 +51,7 @@
 
         <ImageView
             android:id="@+id/userAccImg"
-            android:layout_width="65dp"
+            android:layout_width="@dimen/footerImgWidth"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="15dp"
@@ -59,7 +59,7 @@
 
         <ImageView
             android:id="@+id/settingsImg"
-            android:layout_width="65dp"
+            android:layout_width="@dimen/footerImgWidth"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="15dp"
@@ -68,8 +68,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginBottom="37dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -85,7 +84,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="@dimen/addProjectField"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
@@ -94,7 +93,8 @@
                 android:innerRadius="0dp"
                 android:shape="ring"
                 android:thicknessRatio="1.9"
-                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/colorHeaderFooter"
+                app:cardCornerRadius="@dimen/cardConerRadious"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -102,28 +102,28 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/imageView1"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
                     android:layout_weight="1"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     app:srcCompat="@drawable/icon13" />
 
                 <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView451"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
                     android:layout_marginLeft="85dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Game"
+                    android:gravity="center|left"
+                    android:text="@string/dummyProject1"
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="80dp"
+                    android:id="@+id/textView2"
+                    android:layout_width="@dimen/iconSize"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
                     android:layout_weight="1"
@@ -138,7 +138,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="@dimen/addProjectField"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
@@ -148,6 +148,7 @@
                 android:innerRadius="0dp"
                 android:shape="ring"
                 android:thicknessRatio="1.9"
+                app:cardBackgroundColor="@color/colorHeaderFooter"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -156,27 +157,27 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/imageView2"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
                     android:layout_weight="1"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     app:srcCompat="@drawable/icon3" />
 
                 <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/exId2.0"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
                     android:layout_marginLeft="85dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Game"
+                    android:gravity="center|left"
+                    android:text="@string/dummyProject2"
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/textView41"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -192,7 +193,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="@dimen/addProjectField"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
@@ -202,6 +203,7 @@
                 android:innerRadius="0dp"
                 android:shape="ring"
                 android:thicknessRatio="1.9"
+                app:cardBackgroundColor="@color/colorHeaderFooter"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -210,27 +212,27 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/imageView3"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
                     android:layout_weight="1"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     app:srcCompat="@drawable/icon15" />
 
                 <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView8"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
                     android:layout_marginLeft="85dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Game"
+                    android:gravity="center|left"
+                    android:text="@string/dummyProject3"
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/textView9"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -238,6 +240,281 @@
                     android:background="#585858"
                     android:gravity="center"
                     android:text="20.9"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/addProjectField"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardBackgroundColor="@color/colorHeaderFooter"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/historyToolbar">
+
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/icon11" />
+
+                <TextView
+                    android:id="@+id/exId5.0"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="85dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/dummyProject7"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView5.1"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="#585858"
+                    android:gravity="center"
+                    android:text="10.3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/addProjectField"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardBackgroundColor="@color/colorHeaderFooter"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/historyToolbar">
+
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/icon13" />
+
+                <TextView
+                    android:id="@+id/exId6.0"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="85dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/dummyProject6"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView6.1"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="#585858"
+                    android:gravity="center"
+                    android:text="10.3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/addProjectField"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardBackgroundColor="@color/colorHeaderFooter"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/historyToolbar">
+
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/icon4" />
+
+                <TextView
+                    android:id="@+id/exId8.0"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="85dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/dummyProject5"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="#585858"
+                    android:gravity="center"
+                    android:text="10.3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/addProjectField"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardBackgroundColor="@color/colorHeaderFooter"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/historyToolbar">
+
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/icon3" />
+
+                <TextView
+                    android:id="@+id/exId3.0"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="85dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/dummyProject2"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView91"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="#585858"
+                    android:gravity="center"
+                    android:text="10.3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/addProjectField"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardBackgroundColor="@color/colorHeaderFooter"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/historyToolbar">
+
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/icon3" />
+
+                <TextView
+                    android:id="@+id/exId20"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="85dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/dummyProject2"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="#585858"
+                    android:gravity="center"
+                    android:text="10.3"
                     android:textColor="#FFFFFF"
                     android:textSize="30sp" />
 

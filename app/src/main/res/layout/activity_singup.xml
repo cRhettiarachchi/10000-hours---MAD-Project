@@ -67,7 +67,7 @@
                 android:hint="Password" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/deletebtn"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
