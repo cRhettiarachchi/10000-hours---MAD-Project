@@ -1,6 +1,7 @@
 package com.example.a10000hours;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +25,10 @@ public class EditGoal extends AppCompatActivity {
                 save();
             }
         });
+
+        Toolbar toolbar = findViewById(R.id.historyToolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Edit Goals");
     }
 
     public void save() {

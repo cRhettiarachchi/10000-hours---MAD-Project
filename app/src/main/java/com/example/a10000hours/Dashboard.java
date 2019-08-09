@@ -36,6 +36,10 @@ public class Dashboard extends AppCompatActivity {
                 editGoal();
             }
         });
+
+        Toolbar toolbar = findViewById(R.id.historyToolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Dashboard");
     }
 
     public void addGoal() {
