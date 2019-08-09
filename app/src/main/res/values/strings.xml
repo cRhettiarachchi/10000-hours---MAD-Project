@@ -17,4 +17,7 @@
     <string name="done">Done</string>
     <string name="addItem">Add Item</string>
     <string name="showHistory">Show History</string>
+
+    <!-- Dashboard strings -->
+    <string name="tashboardTitle">Dashboard</string>
 </resources>
