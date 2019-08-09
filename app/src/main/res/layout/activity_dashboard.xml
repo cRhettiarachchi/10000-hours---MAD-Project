@@ -40,6 +40,7 @@
         android:layout_marginTop="84dp"
         android:gravity="center"
         android:text="355"
+        android:textColor="@color/dashboardStatTitle"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,7 +53,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="120dp"
         android:gravity="center"
-        android:text="Records"
+        android:text="@string/dashboardRecords"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,6 +66,7 @@
         android:layout_marginBottom="545dp"
         android:gravity="center"
         android:text="516h"
+        android:textColor="@color/dashboardStatTitle"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -78,7 +80,7 @@
         android:layout_marginTop="120dp"
         android:layout_marginBottom="519dp"
         android:gravity="center"
-        android:text="Total Time"
+        android:text="@string/dashboardTime"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -95,6 +97,7 @@
         android:layout_marginBottom="545dp"
         android:gravity="center"
         android:text="19h"
+        android:textColor="@color/dashboardStatTitle"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +113,7 @@
         android:layout_marginEnd="41dp"
         android:layout_marginRight="41dp"
         android:gravity="center"
-        android:text="Per week"
+        android:text="@string/dashboardWeek"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -133,7 +136,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="184dp"
-        android:text="Goals"
+        android:text="@string/dashboardGoals"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -155,7 +159,8 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="233dp"
-        android:text="Project"
+        android:text="@string/dashboardProject"
+        android:textColor="@color/dashboardStatTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -166,7 +171,8 @@
         android:layout_marginStart="172dp"
         android:layout_marginLeft="172dp"
         android:layout_marginTop="232dp"
-        android:text="Goal"
+        android:text="@string/dashboardGoal"
+        android:textColor="@color/dashboardStatTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -177,7 +183,8 @@
         android:layout_marginStart="248dp"
         android:layout_marginLeft="248dp"
         android:layout_marginTop="232dp"
-        android:text="Completed"
+        android:text="@string/dashboardComplete"
+        android:textColor="@color/dashboardStatTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -254,7 +261,7 @@
         android:layout_marginStart="132dp"
         android:layout_marginLeft="132dp"
         android:layout_marginTop="512dp"
-        android:text="Add Goal"
+        android:text="@string/dashboardAddGoal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

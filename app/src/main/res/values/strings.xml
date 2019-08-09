@@ -20,4 +20,13 @@
 
     <!-- Dashboard strings -->
     <string name="tashboardTitle">Dashboard</string>
+    <string name="dashboardRecords">Records</string>
+    <string name="dashboardTime">Total Time</string>
+    <string name="dashboardWeek">Per week</string>
+    <string name="dashboardGoals">Goals</string>
+    <string name="dashboardProject">Project</string>
+    <string name="dashboardGoal">Goal</string>
+    <string name="dashboardComplete">Completed</string>
+    <string name="dashboardAddGoal">ADD GOAL</string>
+
 </resources>
