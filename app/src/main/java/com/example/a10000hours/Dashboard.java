@@ -27,13 +27,10 @@ public class Dashboard extends AppCompatActivity {
                 addGoal();
             }
         });
-
     }
 
     public void addGoal() {
         Intent intent = new Intent(this, AddGoal.class);
         startActivity(intent);
     }
-
-
 }
