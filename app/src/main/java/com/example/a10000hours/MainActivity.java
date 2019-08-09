@@ -3,6 +3,7 @@ package com.example.a10000hours;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,27 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
-
-
-
     private void navigateBar() {
 
         ImageView home = (ImageView) findViewById(R.id.homeImage);
         ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
         ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
-    //    ImageView userAcc = (ImageView) findViewById(R.id.homeImage);
+        ImageView userAcc = (ImageView) findViewById(R.id.userAccImg);
     //    ImageView settings = (ImageView) findViewById(R.id.homeImage);
 
 
@@ -78,16 +64,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
+
         userAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent4 = new Intent(MainActivity.this, AllProjects.class);
+                Intent intent4 = new Intent(MainActivity.this, userAccount.class);
                 startActivity(intent4);
             }
         });
 
+        /*
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,8 +88,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+        switch (item.getItemId()){
 
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
 
+            case R.id.showHistory:
+                startActivity(new Intent(this, History.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

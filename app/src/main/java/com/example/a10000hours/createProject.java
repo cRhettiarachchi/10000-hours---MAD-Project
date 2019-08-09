@@ -1,9 +1,14 @@
 package com.example.a10000hours;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -14,44 +19,69 @@ public class createProject extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_project);
 
-        navigateBar();
+        Toolbar toolbar = findViewById(R.id.historyToolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Add Record");
+//        navigateBar();
     }
 
-    private void navigateBar() {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
 
-        ImageView home = (ImageView) findViewById(R.id.homeImage);
-        ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
-        ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
-        //    ImageView userAcc = (ImageView) findViewById(R.id.homeImage);
-        //    ImageView settings = (ImageView) findViewById(R.id.homeImage);
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+        switch (item.getItemId()){
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
 
-                Intent intent1 = new Intent(createProject.this, MainActivity.class);
-                startActivity(intent1);
-            }
-        });
+            case R.id.showHistory:
+                startActivity(new Intent(this, History.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
-        allProjects.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent2 = new Intent(createProject.this, AllProjects.class);
-                startActivity(intent2);
-            }
-        });
-
-        addProjects.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent3 = new Intent(createProject.this, createProject.class);
-                startActivity(intent3);
-            }
-        });
+//    private void navigateBar() {
+//
+//        ImageView home = (ImageView) findViewById(R.id.homeImage);
+//        ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
+//        ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
+//        //    ImageView userAcc = (ImageView) findViewById(R.id.homeImage);
+//        //    ImageView settings = (ImageView) findViewById(R.id.homeImage);
+//
+//
+//        home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent1 = new Intent(createProject.this, MainActivity.class);
+//                startActivity(intent1);
+//            }
+//        });
+//
+//        allProjects.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent2 = new Intent(createProject.this, AllProjects.class);
+//                startActivity(intent2);
+//            }
+//        });
+//
+//        addProjects.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent3 = new Intent(createProject.this, createProject.class);
+//                startActivity(intent3);
+//            }
+//        });
 
         /*
         userAcc.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +103,6 @@ public class createProject extends AppCompatActivity {
         });
 
         */
-    }
+//    }
 
 }
