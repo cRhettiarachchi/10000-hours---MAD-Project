@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">10000Hour</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="username">User Name</string>
+    <string name="resetpass">Please input the email address you used to signup your
+                10000Hours account.We will send a recovery mail to that address.Please follow the instruction to recover Your password</string>
+    <string name="signup">SIGN UP</string>
+    <string name="signin">SIGN IN</string>
+    <string name="forgetpass">Forget Password?</string>
+    <string name="logoname">10000Hour</string>
+
+</resources>
