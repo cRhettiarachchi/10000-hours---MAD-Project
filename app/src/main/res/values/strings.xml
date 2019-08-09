@@ -28,5 +28,6 @@
     <string name="dashboardGoal">Goal</string>
     <string name="dashboardComplete">Completed</string>
     <string name="dashboardAddGoal">ADD GOAL</string>
+    <string name="dashboardSelectProject">Select Project</string>
 
 </resources>
