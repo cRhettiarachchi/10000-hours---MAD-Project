@@ -1,0 +1,178 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.android.material:material:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55d1d512ae6496c3fa44b48a69ba0d52/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3e7fe5c0128a22284c91dda52dbce265/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/Charith/.gradle/caches/transforms-2/files-2.1/621bbec10e7f4dad338d82721059afe7/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c04ea7cceb8307a7a5a696a59d564abe/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/648ec8ebbeca60a01cd86dc71756b05f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/79e1dddbe9597797529f54e5bfa020b2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/d0f9cf459c38a65e754144dae6f32264/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f94c3271e10ed8bbcef9964bc6e125e1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/Charith/.gradle/caches/transforms-2/files-2.1/9933f03f72073da93bf06c984a66eaf5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55cb52a18ab8c36611d748242544573e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f149283811cffc7e1ac5764ee57158d6/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/ca9be8b0296519f99455835f1e21c7e5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55988a4b9a534cbe28432872beb84571/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/d7658c11cdb26c1263eb5e9ab0ec7520/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/06305facd37d792d6b5934c1731051a7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3457cf71a608e6fc0d80a34cf9780acd/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c80f08f1e50b13757171b58ad7c030ab/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/6bd13744f1cf26d5e07172579769c691/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3b60714f4606f742b82297ba80d08c48/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f891184001825c79da886815b6dda314/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/2c879d7b170cf9b4401c2e437e38ae7c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/4452b5303b29b7ef9f67b626c62baf67/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/96c34be585487edd2b6149638338fab9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/7fee7b677263b3d0ba374b356b4c8cdf/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55dadaec3a85261bf5c8c046399279b1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/abab5d35ea3775003528964bd9e22e7d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/ab3b0349549900d038d6a949a82d8702/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/e427e2312bbcff6bfc616f9704318b1c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/08ce48e378fab1bc33b7c3dd12ed8382/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c0ab8c27278f12dccbc740b376b1a6c8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c75695f715de31a123259e86773495e0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:1-26:12
+	package
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:3:5-38
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:1-26:12
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:1-26:12
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:5:5-24:19
+MERGED from [com.google.android.material:material:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55d1d512ae6496c3fa44b48a69ba0d52/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55d1d512ae6496c3fa44b48a69ba0d52/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/Charith/.gradle/caches/transforms-2/files-2.1/621bbec10e7f4dad338d82721059afe7/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/Charith/.gradle/caches/transforms-2/files-2.1/621bbec10e7f4dad338d82721059afe7/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.0.1] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3b60714f4606f742b82297ba80d08c48/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3b60714f4606f742b82297ba80d08c48/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f891184001825c79da886815b6dda314/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f891184001825c79da886815b6dda314/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3b60714f4606f742b82297ba80d08c48/AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.example.a10000hours.History
+ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:12:9-54
+	android:name
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:12:19-42
+activity#com.example.a10000hours.MainActivity
+ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:13:9-19:20
+	android:name
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:13:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:14:13-18:29
+action#android.intent.action.MAIN
+ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:15:17-69
+	android:name
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:15:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:17:17-77
+	android:name
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:17:27-74
+meta-data#preloaded_fonts
+ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:21:9-23:57
+	android:resource
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:23:13-54
+	android:name
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml:22:13-43
+uses-sdk
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55d1d512ae6496c3fa44b48a69ba0d52/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55d1d512ae6496c3fa44b48a69ba0d52/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3e7fe5c0128a22284c91dda52dbce265/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3e7fe5c0128a22284c91dda52dbce265/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/Charith/.gradle/caches/transforms-2/files-2.1/621bbec10e7f4dad338d82721059afe7/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/Charith/.gradle/caches/transforms-2/files-2.1/621bbec10e7f4dad338d82721059afe7/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c04ea7cceb8307a7a5a696a59d564abe/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c04ea7cceb8307a7a5a696a59d564abe/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/648ec8ebbeca60a01cd86dc71756b05f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/648ec8ebbeca60a01cd86dc71756b05f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/79e1dddbe9597797529f54e5bfa020b2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/79e1dddbe9597797529f54e5bfa020b2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/d0f9cf459c38a65e754144dae6f32264/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/d0f9cf459c38a65e754144dae6f32264/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f94c3271e10ed8bbcef9964bc6e125e1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f94c3271e10ed8bbcef9964bc6e125e1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/Charith/.gradle/caches/transforms-2/files-2.1/9933f03f72073da93bf06c984a66eaf5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/Charith/.gradle/caches/transforms-2/files-2.1/9933f03f72073da93bf06c984a66eaf5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55cb52a18ab8c36611d748242544573e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55cb52a18ab8c36611d748242544573e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f149283811cffc7e1ac5764ee57158d6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f149283811cffc7e1ac5764ee57158d6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/ca9be8b0296519f99455835f1e21c7e5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/ca9be8b0296519f99455835f1e21c7e5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55988a4b9a534cbe28432872beb84571/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55988a4b9a534cbe28432872beb84571/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/d7658c11cdb26c1263eb5e9ab0ec7520/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/d7658c11cdb26c1263eb5e9ab0ec7520/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/06305facd37d792d6b5934c1731051a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/06305facd37d792d6b5934c1731051a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3457cf71a608e6fc0d80a34cf9780acd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3457cf71a608e6fc0d80a34cf9780acd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c80f08f1e50b13757171b58ad7c030ab/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c80f08f1e50b13757171b58ad7c030ab/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/6bd13744f1cf26d5e07172579769c691/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/6bd13744f1cf26d5e07172579769c691/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3b60714f4606f742b82297ba80d08c48/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /Users/Charith/.gradle/caches/transforms-2/files-2.1/3b60714f4606f742b82297ba80d08c48/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f891184001825c79da886815b6dda314/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/f891184001825c79da886815b6dda314/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/2c879d7b170cf9b4401c2e437e38ae7c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/2c879d7b170cf9b4401c2e437e38ae7c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/4452b5303b29b7ef9f67b626c62baf67/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/4452b5303b29b7ef9f67b626c62baf67/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/96c34be585487edd2b6149638338fab9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/96c34be585487edd2b6149638338fab9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/7fee7b677263b3d0ba374b356b4c8cdf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/7fee7b677263b3d0ba374b356b4c8cdf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55dadaec3a85261bf5c8c046399279b1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/55dadaec3a85261bf5c8c046399279b1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/abab5d35ea3775003528964bd9e22e7d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/abab5d35ea3775003528964bd9e22e7d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/ab3b0349549900d038d6a949a82d8702/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/ab3b0349549900d038d6a949a82d8702/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/e427e2312bbcff6bfc616f9704318b1c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/e427e2312bbcff6bfc616f9704318b1c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/08ce48e378fab1bc33b7c3dd12ed8382/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/08ce48e378fab1bc33b7c3dd12ed8382/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c0ab8c27278f12dccbc740b376b1a6c8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c0ab8c27278f12dccbc740b376b1a6c8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c75695f715de31a123259e86773495e0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/Charith/.gradle/caches/transforms-2/files-2.1/c75695f715de31a123259e86773495e0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Charith/Desktop/android/new/10000-hours---MAD-Project/app/src/main/AndroidManifest.xml
