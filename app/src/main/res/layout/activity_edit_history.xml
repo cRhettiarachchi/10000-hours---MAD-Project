@@ -28,7 +28,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/exId2.0"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginStart="8dp"
@@ -40,10 +40,10 @@
                 android:text="@string/hrs"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/editDatetxt1"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/exId2.1" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/exId2.1"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginTop="8dp"
@@ -81,7 +81,7 @@
                 android:inputType="number"
                 android:text="@string/timeInt"
                 app:layout_constraintBaseline_toBaselineOf="@+id/txtTitle1"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/exId2.1"
                 app:layout_constraintStart_toEndOf="@+id/txtTitle1" />
 
             <TextView

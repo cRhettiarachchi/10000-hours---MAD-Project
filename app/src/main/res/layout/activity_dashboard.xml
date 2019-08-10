@@ -254,6 +254,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/edit" />
 
+<<<<<<< HEAD
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
@@ -305,6 +306,8 @@
             app:srcCompat="@drawable/setting" />
     </LinearLayout>
 
+=======
+>>>>>>> 97dde53dbc6dc86e7a74bac93048eee1e27488e5
     <Button
         android:id="@+id/button2"
         android:layout_width="146dp"

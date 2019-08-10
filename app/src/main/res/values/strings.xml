@@ -10,6 +10,19 @@
     <string name="testTitle">Title 1</string>
     <string name="testDate">07/05</string>
 
+    <string name="dummyProject1">MobileApp development</string>
+    <string name="dummyProject2">Web development</string>
+    <string name="dummyProject3">Gaming</string>
+    <string name="dummyProject4">Game development</string>
+    <string name="dummyProject5">Study</string>
+    <string name="dummyProject6">Spring Boot App</string>
+    <string name="dummyProject7">PHP App</string>
+
+    <string name="dummyTime">16:20</string>
+    <string name="dummyDate">3rd Friday</string>
+    <string name="dummyHours">6.5</string>
+
+
 
     <!--menu strings-->
     <string name="edit">Edit</string>
@@ -18,6 +31,30 @@
     <string name="addItem">Add Item</string>
     <string name="showHistory">Show History</string>
 
+<<<<<<< HEAD
+=======
+
+<!--<<<<<<< HEAD-->
+    <!--Add Time Record -->
+    <string name="addTime">Add Time Records</string>
+    <string name="Task">Task1</string>
+    <string name="date">2019/08/10</string>
+    <string name="time">Time</string>
+    <string name="inputPname">Project Name</string>
+
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="username">User Name</string>
+    <string name="resetpass">Please input the email address you used to signup your
+                10000Hours account.We will send a recovery mail to that address.Please follow the instruction to recover Your password</string>
+    <string name="signup">SIGN UP</string>
+    <string name="signin">SIGN IN</string>
+    <string name="forgetpass">Forget Password?</string>
+    <string name="logoname">10000Hour</string>
+
+
+>>>>>>> 97dde53dbc6dc86e7a74bac93048eee1e27488e5
     <!-- Dashboard strings -->
     <string name="tashboardTitle">Dashboard</string>
     <string name="dashboardRecords">Records</string>
@@ -31,4 +68,8 @@
     <string name="dashboardSelectProject">Select Project</string>
     <string name="dashboardSaveGoal">SAVE GOAL</string>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 97dde53dbc6dc86e7a74bac93048eee1e27488e5
 </resources>

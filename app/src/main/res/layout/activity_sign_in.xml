@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="10000Hour"
+                android:text="@string/logoname"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
@@ -49,7 +49,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/edittextstyle"
-                android:hint="Email" />
+                android:hint="@string/email" />
 
             <EditText
                 android:layout_width="300dp"
@@ -57,7 +57,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/edittextstyle"
-                android:hint="Password" />
+                android:hint="@string/password" />
 
             <Button
                 android:layout_width="300dp"
@@ -65,7 +65,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/buttonstyle"
-                android:text="Sing In"
+                android:text="@string/signin"
                 android:textColor="@color/cardview_light_background"
                 android:textColorHighlight="@android:color/holo_blue_dark" />
 
@@ -76,7 +76,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/buttonstyle2"
-                android:text="Forget Password?"
+                android:text="@string/forgetpass"
 
                 android:textColorHighlight="@android:color/holo_blue_dark" />
         </androidx.appcompat.widget.LinearLayoutCompat>
