@@ -31,6 +31,12 @@
     <string name="addItem">Add Item</string>
     <string name="showHistory">Show History</string>
 
+
+    <!--Add Time Record -->
+    <string name="addTime">Add Time Records</string>
+    <string name="Task">Task1</string>
+    <string name="date">2019/08/10</string>
+    <string name="time">Time</string>
     <string name="inputPname">Project Name</string>
 
 </resources>

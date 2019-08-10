@@ -70,6 +70,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".AddPop" android:theme="@style/AppTheme.popUpStyle"></activity>
     </application>
 
 </manifest>
