@@ -19,7 +19,7 @@ public class Signup extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("Sign up");
 
-        button = (Button) findViewById(R.id.deletebtn);
+        button = (Button) findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
         ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
         ImageView userAcc = (ImageView) findViewById(R.id.userAccImg);
-    //    ImageView settings = (ImageView) findViewById(R.id.homeImage);
+        ImageView settings = (ImageView) findViewById(R.id.settingsImg);
 
 
         home.setOnClickListener(new View.OnClickListener() {
@@ -103,17 +103,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
+
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent5 = new Intent(MainActivity.this, AllProjects.class);
+                Intent intent5 = new Intent(MainActivity.this, Dashboard.class);
                 startActivity(intent5);
             }
         });
 
-        */
+
 
     }
 

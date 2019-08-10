@@ -12,8 +12,13 @@
     <color name="gradEnd">#67EFC8</color>
     <color name="gradStart">#63C9FF</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="heading">#3797CF</color>
     <color name="grey">#E5E5E5</color>
     <color name="newGrey">#F6F6F6</color>
     <color name="colorWorkedHours">#585858</color>
+
+    <!-- Colors by Shafkhan -->
+    <color name="dashboardStatTitle">#4169E1</color>
+    <color name="toolBlue">#c2d3ed</color>
 </resources>
