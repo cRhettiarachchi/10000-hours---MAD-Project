@@ -29,16 +29,34 @@
         <activity android:name=".Userprofile"></activity>
         <activity android:name=".ResetPassword" />
         <activity android:name=".SignIn" />
-        <activity android:name=".Signup"
+        <activity
+            android:name=".Signup"
             android:parentActivityName=".userAccount">
+
+            <!--
+        The meta-data tag is required if you support API level 15
+        and lower
+            -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".userAccount" />
         </activity>
         <activity android:name=".EditGoal"></activity>
         <activity android:name=".AddGoal" />
-        <activity android:name=".Dashboard"/>
-        <activity android:name=".userAccount"/>
+        <activity android:name=".Dashboard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".userAccount">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!--charith manifest files-->
         <activity android:name=".EditHistory"
