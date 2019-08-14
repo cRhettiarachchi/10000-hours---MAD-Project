@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">10000 Hours</string>
+    <string name="PageTitleHistory">History</string>
+    <string name="hello_world">hello</string>
+
+    <!--Dummy data-->
+    <string name="hrs">hrs</string>
+    <string name="timeInt">2.00</string>
+    <string name="testTime">1.30hrs</string>
+    <string name="testTitle">Title 1</string>
+    <string name="testDate">07/05</string>
+
+    <string name="dummyProject1">MobileApp development</string>
+    <string name="dummyProject2">Web development</string>
+    <string name="dummyProject3">Gaming</string>
+    <string name="dummyProject4">Game development</string>
+    <string name="dummyProject5">Study</string>
+    <string name="dummyProject6">Spring Boot App</string>
+    <string name="dummyProject7">PHP App</string>
+
+    <string name="dummyTime">16:20</string>
+    <string name="dummyDate">3rd Friday</string>
+    <string name="dummyHours">6.5</string>
+
+
+
+    <!--menu strings-->
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="done">Done</string>
+    <string name="addItem">Add Item</string>
+    <string name="showHistory">Show History</string>
+
+
+<!--<<<<<<< HEAD-->
+    <!--Add Time Record -->
+    <string name="addTime">Add Time Records</string>
+    <string name="Task">Task1</string>
+    <string name="date">2019/08/10</string>
+    <string name="time">Time</string>
+    <string name="inputPname">Project Name</string>
+
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="username">User Name</string>
+    <string name="resetpass">Please input the email address you used to signup your
+                10000Hours account.We will send a recovery mail to that address.Please follow the instruction to recover Your password</string>
+    <string name="signup">SIGN UP</string>
+    <string name="signin">SIGN IN</string>
+    <string name="forgetpass">Forget Password?</string>
+    <string name="logoname">10000Hour</string>
+
+
+    <!-- Dashboard strings -->
+    <string name="tashboardTitle">Dashboard</string>
+    <string name="dashboardRecords">Records</string>
+    <string name="dashboardTime">Total Time</string>
+    <string name="dashboardWeek">Per week</string>
+    <string name="dashboardGoals">Goals</string>
+    <string name="dashboardProject">Project</string>
+    <string name="dashboardGoal">Goal</string>
+    <string name="dashboardComplete">Completed</string>
+    <string name="dashboardAddGoal">ADD GOAL</string>
+    <string name="dashboardSelectProject">Select Project</string>
+    <string name="dashboardSaveGoal">SAVE GOAL</string>
+
+
+</resources>
