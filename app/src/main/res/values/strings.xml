@@ -31,6 +31,8 @@
     <string name="addItem">Add Item</string>
     <string name="showHistory">Show History</string>
 
+<<<<<<< HEAD
+=======
 
 <!--<<<<<<< HEAD-->
     <!--Add Time Record -->
@@ -52,6 +54,7 @@
     <string name="logoname">10000Hour</string>
 
 
+>>>>>>> 97dde53dbc6dc86e7a74bac93048eee1e27488e5
     <!-- Dashboard strings -->
     <string name="tashboardTitle">Dashboard</string>
     <string name="dashboardRecords">Records</string>
@@ -65,5 +68,8 @@
     <string name="dashboardSelectProject">Select Project</string>
     <string name="dashboardSaveGoal">SAVE GOAL</string>
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 97dde53dbc6dc86e7a74bac93048eee1e27488e5
 </resources>

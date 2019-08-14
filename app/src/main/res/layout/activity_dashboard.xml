@@ -254,6 +254,60 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/edit" />
 
+<<<<<<< HEAD
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/homeImage"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/allProjectsImg"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/newproject" />
+
+        <ImageView
+            android:id="@+id/newProjectImg"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/addproject" />
+
+        <ImageView
+            android:id="@+id/userAccImg"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/user" />
+
+        <ImageView
+            android:id="@+id/settingsImg"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/setting" />
+    </LinearLayout>
+
+=======
+>>>>>>> 97dde53dbc6dc86e7a74bac93048eee1e27488e5
     <Button
         android:id="@+id/button2"
         android:layout_width="146dp"
