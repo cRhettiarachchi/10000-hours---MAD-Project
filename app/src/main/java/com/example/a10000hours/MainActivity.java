@@ -8,7 +8,6 @@ import androidx.core.app.NavUtils;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
         ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
         ImageView userAcc = (ImageView) findViewById(R.id.userAccImg);
-        ImageView settings = (ImageView) findViewById(R.id.settingsImg);
+        ImageView dashboard = (ImageView) findViewById(R.id.dashboardImg);
 
 
         home.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        settings.setOnClickListener(new View.OnClickListener() {
+        dashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
