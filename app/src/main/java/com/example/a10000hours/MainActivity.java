@@ -4,15 +4,25 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.a10000hours.adapter.HomeRVAdapter;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ArrayList<String> testPNames = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +36,28 @@ public class MainActivity extends AppCompatActivity {
         navigateBar();
         addActivity();
 
+        //------------------------
+        testPNames.add("robotics");
+        testPNames.add("mobile apps");
+        testPNames.add("Web Development");
+        testPNames.add("watching tutorials");
+        testPNames.add("play chess");
+
+        initRecyclerView();
+
+
+    }
+
+    private void initRecyclerView() {
+        //Log.d(TAG,"initRecyclerView methoed called");
+        RecyclerView recyclerView = findViewById(R.id.homeRecyclerView);
+        HomeRVAdapter homeRVAdapter = new HomeRVAdapter(this,testPNames);
+        recyclerView.setAdapter(homeRVAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void addActivity(){
-        ImageView addBtn = (ImageView) findViewById(R.id.exId1);
+    /*    ImageView addBtn = (ImageView) findViewById(R.id.exId1);
         ImageView addBtn1 = (ImageView) findViewById(R.id.exId4);
         ImageView addBtn2= (ImageView) findViewById(R.id.exId3);
 
@@ -53,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, AddPop.class));
             }
-        });
+        }); */
     }
 
     private void navigateBar() {
