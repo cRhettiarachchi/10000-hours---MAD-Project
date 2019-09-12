@@ -30,7 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG, " +
                 AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
 
-        String Users_Table= "CREATE TABLE "+UserMaster.User.TABLE_NAME+" ("+
+        String Users_Table= "CREATE TABLE "+ AppDBMaster.User.TABLE_NAME+" ("+
                 UserMaster.User._ID+" INTEGER PRIMARY KEY,"+
                 UserMaster.User.COLUMN_NAME_USERNAME+ " TEXT,"+
                 UserMaster.User.COLUMN_NAME_EMAIL+ " TEXT,"+
