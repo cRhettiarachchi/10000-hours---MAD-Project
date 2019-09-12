@@ -30,11 +30,11 @@ public class DBHelper extends SQLiteOpenHelper {
                 AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG, " +
                 AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
 
-        String Users_Table = "CREATE TABLE " + AppDBMaster.User.TABLE_NAME + " (" +
-                AppDBMaster.User._ID + " INTEGER PRIMARY KEY, " +
-                AppDBMaster.User.COLOMN_NAME_USERNAME + " TEXT, " +
-                AppDBMaster.User.COLOMN_NAME_PASSWORD + " TEXT, " +
-                AppDBMaster.User.COLOMN_PROFILE_PIC + " BLOB);";
+        String Users_Table= "CREATE TABLE "+UserMaster.User.TABLE_NAME+" ("+
+                UserMaster.User._ID+" INTEGER PRIMARY KEY,"+
+                UserMaster.User.COLUMN_NAME_USERNAME+ " TEXT,"+
+                UserMaster.User.COLUMN_NAME_EMAIL+ " TEXT,"+
+                UserMaster.User.COLUMN_NAME_PASSWORD+ " TEXT);";
 
         sqLiteDatabase.execSQL(Task_Table);
         sqLiteDatabase.execSQL(Records_Table);

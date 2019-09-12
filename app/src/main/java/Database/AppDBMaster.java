@@ -6,11 +6,12 @@ public final class AppDBMaster {
 
     private AppDBMaster(){}
 
+ 
     protected static class User implements BaseColumns{
-        protected static final String TABLE_NAME = "user";
-        protected static final String COLOMN_NAME_USERNAME = "username";
-        protected static final String COLOMN_NAME_PASSWORD = "password";
-        protected static final String COLOMN_PROFILE_PIC = "profile_pic";
+        protected static final String TABLE_NAME = "users";
+        protected static final String COLUMN_NAME_USERNAME = "username";
+        protected static final String COLUMN_NAME_EMAIL = "email";
+        protected static final String COLUMN_NAME_PASSWORD = "password";
     }
 
     protected static class Tasks implements BaseColumns{
