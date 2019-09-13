@@ -31,14 +31,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
 
         String Users_Table= "CREATE TABLE "+ AppDBMaster.User.TABLE_NAME+" ("+
-                UserMaster.User._ID+" INTEGER PRIMARY KEY,"+
-                UserMaster.User.COLUMN_NAME_USERNAME+ " TEXT,"+
-                UserMaster.User.COLUMN_NAME_EMAIL+ " TEXT,"+
-                UserMaster.User.COLUMN_NAME_PASSWORD+ " TEXT);";
+                AppDBMaster.User._ID+" INTEGER PRIMARY KEY,"+
+                AppDBMaster.User.COLUMN_NAME_USERNAME+ " TEXT,"+
+                AppDBMaster.User.COLUMN_NAME_EMAIL+ " TEXT,"+
+                AppDBMaster.User.COLUMN_NAME_PASSWORD+ " TEXT);";
 
-        sqLiteDatabase.execSQL(Task_Table);
-        sqLiteDatabase.execSQL(Records_Table);
-        sqLiteDatabase.execSQL(Users_Table);
+//        sqLiteDatabase.execSQL(Task_Table);
+//        sqLiteDatabase.execSQL(Records_Table);
+//        sqLiteDatabase.execSQL(Users_Table);
     }
 
     @Override

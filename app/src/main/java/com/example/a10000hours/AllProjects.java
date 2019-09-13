@@ -47,7 +47,7 @@ public class AllProjects extends AppCompatActivity {
         ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
         ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
         ImageView userAcc = (ImageView) findViewById(R.id.userAccImg);
-        //    ImageView settings = (ImageView) findViewById(R.id.homeImage);
+        ImageView dashboard = (ImageView) findViewById(R.id.dashboardImg);
 
 
         home.setOnClickListener(new View.OnClickListener() {
@@ -86,17 +86,17 @@ public class AllProjects extends AppCompatActivity {
                 startActivity(intent4);
             }
         });
-        /*
-        settings.setOnClickListener(new View.OnClickListener() {
+
+        dashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent5 = new Intent(AllProjects.this, AllProjects.class);
+                Intent intent5 = new Intent(AllProjects.this, Dashboard.class);
                 startActivity(intent5);
             }
         });
 
-        */
+
     }
 
     @Override

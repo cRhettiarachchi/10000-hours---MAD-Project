@@ -92,12 +92,12 @@
             app:srcCompat="@drawable/user" />
 
         <ImageView
-            android:id="@+id/settingsImg"
+            android:id="@+id/dashboardImg"
             android:layout_width="@dimen/footerImgWidth"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="15dp"
-            app:srcCompat="@drawable/setting" />
+            app:srcCompat="@drawable/dashboard_icon" />
 
     </LinearLayout>
 

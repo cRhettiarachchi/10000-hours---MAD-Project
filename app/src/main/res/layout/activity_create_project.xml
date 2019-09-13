@@ -92,7 +92,7 @@
                 app:srcCompat="@drawable/icon3" />
 
             <ImageView
-                android:id="@+id/imageView11"
+                android:id="@+id/projectImage"
                 android:layout_width="@dimen/selectImageSize"
                 android:layout_height="@dimen/selectImageSize"
                 android:layout_weight="1"

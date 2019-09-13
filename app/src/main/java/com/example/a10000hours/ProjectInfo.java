@@ -22,8 +22,8 @@ public class ProjectInfo extends AppCompatActivity {
         ImageView home = (ImageView) findViewById(R.id.homeImage);
         ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
         ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
-        //    ImageView userAcc = (ImageView) findViewById(R.id.homeImage);
-        //    ImageView settings = (ImageView) findViewById(R.id.homeImage);
+        ImageView userAcc = (ImageView) findViewById(R.id.homeImage);
+        ImageView dashboard = (ImageView) findViewById(R.id.dashboardImg);
 
 
         home.setOnClickListener(new View.OnClickListener() {
@@ -53,26 +53,24 @@ public class ProjectInfo extends AppCompatActivity {
             }
         });
 
-        /*
         userAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent4 = new Intent(ProjectInfo.this, AllProjects.class);
+                Intent intent4 = new Intent(ProjectInfo.this, userAccount.class);
                 startActivity(intent4);
             }
         });
 
-        settings.setOnClickListener(new View.OnClickListener() {
+        dashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent5 = new Intent(ProjectInfo.this, AllProjects.class);
+                Intent intent5 = new Intent(ProjectInfo.this, Dashboard.class);
                 startActivity(intent5);
             }
         });
 
-        */
     }
 
 }

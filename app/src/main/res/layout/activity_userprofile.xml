@@ -27,7 +27,7 @@
                 android:layout_margin="20dp"
 
                 android:padding="3dp"
-                android:src="@drawable/user1"
+                android:src="@drawable/user"
                 android:adjustViewBounds="true"
                 android:background="@drawable/circle"
                 android:scaleType ="centerInside">
