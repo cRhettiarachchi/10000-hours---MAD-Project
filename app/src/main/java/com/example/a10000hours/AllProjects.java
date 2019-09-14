@@ -27,7 +27,7 @@ public class AllProjects extends AppCompatActivity {
     }
 
     private void projectInfo() {
-
+/*
         ImageView proInfo = (ImageView) findViewById(R.id.imageView1);
 
         proInfo.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +38,7 @@ public class AllProjects extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+*/
     }
 
     private void navigateBar() {

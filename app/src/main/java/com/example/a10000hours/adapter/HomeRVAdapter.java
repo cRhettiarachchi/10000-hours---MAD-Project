@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -37,10 +38,17 @@ public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HomeViewHolder holder, final int position) {
         Log.d(TAG,"onBindViewHolder called!!");
 
         holder.projectName.setText(projectNames.get(position));
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(nContext,projectNames.get(position),Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

@@ -17,12 +17,15 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.a10000hours.adapter.HomeRVAdapter;
+import com.example.a10000hours.adapter.ProjectInfoRVAdapter;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     private ArrayList<String> testPNames = new ArrayList<>();
+    private ArrayList<String> testHours = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +46,28 @@ public class MainActivity extends AppCompatActivity {
         testPNames.add("watching tutorials");
         testPNames.add("play chess");
 
+        testHours.add("10.5");
+        testHours.add("20.4");
+        testHours.add("9.8");
+        testHours.add("1.5");
+        testHours.add("17.3");
+
         initRecyclerView();
+        initRecyclerView2();
 
 
     }
 
+    private void initRecyclerView2() {
+        Log.d(TAG,"initRecyclerView2 methoed called");
+        RecyclerView infoRecyclerView = findViewById(R.id.testRecycleView);
+        ProjectInfoRVAdapter infoAdapter = new ProjectInfoRVAdapter(this,testPNames,testHours);
+        infoRecyclerView.setAdapter(infoAdapter);
+        infoRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
     private void initRecyclerView() {
-        //Log.d(TAG,"initRecyclerView methoed called");
+        Log.d(TAG,"initRecyclerView methoed called");
         RecyclerView recyclerView = findViewById(R.id.homeRecyclerView);
         HomeRVAdapter homeRVAdapter = new HomeRVAdapter(this,testPNames);
         recyclerView.setAdapter(homeRVAdapter);
@@ -105,9 +123,10 @@ public class MainActivity extends AppCompatActivity {
         allProjects.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent2 = new Intent(MainActivity.this, AllProjects.class);
                 startActivity(intent2);
+                finish();
+
             }
         });
 
