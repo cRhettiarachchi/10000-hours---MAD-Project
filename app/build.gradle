@@ -29,6 +29,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 
     //Round corner dependancy
+    // not supported with sdk 14
 //    implementation 'com.jcminarro:RoundKornerLayouts:0.4.0'
 //    implementation 'com.android.support:recyclerview-v7:29.0.0'
 }
