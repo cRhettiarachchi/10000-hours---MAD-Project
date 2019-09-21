@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         testHours.add("17.3");
 
         initRecyclerView();
-        initRecyclerView2();
+        //initRecyclerView2();
 
 
     }
