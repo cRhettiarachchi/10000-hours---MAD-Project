@@ -4,16 +4,16 @@ import android.provider.BaseColumns;
 
 public final class AppDBMaster {
 
-    private AppDBMaster(){}
+    public AppDBMaster() {
+    }
 
- 
     protected static class User implements BaseColumns{
+
         protected static final String TABLE_NAME = "users";
         protected static final String COLUMN_NAME_USERNAME = "username";
         protected static final String COLUMN_NAME_EMAIL = "email";
         protected static final String COLUMN_NAME_PASSWORD = "password";
     }
-
     protected static class Tasks implements BaseColumns{
         protected static final String TABLE_NAME = "tasks";
         protected static final String COLOMN_TASK_NAME = "name";
@@ -28,6 +28,4 @@ public final class AppDBMaster {
         protected static final String COLOMN_RECORD_DATE = "date";
         protected static final String COLOMN_RECORD_TIME = "time";
     }
-
-
 }

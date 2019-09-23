@@ -31,14 +31,14 @@ public class EditHistoryListAdapter extends RecyclerView.Adapter<EditHistoryList
 
     @NonNull
     @Override
-    public EditHistoryListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.edit_history_list_items, parent, false);
-        EditHistoryListAdapter.ViewHolder holder = new EditHistoryListAdapter.ViewHolder(view);
+        ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EditHistoryListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(" ","onBindViewHolder: called");
 
         holder.edit_history_date.setText(mHistory_dates.get(position));
