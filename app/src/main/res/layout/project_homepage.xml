@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeProjectLL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/projectHomeCard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/addProjectField"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:thicknessRatio="1.9"
+        app:cardCornerRadius="20dp">
+
+        <TextView
+            android:id="@+id/projectName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginLeft="25dp"
+            android:gravity="center"
+            android:text="@string/dummyProject2"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/sideLine"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:background="#3D3D44" />
+
+        <ImageView
+            android:id="@+id/addTimeImage"
+            android:layout_width="@dimen/iconSize"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            app:srcCompat="@drawable/addtime" />
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
