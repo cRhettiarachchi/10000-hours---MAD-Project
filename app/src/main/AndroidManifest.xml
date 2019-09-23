@@ -28,6 +28,7 @@
         <!--Sasika UI-->
         <activity android:name=".Userprofile"></activity>
         <activity android:name=".ResetPassword" />
+        <activity android:name=".editUserProfile"/>
         <activity android:name=".SignIn" />
         <activity
             android:name=".Signup"
@@ -40,6 +41,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".userAccount" />
+        </activity>
+        <activity android:name=".EditGoal"></activity>
+        <activity android:name=".AddGoal" />
+        <activity android:name=".Dashboard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".userAccount">
             <intent-filter>
@@ -70,6 +80,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".AddPop" android:theme="@style/AppTheme.popUpStyle"></activity>
     </application>
 
 </manifest>

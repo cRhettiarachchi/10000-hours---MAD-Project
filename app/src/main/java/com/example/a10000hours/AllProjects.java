@@ -23,6 +23,22 @@ public class AllProjects extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("All Projects");
         navigateBar();
+        projectInfo();
+    }
+
+    private void projectInfo() {
+
+        ImageView proInfo = (ImageView) findViewById(R.id.imageView1);
+
+        proInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(AllProjects.this, ProjectInfo.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void navigateBar() {
@@ -30,8 +46,8 @@ public class AllProjects extends AppCompatActivity {
         ImageView home = (ImageView) findViewById(R.id.homeImage);
         ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
         ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
-        //    ImageView userAcc = (ImageView) findViewById(R.id.homeImage);
-        //    ImageView settings = (ImageView) findViewById(R.id.homeImage);
+        ImageView userAcc = (ImageView) findViewById(R.id.userAccImg);
+        ImageView dashboard = (ImageView) findViewById(R.id.dashboardImg);
 
 
         home.setOnClickListener(new View.OnClickListener() {
@@ -61,26 +77,26 @@ public class AllProjects extends AppCompatActivity {
             }
         });
 
-        /*
+
         userAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent4 = new Intent(AllProjects.this, AllProjects.class);
+                Intent intent4 = new Intent(AllProjects.this, userAccount.class);
                 startActivity(intent4);
             }
         });
 
-        settings.setOnClickListener(new View.OnClickListener() {
+        dashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent5 = new Intent(AllProjects.this, AllProjects.class);
+                Intent intent5 = new Intent(AllProjects.this, Dashboard.class);
                 startActivity(intent5);
             }
         });
 
-        */
+
     }
 
     @Override

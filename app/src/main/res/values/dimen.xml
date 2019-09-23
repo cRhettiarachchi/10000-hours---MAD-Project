@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="addProjectField">80dp</dimen>
+    <dimen name="choseIconSize">40dp</dimen>
+    <dimen name="selectImageSize">60dp</dimen>
+    <dimen name="marginBtn">20dp</dimen>
+    <dimen name="LinearPadding">10dp</dimen>
+    <dimen name="BottomLinearHeight">100dp</dimen>
+    <dimen name="HeaderHeight">75dp</dimen>
+    <dimen name="footerHeight">65dp</dimen>
+    <dimen name="footerImgWidth">65dp</dimen>
+    <dimen name="iconSize">80dp</dimen>
+    <dimen name="cardConerRadious">20dp</dimen>
+    <dimen name="cardViewMargin">50dp</dimen>
+    <dimen name="profileHeight">300dp</dimen>
+    <dimen name="projectNameWidth">200dp</dimen>
+    <dimen name="prfImgLayoutWidth">122dp</dimen>
+    <dimen name="prfImgLayoutHeight">135dp</dimen>
+
+    <dimen name="projectNameWidthPrf">269dp</dimen>
+    <dimen name="projectNameHeightPrf">40dp</dimen>
+
+</resources>

@@ -8,7 +8,6 @@ import androidx.core.app.NavUtils;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,7 +24,36 @@ public class MainActivity extends AppCompatActivity {
         setTitle("10000 Hours");
 
         navigateBar();
+        addActivity();
 
+    }
+
+    private void addActivity(){
+        ImageView addBtn = (ImageView) findViewById(R.id.exId1);
+        ImageView addBtn1 = (ImageView) findViewById(R.id.exId4);
+        ImageView addBtn2= (ImageView) findViewById(R.id.exId3);
+
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddPop.class));
+            }
+        });
+
+        addBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddPop.class));
+            }
+        });
+
+        addBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddPop.class));
+            }
+        });
     }
 
     private void navigateBar() {
@@ -34,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
         ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
         ImageView userAcc = (ImageView) findViewById(R.id.userAccImg);
-    //    ImageView settings = (ImageView) findViewById(R.id.homeImage);
+        ImageView dashboard = (ImageView) findViewById(R.id.dashboardImg);
 
 
         home.setOnClickListener(new View.OnClickListener() {
@@ -74,17 +102,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        settings.setOnClickListener(new View.OnClickListener() {
+
+        dashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent5 = new Intent(MainActivity.this, AllProjects.class);
+                Intent intent5 = new Intent(MainActivity.this, Dashboard.class);
                 startActivity(intent5);
             }
         });
 
-        */
+
 
     }
 
