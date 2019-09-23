@@ -17,12 +17,14 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.a10000hours.adapter.HomeRVAdapter;
+import com.example.a10000hours.adapter.ProjectInfoRVAdapter;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> testPNames = new ArrayList<>();
+    private ArrayList<String> testHours = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,17 +45,31 @@ public class MainActivity extends AppCompatActivity {
         testPNames.add("watching tutorials");
         testPNames.add("play chess");
 
-        initRecyclerView();
+        testHours.add("10.5");
+        testHours.add("20.4");
+        testHours.add("9.8");
+        testHours.add("1.5");
+        testHours.add("17.3");
 
+       // initRecyclerView();
+        initRecyclerView2();
 
     }
 
     private void initRecyclerView() {
         //Log.d(TAG,"initRecyclerView methoed called");
-        RecyclerView recyclerView = findViewById(R.id.homeRecyclerView);
+        RecyclerView recyclerView = findViewById(R.id.proInfoRV);
         HomeRVAdapter homeRVAdapter = new HomeRVAdapter(this,testPNames);
         recyclerView.setAdapter(homeRVAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void initRecyclerView2() {
+        //Log.d(TAG,"initRecyclerView2 methoed called");
+        RecyclerView infoRecyclerView = findViewById(R.id.proInfoRV);
+        ProjectInfoRVAdapter infoAdapter = new ProjectInfoRVAdapter(this,testPNames,testHours);
+        infoRecyclerView.setAdapter(infoAdapter);
+        infoRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void addActivity(){

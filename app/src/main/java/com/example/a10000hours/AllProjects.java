@@ -28,16 +28,16 @@ public class AllProjects extends AppCompatActivity {
 
     private void projectInfo() {
 
-        ImageView proInfo = (ImageView) findViewById(R.id.imageView1);
+        //ImageView proInfo = (ImageView) findViewById(R.id.imageView1);
 
-        proInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        //proInfo.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
 
-                Intent intent = new Intent(AllProjects.this, ProjectInfo.class);
-                startActivity(intent);
-            }
-        });
+         //       Intent intent = new Intent(AllProjects.this, ProjectInfo.class);
+           //     startActivity(intent);
+            //}
+        //});
 
     }
 
