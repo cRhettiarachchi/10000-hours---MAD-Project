@@ -5,13 +5,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABSE_NAME = "timetrack.db";
     public DBHelper(Context context) {
-        super(context, DATABSE_NAME, null, 1);
+        super(context, DATABSE_NAME, null, 2);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -27,11 +30,12 @@ public class DBHelper extends SQLiteOpenHelper {
                 AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT, " +
                 AppDBMaster.Tasks.COLOMN_TASK_DATE + " TEXT);";
 
+//        AppDBMaster.Records.TASK_ID + " INTEGER",
         String Records_Table = "CREATE TABLE " + AppDBMaster.Records.TABLE_NAME + " (" +
-                AppDBMaster.Records.TASK_ID + " INTEGER PRIMARY KEY, " +
-                AppDBMaster.Records.TASK_ID + " INTEGER, " +
-                AppDBMaster.Records.COLOMN_RECORD_DATE + " TEXT, " +
-                AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG, " +
+                AppDBMaster.Records._ID + " INTEGER PRIMARY KEY," +
+                AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_DATE + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG," +
                 AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
 
                 db.execSQL(Users_Table);
@@ -39,8 +43,18 @@ public class DBHelper extends SQLiteOpenHelper {
                 db.execSQL(Records_Table);
     }
 
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        String Records_Table = "CREATE TABLE " + AppDBMaster.Records.TABLE_NAME + " (" +
+                AppDBMaster.Records._ID + " INTEGER PRIMARY KEY," +
+                AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_DATE + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG," +
+                AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
+
+        db.execSQL(Records_Table);
 
     }
     public boolean addUser(String username,String password,String email){
@@ -61,6 +75,37 @@ public class DBHelper extends SQLiteOpenHelper {
         }
 
 
+    }
+
+    public boolean addRecord(String date, double time, String description, String taskName){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(AppDBMaster.Records.COLOMN_RECORD_DATE, date);
+        values.put(AppDBMaster.Tasks.COLOMN_TASK_NAME, taskName);
+        values.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
+        values.put(AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION, description);
+
+        long result = db.insert(AppDBMaster.Records.TABLE_NAME, null, values);
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public Cursor viewAllRecords(){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + AppDBMaster.Records.TABLE_NAME, null);
+        if(cursor.getCount() > 0){
+            Log.d("notEmpty", "not working");
+            return cursor;
+        }else{
+            Log.d("database_empty", "not working");
+            return cursor;
+        }
     }
 
     public boolean checkUser(String username,String password){

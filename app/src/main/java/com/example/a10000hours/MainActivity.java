@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import Database.DBHelper;
+
 import com.example.a10000hours.adapter.HomeRVAdapter;
 
 import java.util.ArrayList;
@@ -45,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         initRecyclerView();
 
-
     }
+
 
     private void initRecyclerView() {
         //Log.d(TAG,"initRecyclerView methoed called");

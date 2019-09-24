@@ -19,12 +19,14 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
     private ArrayList<String> mHistory_dates = new ArrayList<>();
     private ArrayList<String> mHistory_titles = new ArrayList<>();
     private ArrayList<String> mHistory_time = new ArrayList<>();
+    private ArrayList<Integer> mHisotry_id = new ArrayList<>();
     private Context context;
 
-    public HistoryListAdapter(Context context, ArrayList<String> mHistory_dates, ArrayList<String> mHistory_titles, ArrayList<String> mHistory_time) {
+    public HistoryListAdapter(Context context, ArrayList<String> mHistory_dates, ArrayList<String> mHistory_titles, ArrayList<String> mHistory_time, ArrayList<Integer> mHistory_id) {
         this.mHistory_dates = mHistory_dates;
         this.mHistory_titles = mHistory_titles;
         this.mHistory_time = mHistory_time;
+        this.mHisotry_id = mHistory_id;
         this.context = context;
     }
 
@@ -34,6 +36,7 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.history_list_items, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
+
     }
 
     @Override
@@ -43,6 +46,7 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         holder.history_date.setText(mHistory_dates.get(position));
         holder.history_title.setText(mHistory_titles.get(position));
         holder.history_time.setText(mHistory_time.get(position));
+        Log.d("id", "" + mHisotry_id.get(position));
     }
 
     @Override
