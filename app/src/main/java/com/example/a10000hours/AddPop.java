@@ -56,8 +56,9 @@ public class AddPop extends AppCompatActivity {
                 description = description_text.getText().toString();
                 time = Double.parseDouble(time_txt.getText().toString());
                 if(db.addRecord("22/01", time, description, TaskName)){
-                    Intent intent = new Intent(AddPop.this, MainActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent(AddPop.this, MainActivity.class);
+//                    startActivity(intent);
+                      onBackPressed();
                 }else {
                     Toast.makeText(getApplicationContext(), "Data insert Fail", Toast.LENGTH_SHORT).show();
                 }

@@ -108,6 +108,30 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean updateTimeRecord(Integer id, double time){
+
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
+
+        String selection = AppDBMaster.Records._ID + " LIKE ?";
+        String[] SelectionArgs = {id.toString()};
+
+        int update = db.update(
+                AppDBMaster.Records.TABLE_NAME,
+                contentValues,
+                selection,
+                SelectionArgs
+        );
+
+        if(update > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     public boolean checkUser(String username,String password){
         String[] columns = {AppDBMaster.User._ID};
         SQLiteDatabase db = getReadableDatabase();

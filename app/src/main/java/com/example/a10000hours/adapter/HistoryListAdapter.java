@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -57,8 +58,6 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView history_date, history_title, history_time;
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             history_date = itemView.findViewById(R.id.history_date);
