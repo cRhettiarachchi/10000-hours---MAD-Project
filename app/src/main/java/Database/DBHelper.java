@@ -77,61 +77,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean addRecord(String date, double time, String description, String taskName){
-        SQLiteDatabase db = getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-
-        values.put(AppDBMaster.Records.COLOMN_RECORD_DATE, date);
-        values.put(AppDBMaster.Tasks.COLOMN_TASK_NAME, taskName);
-        values.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
-        values.put(AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION, description);
-
-        long result = db.insert(AppDBMaster.Records.TABLE_NAME, null, values);
-        if(result > 0){
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    public Cursor viewAllRecords(){
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + AppDBMaster.Records.TABLE_NAME, null);
-        if(cursor.getCount() > 0){
-            Log.d("notEmpty", "not working");
-            return cursor;
-        }else{
-            Log.d("database_empty", "not working");
-            return cursor;
-        }
-    }
-
-    public boolean updateTimeRecord(Integer id, double time){
-
-        SQLiteDatabase db = getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
-
-        String selection = AppDBMaster.Records._ID + " LIKE ?";
-        String[] SelectionArgs = {id.toString()};
-
-        int update = db.update(
-                AppDBMaster.Records.TABLE_NAME,
-                contentValues,
-                selection,
-                SelectionArgs
-        );
-
-        if(update > 0){
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
     public boolean checkUser(String username,String password){
         String[] columns = {AppDBMaster.User._ID};
         SQLiteDatabase db = getReadableDatabase();
@@ -199,5 +144,80 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return count;
     }
+
+    // ----------------------------------------------------------------- //
+    // Records Queries //
+    public boolean addRecord(String date, double time, String description, String taskName){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(AppDBMaster.Records.COLOMN_RECORD_DATE, date);
+        values.put(AppDBMaster.Tasks.COLOMN_TASK_NAME, taskName);
+        values.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
+        values.put(AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION, description);
+
+        long result = db.insert(AppDBMaster.Records.TABLE_NAME, null, values);
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public Cursor viewAllRecords(){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + AppDBMaster.Records.TABLE_NAME, null);
+        if(cursor.getCount() > 0){
+            Log.d("notEmpty", "not working");
+            return cursor;
+        }else{
+            Log.d("database_empty", "not working");
+            return cursor;
+        }
+    }
+
+    public boolean updateTimeRecord(Integer id, double time){
+
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
+
+        String selection = AppDBMaster.Records._ID + " LIKE ?";
+        String[] SelectionArgs = {id.toString()};
+
+        int update = db.update(
+                AppDBMaster.Records.TABLE_NAME,
+                contentValues,
+                selection,
+                SelectionArgs
+        );
+
+        if(update > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public boolean deleteRecord(Integer id){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String selection = AppDBMaster.Records._ID + " LIKE ? ";
+        String[] selectionArgs = {id.toString()};
+
+        int i = db.delete(AppDBMaster.Records.TABLE_NAME, selection, selectionArgs);
+
+        if(i > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    // -------------------------------------------------------------------- //
+
 
 }

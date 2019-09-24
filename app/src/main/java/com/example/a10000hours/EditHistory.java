@@ -48,16 +48,15 @@ public class EditHistory extends AppCompatActivity {
         initImageBitmaps();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, History.class);
+        startActivity(intent);
+    }
+
     private void initImageBitmaps(){
         Log.d("", "working Init Bitmaps");
-
-//        int i = 0;
-//        while(i < 100){
-//            mHistory_dates.add("11/05");
-//            mHistory_titles.add("Android : " + i);
-//            mHistory_time.add("4.00");
-//            i++;
-//        }
 
         while (cursor.moveToNext()){
             mHistory_id.add(cursor.getInt(0));

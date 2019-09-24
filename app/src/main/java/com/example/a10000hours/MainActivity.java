@@ -58,34 +58,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    public void addActivity(){
-        startActivity(new Intent(MainActivity.this, AddPop.class));
-    /*    ImageView addBtn = (ImageView) findViewById(R.id.exId1);
-        ImageView addBtn1 = (ImageView) findViewById(R.id.exId4);
-        ImageView addBtn2= (ImageView) findViewById(R.id.exId3);
-
-
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddPop.class));
-            }
-        });
-
-        addBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddPop.class));
-            }
-        });
-
-        addBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddPop.class));
-            }
-        }); */
-    }
 
     private void navigateBar() {
 

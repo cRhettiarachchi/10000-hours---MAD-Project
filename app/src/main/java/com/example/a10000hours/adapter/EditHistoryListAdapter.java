@@ -1,6 +1,7 @@
 package com.example.a10000hours.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.a10000hours.History;
 import com.example.a10000hours.R;
 import Database.DBHelper;
 
@@ -69,11 +71,16 @@ public class EditHistoryListAdapter extends RecyclerView.Adapter<EditHistoryList
         });
     }
 
+//    @Override
+//    public void onBackPressed() {
+//        Intent intent = new Intent(context, History.class);
+//        context.startActivity(intent);
+//    }
+
     @Override
     public int getItemCount() {
         return mHistory_titles.size();
     }
-
 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
