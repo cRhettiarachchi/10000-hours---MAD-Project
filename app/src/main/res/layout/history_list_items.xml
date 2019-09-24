@@ -2,36 +2,53 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/history_date"
-        android:textColor="@color/colorPrimary"
-        android:text="@string/testDate"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp">
-    </TextView>
+        android:id="@+id/history_child_layout">
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/history_date"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/testDate"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp">
+        </TextView>
 
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/history_title"
-        android:text="@string/testTitle"
-        android:layout_toRightOf="@+id/history_date"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp">
-    </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/history_title"
+            android:text="@string/testTitle"
+            android:layout_toRightOf="@+id/history_date"
+            android:layout_toLeftOf="@+id/history_time"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp">
+        </TextView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/history_time"
-        android:layout_toRightOf="@+id/history_title"
-        android:text="@string/testTime"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/colorPrimary">
-    </TextView>
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/history_time"
+            android:layout_toLeftOf="@+id/history_hrs"
+            android:text="@string/timeInt"
+            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorPrimary">
+        </TextView>
+
+        <TextView
+            android:id="@+id/history_hrs"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/hrs"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorPrimary"></TextView>
+    </RelativeLayout>
 
 </RelativeLayout>

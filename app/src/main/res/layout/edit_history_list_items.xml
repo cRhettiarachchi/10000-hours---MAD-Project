@@ -13,11 +13,12 @@
     </TextView>
 
     <TextView
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/edit_history_title"
         android:text="@string/testTitle"
         android:layout_toRightOf="@+id/edit_history_date"
+        android:layout_toLeftOf="@+id/edit_history_time"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:textSize="18sp">
@@ -30,7 +31,8 @@
         android:layout_alignBaseline="@id/edit_history_title"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/edit_history_title"
+        android:layout_toLeftOf="@id/edit_history_edit_done_btn"
+        android:gravity="right"
         android:inputType="number"
         android:text="1.30"
         android:textColor="@color/colorPrimary"></EditText>
@@ -41,7 +43,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/edit_done"
         android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/edit_history_time"
+        android:layout_alignParentRight="true"
         android:textColor="@color/colorPrimary"></ImageView>
 "
 </RelativeLayout>

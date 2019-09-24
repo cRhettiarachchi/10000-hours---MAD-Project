@@ -25,9 +25,10 @@
         ></TextView>
 
     <TextView
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/delete_history_date"
+        android:layout_toLeftOf="@+id/delete_history_time"
         android:text="@string/dummyProject1"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
@@ -38,11 +39,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/testTime"
-        android:layout_toRightOf="@+id/delete_history_title"
+        android:text="@string/timeInt"
+        android:layout_toLeftOf="@+id/delete_history_hrs"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
         android:textColor="@color/colorPrimary"
+        android:gravity="right"
         android:id="@+id/delete_history_time">
 
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hrs"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/delete_history_hrs">
     </TextView>
 </RelativeLayout>
