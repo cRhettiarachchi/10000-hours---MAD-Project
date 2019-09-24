@@ -31,12 +31,6 @@ public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHo
     private ArrayList<String> projectNames = new ArrayList<>();
     private Context nContext;
 
-    // ADD DIALOG TEST
-    Dialog dialog;
-    EditText timeEditText;
-    Button doneBtn;
-    TextView titleTextView;
-
     public HomeRVAdapter(Context context,ArrayList<String> projectNames) {
         this.projectNames = projectNames;
         this.nContext = context;
@@ -55,33 +49,12 @@ public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHo
         Log.d(TAG,"onBindViewHolder called!!");
 
         holder.projectName.setText(projectNames.get(position));
-
-        // DIALOG TEST
-        dialog = new Dialog(nContext);
-        dialog.setContentView(R.layout.activity_add_pop);
-        doneBtn = (Button) dialog.findViewById(R.id.addRecordBtn);
-        doneBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                timeEditText = (EditText) dialog.findViewById(R.id.time_txt);
-                final String time = timeEditText.getText().toString();
-                Toast.makeText(nContext, "This is a message displayed in a Toast " + time,
-                        Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-        titleTextView = (TextView) dialog.findViewById(R.id.add_record_task_name);
-
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(nContext, AddPop.class);
-//                intent.putExtra("Task_Name", projectNames.get(position));
-//                nContext.startActivity(intent);
-
-                  // DIALOG ADD TEST
-                titleTextView.setText(projectNames.get(position));
-                dialog.show();
+                Intent intent = new Intent(nContext, AddPop.class);
+                intent.putExtra("Task_Name", projectNames.get(position));
+                nContext.startActivity(intent);
             }
         });
 

@@ -25,6 +25,7 @@
 
     <!--menu strings-->
     <string name="edit">Edit</string>
+    <string name="update">Update</string>
     <string name="delete">Delete</string>
     <string name="done">Done</string>
     <string name="addItem">Add Item</string>
@@ -50,6 +51,11 @@
     <string name="signin">SIGN IN</string>
     <string name="forgetpass">Forget Password?</string>
     <string name="logoname">10000Hour</string>
+
+    <!--validation Errors string-->
+    <string name="usernameerror">Enter your Username</string>
+    <string name="emailerror">Enter valid email</string>
+    <string name="passworderror">Enter valid passowrd</string>
 
 
     <!-- Dashboard strings -->
