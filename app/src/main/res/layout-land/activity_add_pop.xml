@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="50dp"
         tools:context=".add_records_dialog"
         android:background="@color/design_default_color_primary"
         android:id="@+id/add_record_relative_heading"
@@ -50,7 +50,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 android:id="@+id/add_record_linear_time">
 
@@ -85,26 +84,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 android:layout_below="@+id/add_record_linear_time">
 
                 <EditText
                     android:id="@+id/description_text"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="55dp"
                     android:hint="Enter Description" />
 
                 <Button
-                    android:id="@+id/addRecordBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="20dp"
                     android:background="@drawable/buttonstyle"
-                    android:clickable="false"
-                    android:text="@string/done"></Button>
+                    android:text="@string/done"
+                    android:id="@+id/addRecordBtn"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"></Button>
             </LinearLayout>
         </RelativeLayout>
 

@@ -3,6 +3,8 @@ package com.example.a10000hours;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +23,7 @@ public class AddPop extends AppCompatActivity {
     EditText time_txt, description_text;
     DBHelper db;
     String description, TaskName;
+    Button btn;
     double time;
 
     @Override
@@ -36,32 +39,43 @@ public class AddPop extends AppCompatActivity {
         int height = displayMetrics.heightPixels;
         getWindow().setLayout((int)(width * 0.8), (int)(height * 0.7));
 
+        // Get date from user
+        time_txt = findViewById(R.id.time_txt);
+        description_text = findViewById(R.id.description_text);
+
         addClick();
         grabIntent();
-
         db = new DBHelper(this);
     }
 
     private void addClick(){
-        Button btn = findViewById(R.id.addRecordBtn);
+        btn = findViewById(R.id.addRecordBtn);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Get date from user
-                time_txt = findViewById(R.id.time_txt);
-                description_text = findViewById(R.id.description_text);
-
                 // Add data to String variables
-                description = description_text.getText().toString();
-                time = Double.parseDouble(time_txt.getText().toString());
-                if(db.addRecord("22/01", time, description, TaskName)){
-//                    Intent intent = new Intent(AddPop.this, MainActivity.class);
-//                    startActivity(intent);
-                      onBackPressed();
-                }else {
-                    Toast.makeText(getApplicationContext(), "Data insert Fail", Toast.LENGTH_SHORT).show();
+
+                // validate count
+                int validate = time_txt.getText().toString().trim().length();
+                if(validate != 0){
+                    description = description_text.getText().toString();
+                    time = Double.parseDouble(time_txt.getText().toString());
+                    Log.d("validate", "" + validate);
+                    if(db.addRecord("22/01", time, description, TaskName)){
+                        onBackPressed();
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Data insert Fail", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    time_txt.setError("Enter the time");
                 }
+
+//                if(db.addRecord("22/01", time, description, TaskName)){
+//                    onBackPressed();
+//                }else {
+//                    Toast.makeText(getApplicationContext(), "Data insert Fail", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
     }
