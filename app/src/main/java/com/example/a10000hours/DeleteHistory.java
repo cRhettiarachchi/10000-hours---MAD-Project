@@ -2,6 +2,7 @@ package com.example.a10000hours;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -9,8 +10,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.a10000hours.adapter.DeleteHistoryAdapter;
+import com.example.a10000hours.adapter.HistoryListAdapter;
+
+import java.util.ArrayList;
 
 public class DeleteHistory extends AppCompatActivity {
+
+    private ArrayList<String> mHistory_dates = new ArrayList<>();
+    private ArrayList<String> mHistory_titles = new ArrayList<>();
+    private ArrayList<String> mHistory_time = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +34,32 @@ public class DeleteHistory extends AppCompatActivity {
 
         setTitle("Delete History");
 
+        initImageBitmaps();
+
     }
 
-    @Override
+    private void initImageBitmaps() {
+        Log.d("", "working Init Bitmaps");
+
+        int i = 0;
+        while (i < 100) {
+            mHistory_dates.add("11/05");
+            mHistory_titles.add("Android : " + i);
+            mHistory_time.add("4.00 hrs");
+            Log.d("loop_log", "Loop is working" + i);
+            i++;
+        }
+        initRecycleView();
+    }
+
+        private void initRecycleView(){
+            Log.d("", "initRecyclerView working");
+            RecyclerView recyclerView = findViewById(R.id.delete_history_recyclerView);
+            DeleteHistoryAdapter deleteHistoryAdapter = new DeleteHistoryAdapter(this, mHistory_dates, mHistory_titles, mHistory_time);
+            recyclerView.setAdapter(deleteHistoryAdapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        }
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.delete_history_menu, menu);
         return true;

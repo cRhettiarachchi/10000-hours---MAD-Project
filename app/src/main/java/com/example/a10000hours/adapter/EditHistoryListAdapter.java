@@ -33,6 +33,7 @@ public class EditHistoryListAdapter extends RecyclerView.Adapter<EditHistoryList
     @Override
     public EditHistoryListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.edit_history_list_items, parent, false);
+//        ViewHolder viewHolder = new ViewHolder(view);
         EditHistoryListAdapter.ViewHolder holder = new EditHistoryListAdapter.ViewHolder(view);
         return holder;
     }
@@ -54,7 +55,7 @@ public class EditHistoryListAdapter extends RecyclerView.Adapter<EditHistoryList
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView edit_history_date, edit_history_title;
+        TextView edit_history_date, edit_history_title, edit_history_hours;
         EditText edit_history_time;
 
 
@@ -63,6 +64,7 @@ public class EditHistoryListAdapter extends RecyclerView.Adapter<EditHistoryList
             edit_history_date = itemView.findViewById(R.id.edit_history_date);
             edit_history_title = itemView.findViewById(R.id.edit_history_title);
             edit_history_time = itemView.findViewById(R.id.edit_history_time);
+            edit_history_hours = itemView.findViewById(R.id.edit_history_hrs);
         }
     }
 }

@@ -1,79 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout3"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:orientation="vertical"
-    tools:context=".AddPop">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/colorPrimary">
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
-                android:gravity="center"
-                android:text="@string/addTime"
-                android:textSize="24sp" />
-
-        </androidx.cardview.widget.CardView>
+        android:layout_height="150dp"
+        tools:context=".add_records_dialog"
+        android:background="@color/design_default_color_primary"
+        android:id="@+id/add_record_relative_heading"
+        >
 
         <TextView
-            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addItem"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"></TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_record_relative_heading"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/testTitle"
+            android:textSize="22dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/add_record_task_name">
+
+        </TextView>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:gravity="center"
-            android:text="@string/date"
-            android:textSize="20sp" />
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            app:cardBackgroundColor="@color/colorBackground">
+            android:layout_below="@+id/add_record_task_name"
+            android:background="@color/background_off_white">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/Task"
-                    android:textSize="22sp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
-                android:orientation="horizontal">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:id="@+id/add_record_linear_time">
 
                 <TextView
                     android:id="@+id/addTime_txtView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/time"
@@ -83,55 +67,45 @@
                     android:id="@+id/time_txt"
                     android:layout_width="42dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:gravity="right"
-                    android:inputType="textPersonName"
-                    android:text="@string/timeInt" />
+                    android:inputType="numberDecimal"
+                    android:hint="@string/timeInt" />
 
                 <TextView
                     android:id="@+id/hrs_txtView"
                     android:layout_width="7dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="@string/hrs" />
+                    android:text="@string/hrs"/>
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:layout_below="@+id/add_record_linear_time">
 
                 <EditText
                     android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:hint="Enter Description"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@android:string/fingerprint_icon_content_description"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:layout_marginBottom="10dp"></EditText>
+                    android:layout_gravity="center"
+                    android:background="@drawable/buttonstyle"
+                    android:text="@string/done"
+                    android:id="@+id/addRecordBtn"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"></Button>
             </LinearLayout>
+        </RelativeLayout>
 
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/addRecordBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/buttonstyle"
-                android:text="@string/done" />
-        </androidx.cardview.widget.CardView>
-
-<!--    </LinearLayout>-->
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</RelativeLayout>

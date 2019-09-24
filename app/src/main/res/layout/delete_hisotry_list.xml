@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        app:srcCompat="@drawable/remove"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/delete_history_button"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/testDate"
+        android:layout_toRightOf="@+id/delete_history_button"
+        android:id="@+id/delete_history_date"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"
+        ></TextView>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/delete_history_date"
+        android:text="@string/dummyProject1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp"
+        android:id="@+id/delete_history_title"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/testTime"
+        android:layout_toRightOf="@+id/delete_history_title"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/delete_history_time">
+
+    </TextView>
+</RelativeLayout>

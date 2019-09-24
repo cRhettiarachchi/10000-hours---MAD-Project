@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("10000 Hours");
 
         navigateBar();
-        addActivity();
+//        addActivity();
 
         //------------------------
         testPNames.add("robotics");
@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void addActivity(){
+    public void addActivity(){
+        startActivity(new Intent(MainActivity.this, AddPop.class));
     /*    ImageView addBtn = (ImageView) findViewById(R.id.exId1);
         ImageView addBtn1 = (ImageView) findViewById(R.id.exId4);
         ImageView addBtn2= (ImageView) findViewById(R.id.exId3);

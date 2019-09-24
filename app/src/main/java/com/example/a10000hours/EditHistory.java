@@ -13,6 +13,7 @@ import androidx.core.app.NavUtils;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.a10000hours.adapter.EditHistoryListAdapter;
 import com.example.a10000hours.adapter.HistoryListAdapter;
 
 import java.util.ArrayList;
@@ -53,8 +54,8 @@ public class EditHistory extends AppCompatActivity {
     private void initRecycleView(){
         Log.d("", "initRecyclerView working");
         RecyclerView recyclerView = findViewById(R.id.edit_history_recyclerView);
-        HistoryListAdapter historyListAdapter = new HistoryListAdapter(this, mHistory_dates, mHistory_titles, mHistory_time);
-        recyclerView.setAdapter(historyListAdapter);
+        EditHistoryListAdapter editHistoryListAdapter = new EditHistoryListAdapter(this, mHistory_dates, mHistory_titles, mHistory_time);
+        recyclerView.setAdapter(editHistoryListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 

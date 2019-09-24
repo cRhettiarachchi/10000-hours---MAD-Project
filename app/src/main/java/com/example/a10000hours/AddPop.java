@@ -1,14 +1,19 @@
 package com.example.a10000hours;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddPop extends AppCompatActivity {
+
+    TextView taskName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,7 @@ public class AddPop extends AppCompatActivity {
         getWindow().setLayout((int)(width * 0.8), (int)(height * 0.7));
 
         addClick();
+        grabIntent();
     }
 
     private void addClick(){
@@ -36,5 +42,19 @@ public class AddPop extends AppCompatActivity {
                 startActivity(new Intent(AddPop.this, MainActivity.class));
             }
         });
+    }
+
+    private void grabIntent(){
+        if(getIntent().hasExtra("Task_Name")){
+            String TaskName = getIntent().getStringExtra("Task_Name");
+            setTaskName(TaskName);
+        }else{
+            Log.d("notWorking", "no intent to be found");
+        }
+    }
+
+    private void setTaskName(String name){
+        taskName = findViewById(R.id.add_record_task_name);
+        taskName.setText(name);
     }
 }

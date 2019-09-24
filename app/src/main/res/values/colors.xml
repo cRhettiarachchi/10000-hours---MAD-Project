@@ -3,7 +3,7 @@
     <color name="colorPrimary">#4F8CD1</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorBackground">#00FFEBEE</color>
+    <color name="colorBackground">#FFEBEE</color>
     <color name="colorHeaderFooter">#FFFFFF</color>
     <color name="Button">#FF6B72E1</color>
     <color name="Button2">#83E9E9E3</color>
@@ -18,6 +18,7 @@
     <color name="newGrey">#F6F6F6</color>
     <color name="colorWorkedHours">#585858</color>
     <color name="transparent">#00ffffff</color>
+    <color name="background_off_white">#f7f7f7</color>
 
     <!-- Colors by Shafkhan -->
     <color name="dashboardStatTitle">#4169E1</color>

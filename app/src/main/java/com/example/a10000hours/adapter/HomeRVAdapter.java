@@ -1,19 +1,28 @@
 package com.example.a10000hours.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.a10000hours.AddPop;
+import com.example.a10000hours.MainActivity;
 import com.example.a10000hours.R;
-
 import java.util.ArrayList;
+
+import static androidx.core.content.ContextCompat.startActivity;
 
 public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHolder>{
 
@@ -22,6 +31,11 @@ public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHo
     private ArrayList<String> projectNames = new ArrayList<>();
     private Context nContext;
 
+    // ADD DIALOG TEST
+    Dialog dialog;
+    EditText timeEditText;
+    Button doneBtn;
+    TextView titleTextView;
 
     public HomeRVAdapter(Context context,ArrayList<String> projectNames) {
         this.projectNames = projectNames;
@@ -30,17 +44,46 @@ public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHo
 
     @NonNull
     @Override
-    public HomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HomeViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.project_homepage,parent,false);
-        HomeViewHolder holder = new HomeViewHolder(view);
+        final HomeViewHolder holder = new HomeViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HomeViewHolder holder, final int position) {
         Log.d(TAG,"onBindViewHolder called!!");
 
         holder.projectName.setText(projectNames.get(position));
+
+        // DIALOG TEST
+        dialog = new Dialog(nContext);
+        dialog.setContentView(R.layout.activity_add_pop);
+        doneBtn = (Button) dialog.findViewById(R.id.addRecordBtn);
+        doneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                timeEditText = (EditText) dialog.findViewById(R.id.time_txt);
+                final String time = timeEditText.getText().toString();
+                Toast.makeText(nContext, "This is a message displayed in a Toast " + time,
+                        Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        titleTextView = (TextView) dialog.findViewById(R.id.add_record_task_name);
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(nContext, AddPop.class);
+//                intent.putExtra("Task_Name", projectNames.get(position));
+//                nContext.startActivity(intent);
+
+                  // DIALOG ADD TEST
+                titleTextView.setText(projectNames.get(position));
+                dialog.show();
+            }
+        });
 
     }
 
