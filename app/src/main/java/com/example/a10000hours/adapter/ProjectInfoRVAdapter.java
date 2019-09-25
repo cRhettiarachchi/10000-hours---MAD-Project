@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -77,7 +76,7 @@ public class ProjectInfoRVAdapter extends RecyclerView.Adapter<ProjectInfoRVAdap
             infoCard = itemView.findViewById(R.id.projectInfoCard);
             projectName = itemView.findViewById(R.id.projectNameInfo);
             totHours = itemView.findViewById(R.id.totalHours);
-            projectImg = itemView.findViewById(R.id.projectImage);
+            projectImg = itemView.findViewById(R.id.tIcon4);
 
         }
     }

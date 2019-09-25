@@ -21,8 +21,12 @@ import Database.DBHelper;
 public class createProject extends AppCompatActivity {
 
     EditText projectName;
-    ImageView projectImage;
-    String name,icon;
+    ImageView projectImage1,projectImage2,projectImage3,projectImage4;
+    ImageView projectImage5,projectImage6,projectImage7,projectImage8;
+    ImageView projectImage9,projectImage10,projectImage11,projectImage12;
+    ImageView projectImage13,projectImage14,projectImage15,projectImage16;
+    String name;
+    static String icon = "@drawable/icon1";
     Button saveBtn;
     DBHelper db;
 
@@ -33,9 +37,156 @@ public class createProject extends AppCompatActivity {
 
 
         projectName = findViewById(R.id.proName);
-        //projectImage = findViewById(R.id.proName);
-        //saveBtn = findViewById(R.id.saveBtn);
         db = new DBHelper(this);
+
+        projectImage1 = findViewById(R.id.tIcon1);
+        projectImage2 = findViewById(R.id.tIcon2);
+        projectImage3 = findViewById(R.id.tIcon3);
+        projectImage4 = findViewById(R.id.tIcon4);
+        projectImage5 = findViewById(R.id.tIcon5);
+        projectImage6 = findViewById(R.id.tIcon6);
+        projectImage7 = findViewById(R.id.tIcon7);
+        projectImage8 = findViewById(R.id.tIcon8);
+        projectImage9 = findViewById(R.id.tIcon9);
+        projectImage10 = findViewById(R.id.tIcon10);
+        projectImage11 = findViewById(R.id.tIcon11);
+        projectImage12 = findViewById(R.id.tIcon12);
+        projectImage13 = findViewById(R.id.tIcon13);
+        projectImage14 = findViewById(R.id.tIcon14);
+        projectImage15 = findViewById(R.id.tIcon15);
+        projectImage16 = findViewById(R.id.tIcon16);
+
+
+        projectImage1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon1";
+                Toast.makeText(getApplicationContext(),"Icon 1 selected",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        projectImage2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon2";
+                Toast.makeText(getApplicationContext(),"Icon 2 selected",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        projectImage3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon3";
+                Toast.makeText(getApplicationContext(),"Icon 3 selected",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        projectImage4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon4";
+                Toast.makeText(getApplicationContext(),"Icon 4 selected",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        projectImage5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon5";
+                Toast.makeText(getApplicationContext(),"Icon 5 selected",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        projectImage6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon6";
+                Toast.makeText(getApplicationContext(),"Icon 6 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        projectImage7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon7";
+                Toast.makeText(getApplicationContext(),"Icon 7 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        projectImage9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon9";
+                Toast.makeText(getApplicationContext(),"Icon 9 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        projectImage10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon10";
+                Toast.makeText(getApplicationContext(),"Icon 10 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        projectImage11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon11";
+                Toast.makeText(getApplicationContext(),"Icon 11 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        projectImage12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon12";
+                Toast.makeText(getApplicationContext(),"Icon 12 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        projectImage13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon13";
+                Toast.makeText(getApplicationContext(),"Icon 13 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        projectImage14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon14";
+                Toast.makeText(getApplicationContext(),"Icon 14 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        projectImage15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon15";
+                Toast.makeText(getApplicationContext(),"Icon 15 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        projectImage16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                icon = "@drawable/icon16";
+                Toast.makeText(getApplicationContext(),"Icon 16 selected",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
 
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
@@ -68,7 +219,7 @@ public class createProject extends AppCompatActivity {
 
         name = projectName.getText().toString();
         //icon = projectImage.getText().toString();
-        icon = "testing.png";
+        //icon = "testing.png";
 
         boolean result = db.addTask(name,icon);
 
@@ -84,195 +235,3 @@ public class createProject extends AppCompatActivity {
 
 }
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-/*
-<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/choseIconSize"
-            android:background="#FFFFFF"
-            android:gravity="center|left"
-            android:paddingLeft="20dp"
-            android:text="Chose Icon"
-            android:textSize="24sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorHeaderFooter"
-            android:orientation="horizontal"
-            android:paddingTop="@dimen/LinearPadding"
-            android:paddingBottom="@dimen/LinearPadding">
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon1" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon2" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon3" />
-
-            <ImageView
-                android:id="@+id/projectImage"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon4" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorHeaderFooter"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/LinearPadding">
-
-            <ImageView
-                android:id="@+id/imageView12"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon5" />
-
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon6" />
-
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon7" />
-
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon8" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorHeaderFooter"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/LinearPadding">
-
-            <ImageView
-                android:id="@+id/imageView16"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon9" />
-
-            <ImageView
-                android:id="@+id/imageView17"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon10" />
-
-            <ImageView
-                android:id="@+id/imageView18"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon11" />
-
-            <ImageView
-                android:id="@+id/imageView19"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon12" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorHeaderFooter"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/LinearPadding">
-
-            <ImageView
-                android:id="@+id/imageView20"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon13" />
-
-            <ImageView
-                android:id="@+id/imageView21"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon14" />
-
-            <ImageView
-                android:id="@+id/imageView22"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon15" />
-
-            <ImageView
-                android:id="@+id/imageView23"
-                android:layout_width="@dimen/selectImageSize"
-                android:layout_height="@dimen/selectImageSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon16" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/BottomLinearHeight"
-            android:background="@color/colorHeaderFooter"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/saveBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/marginBtn"
-                android:layout_marginRight="@dimen/marginBtn"
-                android:layout_weight="1"
-                android:background="@drawable/buttonstyle2"
-                android:onClick="saveProject"
-                android:text="@string/done" />
-       </LinearLayout>
-
-    </LinearLayout>
-
- */

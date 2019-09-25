@@ -80,28 +80,28 @@
                 android:paddingBottom="@dimen/LinearPadding">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/tIcon1"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon1" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/tIcon2"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon2" />
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/tIcon3"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon3" />
 
                 <ImageView
-                    android:id="@+id/projectImage"
+                    android:id="@+id/tIcon4"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
@@ -116,28 +116,28 @@
                 android:paddingBottom="@dimen/LinearPadding">
 
                 <ImageView
-                    android:id="@+id/imageView12"
+                    android:id="@+id/tIcon5"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon5" />
 
                 <ImageView
-                    android:id="@+id/imageView13"
+                    android:id="@+id/tIcon6"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon6" />
 
                 <ImageView
-                    android:id="@+id/imageView14"
+                    android:id="@+id/tIcon7"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon7" />
 
                 <ImageView
-                    android:id="@+id/imageView15"
+                    android:id="@+id/tIcon8"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
@@ -153,28 +153,28 @@
                 android:paddingBottom="@dimen/LinearPadding">
 
                 <ImageView
-                    android:id="@+id/imageView16"
+                    android:id="@+id/tIcon9"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon9" />
 
                 <ImageView
-                    android:id="@+id/imageView17"
+                    android:id="@+id/tIcon10"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon10" />
 
                 <ImageView
-                    android:id="@+id/imageView18"
+                    android:id="@+id/tIcon11"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon11" />
 
                 <ImageView
-                    android:id="@+id/imageView19"
+                    android:id="@+id/tIcon12"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
@@ -190,28 +190,28 @@
                 android:paddingBottom="@dimen/LinearPadding">
 
                 <ImageView
-                    android:id="@+id/imageView20"
+                    android:id="@+id/tIcon13"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon13" />
 
                 <ImageView
-                    android:id="@+id/imageView21"
+                    android:id="@+id/tIcon14"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon14" />
 
                 <ImageView
-                    android:id="@+id/imageView22"
+                    android:id="@+id/tIcon15"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/icon15" />
 
                 <ImageView
-                    android:id="@+id/imageView23"
+                    android:id="@+id/tIcon16"
                     android:layout_width="@dimen/selectImageSize"
                     android:layout_height="@dimen/selectImageSize"
                     android:layout_weight="1"
