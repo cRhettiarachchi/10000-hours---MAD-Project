@@ -50,10 +50,10 @@ public class SignIn extends AppCompatActivity {
                 Boolean res = db.checkUser(email,password);
 
                 if (res == true){
-                    Toast.makeText(getApplicationContext(),"Successfully Login",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Welcome!!",Toast.LENGTH_LONG).show();
                     userProfile();
                 }else{
-                    Toast.makeText(getApplicationContext(),"Login error",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Invalid credential",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -67,7 +67,6 @@ public class SignIn extends AppCompatActivity {
     public void userProfile(){
         Intent intent = new Intent(this,Userprofile.class);
         intent.putExtra(EXTRA_EMAIL,email);
-
         startActivity(intent);
     }
 }

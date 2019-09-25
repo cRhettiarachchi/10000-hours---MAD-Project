@@ -1,8 +1,10 @@
 package com.example.a10000hours;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +18,8 @@ import Database.DBHelper;
 import Database.AppDBMaster;
 
 public class Userprofile extends AppCompatActivity {
+
+    boolean doubleBackToExitPressedOnce = false;
 
     public static final String EXTRA_USERID = "send user id";
     public static final String EXTRA_PASSWORD = "send user password";
@@ -38,6 +42,7 @@ public class Userprofile extends AppCompatActivity {
         editButton = findViewById(R.id.btn_edit);
 
         display(Email);
+
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,17 +55,24 @@ public class Userprofile extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int result = dbh.deleteUser(Email);
-
-                if (result == 1){
-                    Toast.makeText(getApplicationContext(),"Deleted User",Toast.LENGTH_LONG).show();
-                    LoginPage();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Deleting is  Unsuccess",Toast.LENGTH_LONG).show();
-                    LoginPage();
-                }
-
+               AlertDialog.Builder abuilder = new AlertDialog.Builder(Userprofile.this);
+               abuilder.setMessage("Do You Want to Delete User!!!")
+                       .setCancelable(false)
+                       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                           @Override
+                           public void onClick(DialogInterface dialog, int which) {
+                               deleteUser();
+                           }
+                       })
+                       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                           @Override
+                           public void onClick(DialogInterface dialog, int which) {
+                               dialog.cancel();
+                           }
+                       });
+               AlertDialog alert = abuilder.create();
+               alert.setTitle("Alert!!!");
+               alert.show();
 
             }
         });
@@ -68,6 +80,17 @@ public class Userprofile extends AppCompatActivity {
 
     }
 
+    public void deleteUser(){
+        int result = dbh.deleteUser(Email);
+
+        if (result == 1){
+            Toast.makeText(getApplicationContext(),"Deleted User",Toast.LENGTH_LONG).show();
+            LoginPage();
+        }else{
+            Toast.makeText(getApplicationContext(),"Deleting is  Unsuccess",Toast.LENGTH_LONG).show();
+            LoginPage();
+        }
+    }
     public void LoginPage(){
         Intent intent = new Intent(this,SignIn.class);
         startActivity(intent);
@@ -118,5 +141,31 @@ public class Userprofile extends AppCompatActivity {
 
 
     }
+
+  /*  @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent a = new Intent(this,MainActivity.class);
+            startActivity(a);
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }*/
+  @Override
+  public void onBackPressed() {
+      super.onBackPressed();
+      Intent intent = new Intent(this, MainActivity.class);
+      startActivity(intent);
+  }
 
 }

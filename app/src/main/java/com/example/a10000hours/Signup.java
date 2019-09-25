@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -20,8 +21,10 @@ import com.basgeekball.awesomevalidation.ValidationStyle;
 import Database.DBHelper;
 
 public class Signup extends AppCompatActivity {
+
     EditText txt_userName, txt_password,txt_email;
     DBHelper db;
+    MainActivity mainActivity;
     String userName,password,email;
     private Button addUser;
     AwesomeValidation awesomeValidation;
@@ -42,6 +45,8 @@ public class Signup extends AppCompatActivity {
         txt_password = findViewById(R.id.txtPassword);
         addUser = findViewById(R.id.btnAdd);
         db = new DBHelper(this);
+
+
 
         String regexPassword = "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}";
         awesomeValidation.addValidation(this, R.id.txtUserName, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.usernameerror);
@@ -80,11 +85,13 @@ public class Signup extends AppCompatActivity {
             }
         });
 
-
-
     }
+
     public void  userProfile(){
         Intent intent = new Intent(this,SignIn.class);
         startActivity(intent);
     }
+
+
+
 }
