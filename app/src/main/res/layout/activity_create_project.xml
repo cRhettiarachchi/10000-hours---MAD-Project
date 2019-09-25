@@ -37,8 +37,8 @@
             android:layout_height="@dimen/addProjectField"
             android:layout_marginLeft="90dp"
             android:ems="10"
+            android:hint="@string/inputPname"
             android:inputType="textPersonName"
-            android:text="@string/inputPname"
             android:textColor="#6D6D6D"
             android:textSize="24sp" />
     </androidx.cardview.widget.CardView>

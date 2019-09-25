@@ -15,16 +15,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.a10000hours.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHolder>{
 
     private static final String TAG = "HomeRVAdapter";
 
-    private ArrayList<String> projectNames = new ArrayList<>();
+    private List<String> projectNames = new ArrayList<>();
     private Context nContext;
 
 
-    public HomeRVAdapter(Context context,ArrayList<String> projectNames) {
+    public HomeRVAdapter(Context context, List<String> projectNames) {
         this.projectNames = projectNames;
         this.nContext = context;
     }

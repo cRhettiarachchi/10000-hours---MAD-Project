@@ -18,7 +18,7 @@ public final class AppDBMaster {
         protected static final String TABLE_NAME = "tasks";
         protected static final String COLOMN_TASK_NAME = "name";
         protected static final String ICON_NAME = "icon_name";
-        protected static final String COLOMN_TASK_DATE = "date";
+        protected static final String COLOMN_TASK_TIME = "total_time";
     }
 
     protected static class Records implements BaseColumns{
