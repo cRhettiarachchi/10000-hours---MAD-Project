@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".add_records_dialog"></activity>
+<!--        <activity android:name=".add_records_dialog"></activity>-->
         <activity android:name=".createProject" />
         <activity android:name=".AllProjects" />
         <activity android:name=".ProjectInfo" />
