@@ -15,16 +15,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.a10000hours.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProjectInfoRVAdapter extends RecyclerView.Adapter<ProjectInfoRVAdapter.PInfoViewHolder>{
 
     private static final String TAG = "ProjectInfoRVAdapter";
 
     private Context mContext;
-    private ArrayList<String> projectNames = new ArrayList<>();
-    private ArrayList<String> totalHours = new ArrayList<>();
+    private List<String> projectNames = new ArrayList<>();
+    private List<String> totalHours = new ArrayList<>();
 
-    public ProjectInfoRVAdapter(Context mContext, ArrayList<String> proNames, ArrayList<String> hours) {
+    public ProjectInfoRVAdapter(Context mContext, List<String> proNames, List<String> hours) {
         this.mContext = mContext;
         this.projectNames = proNames;
         this.totalHours = hours;

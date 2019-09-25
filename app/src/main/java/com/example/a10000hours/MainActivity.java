@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> testPNames = new ArrayList<>();
     private ArrayList<String> testHours = new ArrayList<>();
-    private List<String> FromDatabase = new ArrayList<>();
+    private List<String> FromDatabase = new  ArrayList<>();
     DBHelper dbHelper;
     Boolean test;
     int del;

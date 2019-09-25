@@ -255,8 +255,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
         List totalTime = new ArrayList<>();
         while(cursor.moveToNext()) {
-            String taskName = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_NAME));
-            totalTime.add(taskName);
+            String Time = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_TIME));
+            totalTime.add(Time);
         }
         cursor.close();
 
