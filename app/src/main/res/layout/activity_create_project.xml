@@ -32,7 +32,7 @@
             app:srcCompat="@drawable/newproject" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/proName"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/addProjectField"
             android:layout_marginLeft="90dp"
@@ -217,7 +217,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/saveBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -225,6 +225,7 @@
                 android:layout_marginRight="@dimen/marginBtn"
                 android:layout_weight="1"
                 android:background="@drawable/buttonstyle2"
+                android:onClick="saveProject"
                 android:text="@string/done" />
         </LinearLayout>
 

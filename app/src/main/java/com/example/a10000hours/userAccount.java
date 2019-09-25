@@ -22,7 +22,7 @@ public class userAccount extends AppCompatActivity {
         setTitle("User Accounts");
 
 
-        button =(Button) findViewById(R.id.button);
+        button =(Button) findViewById(R.id.saveBtn);
         button2 = (Button)findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
