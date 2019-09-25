@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         tools:context=".add_records_dialog"
         android:background="@color/design_default_color_primary"
         android:id="@+id/add_record_relative_heading"
@@ -47,10 +47,23 @@
             android:layout_below="@+id/add_record_task_name"
             android:background="@color/background_off_white">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/add_record_date"
+                android:textSize="22sp"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/date">
+            </TextView>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_below="@+id/add_record_date"
                 android:orientation="horizontal"
                 android:id="@+id/add_record_linear_time">
 

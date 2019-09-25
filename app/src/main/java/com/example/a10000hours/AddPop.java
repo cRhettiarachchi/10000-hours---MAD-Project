@@ -17,14 +17,19 @@ import Database.DBHelper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class AddPop extends AppCompatActivity {
 
-    TextView taskName;
+    TextView taskName, displayDate;
     EditText time_txt, description_text;
     DBHelper db;
-    String description, TaskName;
+    String description, TaskName, dateFull, dateNoYear;
     Button btn;
     double time;
+    Calendar calendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,12 @@ public class AddPop extends AppCompatActivity {
         // Get date from user
         time_txt = findViewById(R.id.time_txt);
         description_text = findViewById(R.id.description_text);
+        displayDate = findViewById(R.id.add_record_date);
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        dateFull = simpleDateFormat.format(calendar.getTime());
+
+        displayDate.setText(dateFull);
 
         addClick();
         grabIntent();
@@ -58,11 +69,15 @@ public class AddPop extends AppCompatActivity {
 
                 // validate count
                 int validate = time_txt.getText().toString().trim().length();
+
                 if(validate != 0){
                     description = description_text.getText().toString();
                     time = Double.parseDouble(time_txt.getText().toString());
-                    Log.d("validate", "" + validate);
-                    if(db.addRecord("22/01", time, description, TaskName)){
+
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM");
+                    dateNoYear = simpleDateFormat.format(calendar.getTime());
+
+                    if(db.addRecord(dateNoYear, time, description, TaskName)){
                         onBackPressed();
                     }else {
                         Toast.makeText(getApplicationContext(), "Data insert Fail", Toast.LENGTH_SHORT).show();
@@ -71,11 +86,6 @@ public class AddPop extends AppCompatActivity {
                     time_txt.setError("Enter the time");
                 }
 
-//                if(db.addRecord("22/01", time, description, TaskName)){
-//                    onBackPressed();
-//                }else {
-//                    Toast.makeText(getApplicationContext(), "Data insert Fail", Toast.LENGTH_SHORT).show();
-//                }
             }
         });
     }

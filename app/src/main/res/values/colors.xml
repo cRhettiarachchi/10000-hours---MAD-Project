@@ -18,7 +18,7 @@
     <color name="newGrey">#F6F6F6</color>
     <color name="colorWorkedHours">#585858</color>
     <color name="transparent">#00ffffff</color>
-    <color name="background_off_white">#f7f7f7</color>
+    <color name="background_off_white">#eee</color>
 
     <!-- Colors by Shafkhan -->
     <color name="dashboardStatTitle">#4169E1</color>

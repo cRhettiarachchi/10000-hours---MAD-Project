@@ -27,6 +27,7 @@ public class History extends AppCompatActivity {
     private ArrayList<String> mHistory_titles = new ArrayList<>();
     private ArrayList<String> mHistory_time = new ArrayList<>();
     private ArrayList<Integer> mHistory_id = new ArrayList<>();
+    private ArrayList<String> mHistory_description = new ArrayList<>();
 
     // Initialize db variable
     DBHelper db;
@@ -46,6 +47,7 @@ public class History extends AppCompatActivity {
         cursor = db.viewAllRecords();
 
         initImageBitmaps();
+
     }
 
     private void initImageBitmaps(){
@@ -64,6 +66,8 @@ public class History extends AppCompatActivity {
             mHistory_dates.add(cursor.getString(2));
             mHistory_titles.add(cursor.getString(1));
             mHistory_time.add(cursor.getString(3));
+            mHistory_description.add(cursor.getString(4));
+            Log.d("description", " " + mHistory_description);
         }
 
         initRecycleView();
@@ -73,7 +77,7 @@ public class History extends AppCompatActivity {
     private void initRecycleView(){
         Log.d("", "initRecyclerView working");
         RecyclerView recyclerView = findViewById(R.id.history_recyclerView);
-        HistoryListAdapter historyListAdapter = new HistoryListAdapter(this, mHistory_dates, mHistory_titles, mHistory_time, mHistory_id);
+        HistoryListAdapter historyListAdapter = new HistoryListAdapter(this, mHistory_dates, mHistory_titles, mHistory_time, mHistory_id, mHistory_description);
         recyclerView.setAdapter(historyListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
