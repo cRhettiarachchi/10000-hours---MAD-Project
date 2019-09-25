@@ -77,12 +77,6 @@ public class EditHistoryListAdapter extends RecyclerView.Adapter<EditHistoryList
         }
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        Intent intent = new Intent(context, History.class);
-//        context.startActivity(intent);
-//    }
-
     @Override
     public int getItemCount() {
         return mHistory_titles.size();
