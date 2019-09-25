@@ -112,24 +112,18 @@ public class Userprofile extends AppCompatActivity {
             userText3.setText(cursor.getString(2).toString());
             userText2.setText(cursor.getString(1).toString());
            userText1.setText(cursor.getString(1).toString());
-          //  Toast.makeText(getApplicationContext(),"aaaaaaaaaaaaaa",Toast.LENGTH_LONG).show();
+
         }
 
 
     }
     public void editProfile(){
         Intent intent = new Intent(this,editUserProfile.class);
-       /* txt_Email = findViewById(R.id.displayEmail);
-        email = txt_Email.getText().toString().trim();
-        TextView userText3 = (TextView)findViewById(R.id.displayEmail);*/
-       // Cursor cursor = dbh.readData(Email);
-
-       // TextView userText2 = (TextView)findViewById(R.id.displayUsername);
 
         Cursor cursor = dbh.readData(Email);
         StringBuffer buffer = new StringBuffer();
         while(cursor.moveToNext()){
-//            userText2.setText(cursor.getString(1).toString());
+
             intent.putExtra(EXTRA_USERID,cursor.getString(0).toString());
             intent.putExtra(EXTRA_PASSWORD,cursor.getString(3).toString());
             intent.putExtra(EXTRA_USERNAME,cursor.getString(1).toString());
@@ -138,29 +132,8 @@ public class Userprofile extends AppCompatActivity {
             startActivity(intent);
 
         }
-
-
     }
 
-  /*  @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            Intent a = new Intent(this,MainActivity.class);
-            startActivity(a);
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-            }
-        }, 2000);
-    }*/
   @Override
   public void onBackPressed() {
       super.onBackPressed();
