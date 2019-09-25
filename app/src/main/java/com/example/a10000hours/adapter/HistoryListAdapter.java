@@ -69,7 +69,11 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
                 descriptionDialog.show(((AppCompatActivity)context).getSupportFragmentManager(), "dialog");
             }
         });
-        Log.d("id", "" + mHisotry_id.get(position));
+        if(position % 2 == 0){
+            holder.layout.setBackgroundColor(context.getResources().getColor(R.color.white));
+        }else{
+            holder.layout.setBackgroundColor(context.getResources().getColor(R.color.background_off_white));
+        }
     }
 
     @Override

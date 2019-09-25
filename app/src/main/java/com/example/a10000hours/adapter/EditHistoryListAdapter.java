@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,6 +70,11 @@ public class EditHistoryListAdapter extends RecyclerView.Adapter<EditHistoryList
                 }
             }
         });
+        if(position % 2 == 0){
+            holder.layout.setBackgroundColor(context.getResources().getColor(R.color.white));
+        }else{
+            holder.layout.setBackgroundColor(context.getResources().getColor(R.color.background_off_white));
+        }
     }
 
 //    @Override
@@ -87,6 +93,7 @@ public class EditHistoryListAdapter extends RecyclerView.Adapter<EditHistoryList
 
         TextView edit_history_date, edit_history_title, edit_history_hours;
         EditText edit_history_time;
+        RelativeLayout layout;
         ImageView doneBtn;
 
 
@@ -96,6 +103,7 @@ public class EditHistoryListAdapter extends RecyclerView.Adapter<EditHistoryList
             edit_history_title = itemView.findViewById(R.id.edit_history_title);
             edit_history_time = itemView.findViewById(R.id.edit_history_time);
             doneBtn = itemView.findViewById(R.id.edit_history_edit_done_btn);
+            layout = itemView.findViewById(R.id.edit_history_layout);
         }
     }
 }

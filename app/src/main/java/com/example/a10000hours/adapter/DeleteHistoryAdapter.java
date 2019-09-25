@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,6 +67,11 @@ public class DeleteHistoryAdapter extends RecyclerView.Adapter<DeleteHistoryAdap
 
             }
         });
+        if(position % 2 == 0){
+            holder.layout.setBackgroundColor(context.getResources().getColor(R.color.white));
+        }else{
+            holder.layout.setBackgroundColor(context.getResources().getColor(R.color.background_off_white));
+        }
     }
 
     @Override
@@ -78,6 +84,7 @@ public class DeleteHistoryAdapter extends RecyclerView.Adapter<DeleteHistoryAdap
 
         TextView delete_history_time, delete_history_date, delete_history_title;
         ImageView delete_history_button;
+        RelativeLayout layout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -85,6 +92,7 @@ public class DeleteHistoryAdapter extends RecyclerView.Adapter<DeleteHistoryAdap
             delete_history_title = itemView.findViewById(R.id.delete_history_title);
             delete_history_time = itemView.findViewById(R.id.delete_history_time);
             delete_history_button = itemView.findViewById(R.id.delete_history_button);
+            layout = itemView.findViewById(R.id.delete_history_layout);
         }
     }
 
