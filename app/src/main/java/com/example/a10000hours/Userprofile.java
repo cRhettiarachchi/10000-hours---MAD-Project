@@ -24,7 +24,7 @@ public class Userprofile extends AppCompatActivity {
     public static final String EXTRA_USERID = "send user id";
     public static final String EXTRA_PASSWORD = "send user password";
     public static final String EXTRA_EMAIL = "send email2";
-    public static final String EXTRA_USERNAME = "send email";
+    public static final String EXTRA_USERNAME = "send username";
     TextView txt_Email;
     Button deleteButton,editButton;
     DBHelper dbh;
@@ -57,8 +57,8 @@ public class Userprofile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                AlertDialog.Builder abuilder = new AlertDialog.Builder(Userprofile.this);
-               abuilder.setMessage("Do You Want to Remove this Account!!! " +
-                       "If you remove,all your account details will be deleted.")
+               abuilder.setMessage("Do You Want to Remove this Account !!!  " +
+                       "    If you remove,all your account details will be deleted.")
                        .setCancelable(false)
                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                            @Override
@@ -105,7 +105,7 @@ public class Userprofile extends AppCompatActivity {
         TextView userText  = (TextView)findViewById(R.id.displayUser);
        Cursor cursor = dbh.readData(Email);
        if(cursor.getCount()==0){
-           Toast.makeText(getApplicationContext(),"halo",Toast.LENGTH_LONG).show();
+           Toast.makeText(getApplicationContext(),"Error reading data",Toast.LENGTH_LONG).show();
           return;
        }
          StringBuffer buffer = new StringBuffer();

@@ -66,11 +66,11 @@ public class editUserProfile extends AppCompatActivity{
 
 
         if(result > 0){
-            Toast.makeText(getApplicationContext(),"Updating Success",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Update Success",Toast.LENGTH_LONG).show();
             LoginPage();
 
         }else{
-            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Error in Updating",Toast.LENGTH_LONG).show();
         }
 
     }
