@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="50dp"
         tools:context=".add_records_dialog"
         android:background="@color/design_default_color_primary"
         android:id="@+id/add_record_relative_heading"
@@ -36,7 +36,7 @@
             android:textSize="22dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:id="@+id/add_record_task_name">
 
         </TextView>
@@ -46,16 +46,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/add_record_task_name"
             android:background="@color/background_off_white">
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:id="@+id/add_record_date"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textColor="@color/colorPrimary"
                 android:text="@string/date">
             </TextView>
@@ -66,6 +64,7 @@
                 android:layout_below="@+id/add_record_date"
                 android:orientation="horizontal"
                 android:id="@+id/add_record_linear_time">
+
 
                 <TextView
                     android:id="@+id/addTime_txtView"
@@ -98,26 +97,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 android:layout_below="@+id/add_record_linear_time">
 
                 <EditText
                     android:id="@+id/description_text"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="40dp"
                     android:hint="Enter Description" />
 
                 <Button
-                    android:id="@+id/addRecordBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="20dp"
                     android:background="@drawable/buttonstyle"
-                    android:clickable="false"
-                    android:text="@string/done"></Button>
+                    android:text="@string/done"
+                    android:id="@+id/addRecordBtn"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"></Button>
             </LinearLayout>
         </RelativeLayout>
 

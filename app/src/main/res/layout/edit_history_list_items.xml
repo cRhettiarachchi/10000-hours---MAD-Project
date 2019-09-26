@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:id="@+id/edit_history_layout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_history_date"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/testDate"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_history_title"
+        android:text="@string/testTitle"
+        android:layout_toRightOf="@+id/edit_history_date"
+        android:layout_toLeftOf="@+id/edit_history_time"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp">
+    </TextView>
+
+    <EditText
+        android:id="@+id/edit_history_time"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/edit_history_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toLeftOf="@id/edit_history_edit_done_btn"
+        android:gravity="right"
+        android:inputType="number"
+        android:text="1.30"
+        android:textColor="@color/colorPrimary"></EditText>
+
+    <ImageView
+        android:id="@+id/edit_history_edit_done_btn"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/edit_done"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/colorPrimary"></ImageView>
+"
+</RelativeLayout>

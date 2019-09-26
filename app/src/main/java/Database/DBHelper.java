@@ -5,28 +5,56 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final String DATABSE_NAME = "userinfor.db";
+    private static final String DATABSE_NAME = "timetrack.db";
     public DBHelper(Context context) {
-        super(context, DATABSE_NAME, null, 1);
+        super(context, DATABSE_NAME, null, 2);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String sqlCreateTable = "CREATE TABLE "+ AppDBMaster.User.TABLE_NAME+" ("+
+        String Users_Table = "CREATE TABLE "+ AppDBMaster.User.TABLE_NAME+" ("+
                 AppDBMaster.User._ID+" INTEGER PRIMARY KEY,"+
                 AppDBMaster.User.COLUMN_NAME_USERNAME+ " TEXT,"+
                 AppDBMaster.User.COLUMN_NAME_EMAIL+ " TEXT,"+
                 AppDBMaster.User.COLUMN_NAME_PASSWORD+ " TEXT);";
 
-                db.execSQL(sqlCreateTable);
+        String Task_Table = "CREATE TABLE " + AppDBMaster.Tasks.TABLE_NAME + " (" +
+                AppDBMaster.Tasks._ID + " INTEGER PRIMARY KEY, " +
+                AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT, " +
+                AppDBMaster.Tasks.COLOMN_TASK_DATE + " TEXT);";
+
+//        AppDBMaster.Records.TASK_ID + " INTEGER",
+        String Records_Table = "CREATE TABLE " + AppDBMaster.Records.TABLE_NAME + " (" +
+                AppDBMaster.Records._ID + " INTEGER PRIMARY KEY," +
+                AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_DATE + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG," +
+                AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
+
+                db.execSQL(Users_Table);
+                db.execSQL(Task_Table);
+                db.execSQL(Records_Table);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        String Records_Table = "CREATE TABLE " + AppDBMaster.Records.TABLE_NAME + " (" +
+                AppDBMaster.Records._ID + " INTEGER PRIMARY KEY," +
+                AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_DATE + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG," +
+                AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
+
+        db.execSQL(Records_Table);
 
     }
     public boolean addUser(String username,String password,String email){
@@ -116,5 +144,80 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return count;
     }
+
+    // ----------------------------------------------------------------- //
+    // Records Queries //
+    public boolean addRecord(String date, double time, String description, String taskName){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(AppDBMaster.Records.COLOMN_RECORD_DATE, date);
+        values.put(AppDBMaster.Tasks.COLOMN_TASK_NAME, taskName);
+        values.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
+        values.put(AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION, description);
+
+        long result = db.insert(AppDBMaster.Records.TABLE_NAME, null, values);
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public Cursor viewAllRecords(){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + AppDBMaster.Records.TABLE_NAME, null);
+        if(cursor.getCount() > 0){
+            Log.d("notEmpty", "not working");
+            return cursor;
+        }else{
+            Log.d("database_empty", "not working");
+            return cursor;
+        }
+    }
+
+    public boolean updateTimeRecord(Integer id, double time){
+
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
+
+        String selection = AppDBMaster.Records._ID + " LIKE ?";
+        String[] SelectionArgs = {id.toString()};
+
+        int update = db.update(
+                AppDBMaster.Records.TABLE_NAME,
+                contentValues,
+                selection,
+                SelectionArgs
+        );
+
+        if(update > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public boolean deleteRecord(Integer id){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String selection = AppDBMaster.Records._ID + " LIKE ? ";
+        String[] selectionArgs = {id.toString()};
+
+        int i = db.delete(AppDBMaster.Records.TABLE_NAME, selection, selectionArgs);
+
+        if(i > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    // -------------------------------------------------------------------- //
+
 
 }

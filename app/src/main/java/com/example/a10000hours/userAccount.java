@@ -50,4 +50,10 @@ public class userAccount extends AppCompatActivity {
         Intent intent = new Intent(this,SignIn.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent a = new Intent(this, MainActivity.class);
+        startActivity(a);
+    }
 }

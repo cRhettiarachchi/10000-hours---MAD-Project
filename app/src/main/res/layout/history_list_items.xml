@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/history_child_layout">
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/history_date"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/testDate"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/history_title"
+            android:text="@string/testTitle"
+            android:layout_toRightOf="@+id/history_date"
+            android:layout_toLeftOf="@+id/history_time"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerVertical="true"
+            android:textSize="18sp">
+        </TextView>
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/history_time"
+            android:layout_toLeftOf="@+id/history_hrs"
+            android:text="@string/timeInt"
+            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:layout_marginTop="20dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorPrimary">
+        </TextView>
+
+        <TextView
+            android:id="@+id/history_hrs"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/hrs"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorPrimary"></TextView>
+
+<!--        <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:background="@color/background_off_white"></View>-->
+    </RelativeLayout>
+
+</RelativeLayout>

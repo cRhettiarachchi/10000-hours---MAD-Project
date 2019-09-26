@@ -4,15 +4,34 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import Database.DBHelper;
+
+import com.example.a10000hours.adapter.HomeRVAdapter;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String EXTRA_EMAIL =
+            "send email";
+
+    private ArrayList<String> testPNames = new ArrayList<>();
+    boolean doubleBackToExitPressedOnce = false;
+    String Email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,37 +42,30 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("10000 Hours");
 
+        Intent intent = getIntent();
+        Email = intent.getStringExtra(SignIn.EXTRA_EMAIL);
+
         navigateBar();
-        addActivity();
+//        addActivity();
+
+        //------------------------
+        testPNames.add("robotics");
+        testPNames.add("mobile apps");
+        testPNames.add("Web Development");
+        testPNames.add("watching tutorials");
+        testPNames.add("play chess");
+
+        initRecyclerView();
 
     }
 
-    private void addActivity(){
-        ImageView addBtn = (ImageView) findViewById(R.id.exId1);
-        ImageView addBtn1 = (ImageView) findViewById(R.id.exId4);
-        ImageView addBtn2= (ImageView) findViewById(R.id.exId3);
 
-
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddPop.class));
-            }
-        });
-
-        addBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddPop.class));
-            }
-        });
-
-        addBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddPop.class));
-            }
-        });
+    private void initRecyclerView() {
+        //Log.d(TAG,"initRecyclerView methoed called");
+        RecyclerView recyclerView = findViewById(R.id.homeRecyclerView);
+        HomeRVAdapter homeRVAdapter = new HomeRVAdapter(this,testPNames);
+        recyclerView.setAdapter(homeRVAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void navigateBar() {
@@ -70,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent1 = new Intent(MainActivity.this, MainActivity.class);
+
                 startActivity(intent1);
             }
         });
@@ -97,7 +110,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent4 = new Intent(MainActivity.this, userAccount.class);
+
+                Intent intent4 = new Intent(MainActivity.this, Userprofile.class);
+                intent4.putExtra(EXTRA_EMAIL,Email);
                 startActivity(intent4);
             }
         });
@@ -136,5 +151,27 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }

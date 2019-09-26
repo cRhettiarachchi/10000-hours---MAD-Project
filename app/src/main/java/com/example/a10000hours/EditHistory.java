@@ -1,7 +1,9 @@
 package com.example.a10000hours;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -9,8 +11,25 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.a10000hours.adapter.EditHistoryListAdapter;
+
+import java.util.ArrayList;
+
+import Database.DBHelper;
 
 public class EditHistory extends AppCompatActivity {
+
+    private ArrayList<String> mHistory_dates = new ArrayList<>();
+    private ArrayList<String> mHistory_titles = new ArrayList<>();
+    private ArrayList<String> mHistory_time = new ArrayList<>();
+    private ArrayList<Integer> mHistory_id = new ArrayList<>();
+
+    // Initialize db variable
+    DBHelper db;
+    Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +41,39 @@ public class EditHistory extends AppCompatActivity {
         setTitle("Edit History");
 
 
+        db = new DBHelper(this);
+
+        cursor = db.viewAllRecords();
+
+        initImageBitmaps();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, History.class);
+        startActivity(intent);
+    }
+
+    private void initImageBitmaps(){
+        Log.d("", "working Init Bitmaps");
+
+        while (cursor.moveToNext()){
+            mHistory_id.add(cursor.getInt(0));
+            mHistory_dates.add(cursor.getString(2));
+            mHistory_titles.add(cursor.getString(1));
+            mHistory_time.add(cursor.getString(3));
+        }
+        initRecycleView();
+
+    }
+
+    private void initRecycleView(){
+        Log.d("", "initRecyclerView working");
+        RecyclerView recyclerView = findViewById(R.id.edit_history_recyclerView);
+        EditHistoryListAdapter editHistoryListAdapter = new EditHistoryListAdapter(this, mHistory_dates, mHistory_titles, mHistory_time, mHistory_id);
+        recyclerView.setAdapter(editHistoryListAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override

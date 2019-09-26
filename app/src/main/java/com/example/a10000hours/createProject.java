@@ -46,4 +46,10 @@ public class createProject extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent a = new Intent(this, MainActivity.class);
+        startActivity(a);
+    }
+
 }
