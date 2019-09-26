@@ -13,6 +13,7 @@ import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
+    private static final String TAG = "DBHelper";
     private static final String DATABSE_NAME = "timetrack.db";
     public DBHelper(Context context) {
         super(context, DATABSE_NAME, null, 2);
@@ -330,12 +331,45 @@ public class DBHelper extends SQLiteOpenHelper {
 
         List totalTime = new ArrayList<>();
         while(cursor.moveToNext()) {
-            String Time = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_NAME));
+            String Time = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_TIME));
             totalTime.add(Time);
         }
         cursor.close();
 
         return totalTime;
+    }
+
+    public Cursor getAllTasks(){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + AppDBMaster.Tasks.TABLE_NAME, null);
+        if(cursor.getCount() > 0){
+            Log.d(TAG, "Table is not empty");
+            return cursor;
+        }else{
+            Log.d(TAG, "Table is empty");
+            return cursor;
+        }
+    }
+
+    public int getAproject(String name){
+        SQLiteDatabase db = getReadableDatabase();
+        int taskImages = 0;
+
+        String[] columns = {AppDBMaster.Tasks.ICON_NAME,
+                AppDBMaster.Tasks.COLOMN_TASK_TIME};
+
+        String select = AppDBMaster.Tasks.COLOMN_TASK_NAME+" Like ? ";
+        String[] selectionArgs = {name};
+
+        Cursor cursor = db.query(AppDBMaster.Tasks.TABLE_NAME,columns,select,selectionArgs,null,null,null);
+
+        while(cursor.moveToNext()) {
+            taskImages = cursor.getInt(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.ICON_NAME));
+        }
+        cursor.close();
+
+
+        return taskImages;
     }
 
     //end dna ===========================================================================================================================

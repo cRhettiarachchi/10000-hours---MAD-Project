@@ -1,17 +1,20 @@
 package com.example.a10000hours.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.a10000hours.ProjectInfo;
 import com.example.a10000hours.R;
 
 import java.util.ArrayList;
@@ -25,9 +28,13 @@ public class ProjectInfoRVAdapter extends RecyclerView.Adapter<ProjectInfoRVAdap
     private List<String> projectNames = new ArrayList<>();
     private List<String> totalHours = new ArrayList<>();
     private List<Integer> AllIcons = new ArrayList<>();
+    private List<Integer> taskIDs = new ArrayList<>();
+    private String id;
 
-    public ProjectInfoRVAdapter(Context mContext, List<String> proNames, List<String> hours, List<Integer>Icons) {
+
+    public ProjectInfoRVAdapter(Context mContext, List<Integer>IDs, List<String> proNames, List<String> hours, List<Integer>Icons) {
         this.mContext = mContext;
+        this.taskIDs = IDs;
         this.projectNames = proNames;
         this.totalHours = hours;
         this.AllIcons = Icons;
@@ -51,22 +58,21 @@ public class ProjectInfoRVAdapter extends RecyclerView.Adapter<ProjectInfoRVAdap
 
         holder.projectName.setText(projectNames.get(position));
         holder.totHours.setText(totalHours.get(position));
-
-        //String icon = "@drawable/tIcon2";
-        //holder.projectImg.setImageResource(R.drawable.icon5);
         holder.projectImg.setImageResource(AllIcons.get(position));
 
+        //id = Integer.toString(taskIDs.get(position));
+        //holder.totHours.setText(taskIDs.get(position));
 
-
-        //holder.imageView.setImageResource(list.get(position).imageId);
-        //int imageResource = getResources().getIdentifiew(icon,null,getPackageName())
-
-    /*    holder.infoCard.setOnClickListener(new View.OnClickListener() {
+        holder.infoCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext,projectNames.get(position),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, ProjectInfo.class);
+                intent.putExtra("Task_Name", projectNames.get(position));
+                mContext.startActivity(intent);
+
             }
-        }); */
+        });
 
     }
 

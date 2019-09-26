@@ -1,7 +1,9 @@
 package com.example.a10000hours;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,10 +25,13 @@ import Database.DBHelper;
 
 public class AllProjects extends AppCompatActivity {
 
+    private static final String TAG = "AllProjects";
+    private List<Integer> AllTaskIDs = new  ArrayList<>();
     private List<String> AllTasks = new  ArrayList<>();
     private List<String> AllTimes = new  ArrayList<>();
     private List<Integer> AllIcons = new  ArrayList<>();
     DBHelper dbHelper;
+    Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +39,19 @@ public class AllProjects extends AppCompatActivity {
         setContentView(R.layout.activity_all_projects);
 
         dbHelper = new DBHelper(this);
-        AllTasks = dbHelper.getAllTaskNames();
-        AllTimes = dbHelper.getAllTotalTimes();
-        AllIcons = dbHelper.getAllTaskImages();
+        cursor = dbHelper.getAllTasks();
+
+        while (cursor.moveToNext()){
+            AllTaskIDs.add(cursor.getInt(0));
+            AllTasks.add(cursor.getString(1));
+            AllIcons.add(cursor.getInt(2));
+            AllTimes.add(cursor.getString(3));
+            Log.d(TAG, "cursor working");
+        }
+
+        //AllTasks = dbHelper.getAllTaskNames();
+        //AllTimes = dbHelper.getAllTotalTimes();
+        //AllIcons = dbHelper.getAllTaskImages();
 
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
@@ -47,7 +62,7 @@ public class AllProjects extends AppCompatActivity {
 
     private void InitRecyclerView() {
         RecyclerView infoRecyclerView = findViewById(R.id.proInfoRV);
-        ProjectInfoRVAdapter infoAdapter = new ProjectInfoRVAdapter(this,AllTasks,AllTimes,AllIcons);
+        ProjectInfoRVAdapter infoAdapter = new ProjectInfoRVAdapter(this,AllTaskIDs,AllTasks,AllTimes,AllIcons);
         infoRecyclerView.setAdapter(infoAdapter);
         infoRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

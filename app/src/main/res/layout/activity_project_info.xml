@@ -125,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/taskIcon"
             android:layout_width="@dimen/prfImgLayoutWidth"
             android:layout_height="@dimen/prfImgLayoutHeight"
             android:layout_gravity="center|top"
@@ -133,7 +133,7 @@
             app:srcCompat="@drawable/icon6" />
 
         <TextView
-            android:id="@+id/textView41"
+            android:id="@+id/taskName"
             android:layout_width="@dimen/projectNameWidthPrf"
             android:layout_height="@dimen/projectNameHeightPrf"
             android:layout_gravity="center|top"
@@ -144,7 +144,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/totalHours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
@@ -159,6 +159,7 @@
             android:layout_gravity="bottom|left"
             android:layout_margin="15dp"
             android:background="@drawable/boarder"
+            android:onClick="editProject"
             android:text="@string/edit" />
 
         <Button
@@ -168,6 +169,7 @@
             android:layout_gravity="bottom|right"
             android:layout_margin="15dp"
             android:background="@drawable/boarder"
+            android:onClick="deleteProject"
             android:text="@string/delete" />
     </androidx.cardview.widget.CardView>
 

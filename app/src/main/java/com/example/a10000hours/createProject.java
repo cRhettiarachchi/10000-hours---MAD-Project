@@ -217,8 +217,6 @@ public class createProject extends AppCompatActivity {
     public void saveProject(View view){
 
         name = projectName.getText().toString();
-        //icon = projectImage.getText().toString();
-        //icon = "testing.png";
 
         boolean result = db.addTask(name,icon);
 
@@ -228,6 +226,8 @@ public class createProject extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
         }
 
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 
