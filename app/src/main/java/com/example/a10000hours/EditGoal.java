@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 public class EditGoal extends AppCompatActivity {
 
     private Button buttonSave;
+    private DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class EditGoal extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
         setTitle("Edit Goals");
+
     }
 
     public void save() {

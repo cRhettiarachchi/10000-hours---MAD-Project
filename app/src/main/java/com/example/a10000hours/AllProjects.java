@@ -4,82 +4,43 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-
-import com.example.a10000hours.adapter.ProjectInfoRVAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import Database.DBHelper;
+import android.widget.Toast;
 
 public class AllProjects extends AppCompatActivity {
 
-    private ArrayList<String> testPNames = new ArrayList<>();
-    private ArrayList<String> testHours = new ArrayList<>();
-    private List<String> AllTasks = new  ArrayList<>();
-    private List<String> AllTimes = new  ArrayList<>();
-    private List<String> AllIcons = new  ArrayList<>();
-    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_projects);
 
-        dbHelper = new DBHelper(this);
-        AllTasks = dbHelper.getAllTaskNames();
-        AllTimes = dbHelper.getAllTotalTimes();
-        //AllIcons = dbHelper.getAllTaskImages();
-
-        testPNames.add("robotics");
-        testPNames.add("mobile apps");
-        testPNames.add("Web Development");
-        testPNames.add("watching tutorials");
-        testPNames.add("play chess");
-
-        testHours.add("10.5");
-        testHours.add("20.4");
-        testHours.add("9.8");
-        testHours.add("1.5");
-        testHours.add("17.3");
-
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
         setTitle("All Projects");
         navigateBar();
         projectInfo();
-        initRecyclerView2();
-    }
-
-    private void initRecyclerView2() {
-        //Log.d(TAG,"initRecyclerView2 methoed called");
-        RecyclerView infoRecyclerView = findViewById(R.id.proInfoRV);
-        ProjectInfoRVAdapter infoAdapter = new ProjectInfoRVAdapter(this,AllTasks,AllTimes);
-        infoRecyclerView.setAdapter(infoAdapter);
-        infoRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void projectInfo() {
 
-        //ImageView proInfo = (ImageView) findViewById(R.id.imageView1);
+        ImageView proInfo = (ImageView) findViewById(R.id.imageView1);
 
-        //proInfo.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View view) {
+        proInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-         //       Intent intent = new Intent(AllProjects.this, ProjectInfo.class);
-           //     startActivity(intent);
-            //}
-        //});
+                Intent intent = new Intent(AllProjects.this, ProjectInfo.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -163,5 +124,9 @@ public class AllProjects extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent a = new Intent(this, MainActivity.class);
+        startActivity(a);
+    }
 }

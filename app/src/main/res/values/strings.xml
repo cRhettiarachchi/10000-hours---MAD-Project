@@ -23,7 +23,6 @@
     <string name="dummyHours">6.5</string>
 
 
-
     <!--menu strings-->
     <string name="edit">Edit</string>
     <string name="update">Update</string>
@@ -33,13 +32,14 @@
     <string name="showHistory">Show History</string>
 
 
-<!--<<<<<<< HEAD-->
+    <!--<<<<<<< HEAD-->
     <!--Add Time Record -->
     <string name="addTime">Add Time Records</string>
     <string name="Task">Task1</string>
     <string name="date">2019/08/10</string>
     <string name="time">Time</string>
     <string name="inputPname">Project Name</string>
+    <string name="AddRecord">Add Record</string>
 
 
     <string name="email">Email</string>

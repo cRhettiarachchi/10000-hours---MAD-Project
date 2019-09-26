@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/popupTaskNametx"
         android:layout_width="90dp"
         android:layout_height="20dp"
         android:layout_marginStart="32dp"

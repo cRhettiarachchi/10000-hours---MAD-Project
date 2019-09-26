@@ -1,10 +1,15 @@
 package com.example.a10000hours.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,29 +17,30 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.a10000hours.AddPop;
+import com.example.a10000hours.MainActivity;
 import com.example.a10000hours.R;
-
 import java.util.ArrayList;
-import java.util.List;
+
+import static androidx.core.content.ContextCompat.startActivity;
 
 public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHolder>{
 
     private static final String TAG = "HomeRVAdapter";
 
-    private List<String> projectNames = new ArrayList<>();
+    private ArrayList<String> projectNames = new ArrayList<>();
     private Context nContext;
 
-
-    public HomeRVAdapter(Context context, List<String> projectNames) {
+    public HomeRVAdapter(Context context,ArrayList<String> projectNames) {
         this.projectNames = projectNames;
         this.nContext = context;
     }
 
     @NonNull
     @Override
-    public HomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HomeViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.project_homepage,parent,false);
-        HomeViewHolder holder = new HomeViewHolder(view);
+        final HomeViewHolder holder = new HomeViewHolder(view);
         return holder;
     }
 
@@ -43,11 +49,12 @@ public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHo
         Log.d(TAG,"onBindViewHolder called!!");
 
         holder.projectName.setText(projectNames.get(position));
-
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(nContext,projectNames.get(position), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(nContext, AddPop.class);
+                intent.putExtra("Task_Name", projectNames.get(position));
+                nContext.startActivity(intent);
             }
         });
 

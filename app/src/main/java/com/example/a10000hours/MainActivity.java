@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,45 +18,28 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.a10000hours.adapter.HomeRVAdapter;
-import com.example.a10000hours.adapter.ProjectInfoRVAdapter;
-
 import Database.DBHelper;
 
+import com.example.a10000hours.adapter.HomeRVAdapter;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> testPNames = new ArrayList<>();
-    private ArrayList<String> testHours = new ArrayList<>();
-    private List<String> FromDatabase = new  ArrayList<>();
-    DBHelper dbHelper;
-    Boolean test;
-    int del;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dbHelper = new DBHelper(this);
-        //test = dbHelper.addTask("testWeb","testImage.png");
-        //test = dbHelper.addTask("watchTv","tv.png");
-        //test = dbHelper.addTask("SpringBoot","Learn.png");
-        //test = dbHelper.addTask("mobileApp","app.png");
-        //test = dbHelper.addTask("CyberSecurity","noImage.png");
-        //del = dbHelper.deleteTask("testWeb");
-        FromDatabase = dbHelper.getAllTaskNames();
-
-        Toast.makeText(getApplicationContext(),"adding SUccess",Toast.LENGTH_LONG).show();
-
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
         setTitle("10000 Hours");
 
         navigateBar();
-        addActivity();
+//        addActivity();
 
         //------------------------
         testPNames.add("robotics");
@@ -64,59 +48,17 @@ public class MainActivity extends AppCompatActivity {
         testPNames.add("watching tutorials");
         testPNames.add("play chess");
 
-        testHours.add("10.5");
-        testHours.add("20.4");
-        testHours.add("9.8");
-        testHours.add("1.5");
-        testHours.add("17.3");
-
         initRecyclerView();
-        //initRecyclerView2();
 
     }
+
 
     private void initRecyclerView() {
         //Log.d(TAG,"initRecyclerView methoed called");
         RecyclerView recyclerView = findViewById(R.id.homeRecyclerView);
-        HomeRVAdapter homeRVAdapter = new HomeRVAdapter(this,FromDatabase);
+        HomeRVAdapter homeRVAdapter = new HomeRVAdapter(this,testPNames);
         recyclerView.setAdapter(homeRVAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
-
-    private void initRecyclerView2() {
-        //Log.d(TAG,"initRecyclerView2 methoed called");
-        RecyclerView infoRecyclerView = findViewById(R.id.proInfoRV);
-        ProjectInfoRVAdapter infoAdapter = new ProjectInfoRVAdapter(this,testPNames,testHours);
-        infoRecyclerView.setAdapter(infoAdapter);
-        infoRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
-
-    private void addActivity(){
-    /*    ImageView addBtn = (ImageView) findViewById(R.id.exId1);
-        ImageView addBtn1 = (ImageView) findViewById(R.id.exId4);
-        ImageView addBtn2= (ImageView) findViewById(R.id.exId3);
-
-
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddPop.class));
-            }
-        });
-
-        addBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddPop.class));
-            }
-        });
-
-        addBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddPop.class));
-            }
-        }); */
     }
 
     private void navigateBar() {
@@ -199,5 +141,27 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -20,8 +21,10 @@ import com.basgeekball.awesomevalidation.ValidationStyle;
 import Database.DBHelper;
 
 public class Signup extends AppCompatActivity {
+
     EditText txt_userName, txt_password,txt_email;
     DBHelper db;
+    MainActivity mainActivity;
     String userName,password,email;
     private Button addUser;
     AwesomeValidation awesomeValidation;
@@ -43,6 +46,8 @@ public class Signup extends AppCompatActivity {
         addUser = findViewById(R.id.btnAdd);
         db = new DBHelper(this);
 
+
+        /*Add validation for signup form*/
         String regexPassword = "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}";
         awesomeValidation.addValidation(this, R.id.txtUserName, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.usernameerror);
         awesomeValidation.addValidation(this, R.id.txtEmail, Patterns.EMAIL_ADDRESS, R.string.emailerror);
@@ -57,10 +62,6 @@ public class Signup extends AppCompatActivity {
                email = txt_email.getText().toString();
 
              if(awesomeValidation.validate()){
-   /*              if ((userName.equals(""))||(email.equals(""))||(password.equals("")))
-                 {
-                     Toast.makeText(getApplicationContext(),"Filed must Filled",Toast.LENGTH_LONG).show();
-                 }*/
 
                  boolean result = db.addUser(userName, password, email);
 
@@ -71,20 +72,18 @@ public class Signup extends AppCompatActivity {
                      Toast.makeText(getApplicationContext(), "Error in Registering", Toast.LENGTH_LONG).show();
                  }
 
-             }
-
-               else {
-                 Toast.makeText(getApplicationContext(), "Filled must filled", Toast.LENGTH_LONG).show();
+             } else {
+                 Toast.makeText(getApplicationContext(), "Field must filled", Toast.LENGTH_LONG).show();
                }
 
             }
         });
 
-
-
     }
+
     public void  userProfile(){
         Intent intent = new Intent(this,SignIn.class);
         startActivity(intent);
     }
+
 }

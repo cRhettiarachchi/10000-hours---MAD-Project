@@ -47,7 +47,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/saveBtn"
+                android:id="@+id/button"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

@@ -6,28 +6,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.Toast;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final String TAG = "DBHelper";
-
     private static final String DATABSE_NAME = "timetrack.db";
-
     public DBHelper(Context context) {
-        super(context, DATABSE_NAME, null, 1);
+        super(context, DATABSE_NAME, null, 2);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-        Log.d(TAG,"DBoncreate methoed called");
-
-        String SQL_DELETE_ENTRIES =
-                "DROP TABLE IF EXISTS " + AppDBMaster.Tasks.TABLE_NAME;
-
 
         String Users_Table = "CREATE TABLE "+ AppDBMaster.User.TABLE_NAME+" ("+
                 AppDBMaster.User._ID+" INTEGER PRIMARY KEY,"+
@@ -38,28 +28,35 @@ public class DBHelper extends SQLiteOpenHelper {
         String Task_Table = "CREATE TABLE " + AppDBMaster.Tasks.TABLE_NAME + " (" +
                 AppDBMaster.Tasks._ID + " INTEGER PRIMARY KEY, " +
                 AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT, " +
-                AppDBMaster.Tasks.ICON_NAME + " TEXT, " +
-                AppDBMaster.Tasks.COLOMN_TASK_TIME + " REAL);";
+                AppDBMaster.Tasks.COLOMN_TASK_DATE + " TEXT);";
 
+//        AppDBMaster.Records.TASK_ID + " INTEGER",
         String Records_Table = "CREATE TABLE " + AppDBMaster.Records.TABLE_NAME + " (" +
-                AppDBMaster.Records.TASK_ID + " INTEGER PRIMARY KEY, " +
-                //AppDBMaster.Records.TASK_ID + " INTEGER, " +
-                AppDBMaster.Records.COLOMN_RECORD_DATE + " TEXT, " +
-                AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG, " +
+                AppDBMaster.Records._ID + " INTEGER PRIMARY KEY," +
+                AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_DATE + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG," +
                 AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
 
-                db.execSQL(SQL_DELETE_ENTRIES);
-                //db.execSQL(Users_Table);
+                db.execSQL(Users_Table);
                 db.execSQL(Task_Table);
-                //db.execSQL(Records_Table);
+                db.execSQL(Records_Table);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+        String Records_Table = "CREATE TABLE " + AppDBMaster.Records.TABLE_NAME + " (" +
+                AppDBMaster.Records._ID + " INTEGER PRIMARY KEY," +
+                AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_DATE + " TEXT," +
+                AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG," +
+                AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
+
+        db.execSQL(Records_Table);
+
     }
-
-
     public boolean addUser(String username,String password,String email){
         SQLiteDatabase db = getWritableDatabase();
 
@@ -112,7 +109,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor readData(String email){
+  public Cursor readData(String email){
         SQLiteDatabase db = getReadableDatabase();
         String[] columns = {AppDBMaster.User._ID, AppDBMaster.User.COLUMN_NAME_USERNAME, AppDBMaster.User.COLUMN_NAME_EMAIL, AppDBMaster.User.COLUMN_NAME_PASSWORD};
         String select = AppDBMaster.User.COLUMN_NAME_EMAIL+" Like ? ";
@@ -148,123 +145,79 @@ public class DBHelper extends SQLiteOpenHelper {
         return count;
     }
 
-
-    //start dna ==================================================================================================================
-    public boolean addTask(String taskName,String iconName){
-
-        float totalTime = 0;
-
+    // ----------------------------------------------------------------- //
+    // Records Queries //
+    public boolean addRecord(String date, double time, String description, String taskName){
         SQLiteDatabase db = getWritableDatabase();
+
         ContentValues values = new ContentValues();
 
-        values.put(AppDBMaster.Tasks.COLOMN_TASK_NAME,taskName);
-        values.put(AppDBMaster.Tasks.COLOMN_TASK_TIME,totalTime);
-        values.put(AppDBMaster.Tasks.ICON_NAME,iconName);
+        values.put(AppDBMaster.Records.COLOMN_RECORD_DATE, date);
+        values.put(AppDBMaster.Tasks.COLOMN_TASK_NAME, taskName);
+        values.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
+        values.put(AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION, description);
 
-        long result = db.insert(AppDBMaster.Tasks.TABLE_NAME,null,values);
+        long result = db.insert(AppDBMaster.Records.TABLE_NAME, null, values);
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
 
-        if (result > 0){
+    }
+
+    public Cursor viewAllRecords(){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + AppDBMaster.Records.TABLE_NAME, null);
+        if(cursor.getCount() > 0){
+            Log.d("notEmpty", "not working");
+            return cursor;
+        }else{
+            Log.d("database_empty", "not working");
+            return cursor;
+        }
+    }
+
+    public boolean updateTimeRecord(Integer id, double time){
+
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(AppDBMaster.Records.COLOMN_RECORD_TIME, time);
+
+        String selection = AppDBMaster.Records._ID + " LIKE ?";
+        String[] SelectionArgs = {id.toString()};
+
+        int update = db.update(
+                AppDBMaster.Records.TABLE_NAME,
+                contentValues,
+                selection,
+                SelectionArgs
+        );
+
+        if(update > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public boolean deleteRecord(Integer id){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String selection = AppDBMaster.Records._ID + " LIKE ? ";
+        String[] selectionArgs = {id.toString()};
+
+        int i = db.delete(AppDBMaster.Records.TABLE_NAME, selection, selectionArgs);
+
+        if(i > 0){
             return true;
         }else{
             return false;
         }
     }
 
-    public int deleteTask(String name){
-        SQLiteDatabase db = getReadableDatabase();
-
-        String select = AppDBMaster.Tasks.COLOMN_TASK_NAME+" Like ? ";
-        String[] selectionArgs = {name};
-
-        int result = db.delete(AppDBMaster.Tasks.TABLE_NAME,select,selectionArgs);
-
-        if (result > 0){
-            return 1;
-        }else{
-            return -1;
-        }
-    }
-
-
-    public List getAllTaskNames(){
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        String[] columns = {AppDBMaster.User._ID,
-                AppDBMaster.Tasks.COLOMN_TASK_NAME};
-
-        Cursor cursor = db.query(AppDBMaster.Tasks.TABLE_NAME,
-                columns,
-                null,
-                null,
-                null,
-                null,
-                null);
-
-        List taskNames = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String taskName = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_NAME));
-            taskNames.add(taskName);
-        }
-        cursor.close();
-
-
-        return taskNames;
-    }
-
-    public List getAllTaskImages(){
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        String[] columns = {AppDBMaster.User._ID,
-                AppDBMaster.Tasks.ICON_NAME};
-
-        Cursor cursor = db.query(AppDBMaster.Tasks.TABLE_NAME,
-                columns,
-                null,
-                null,
-                null,
-                null,
-                null);
-
-        List iconNames = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String taskName = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_NAME));
-            iconNames.add(taskName);
-        }
-        cursor.close();
-
-
-        return iconNames;
-    }
-
-    public List getAllTotalTimes(){
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        String[] columns = {AppDBMaster.User._ID,
-                AppDBMaster.Tasks.COLOMN_TASK_TIME};
-
-        Cursor cursor = db.query(AppDBMaster.Tasks.TABLE_NAME,
-                columns,
-                null,
-                null,
-                null,
-                null,
-                null);
-
-        List totalTime = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String Time = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_TIME));
-            totalTime.add(Time);
-        }
-        cursor.close();
-
-        return totalTime;
-    }
-
-    //end dna ===========================================================================================================================
-
+    // -------------------------------------------------------------------- //
 
 
 }
