@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         //del = dbHelper.deleteTask("testWeb");
         FromDatabase = dbHelper.getAllTaskNames();
 
-        Toast.makeText(getApplicationContext(),"adding Success",Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(),"adding Success",Toast.LENGTH_LONG).show();
 
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
