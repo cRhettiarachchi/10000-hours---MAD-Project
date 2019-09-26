@@ -27,14 +27,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String EXTRA_EMAIL =
-            "send email";
+    public static final String EXTRA_EMAIL = "send email";
 
     boolean doubleBackToExitPressedOnce = false;
-
-    private ArrayList<String> testPNames = new ArrayList<>();
-    private ArrayList<String> testHours = new ArrayList<>();
-    private List<String> FromDatabase = new  ArrayList<>();
+    private List<String> Projects = new  ArrayList<>();
     DBHelper dbHelper;
     Boolean test;
     int del;
@@ -45,80 +41,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         dbHelper = new DBHelper(this);
-        //test = dbHelper.addTask("testWeb",R.drawable.icon1);
-        //test = dbHelper.addTask("watchTv",R.drawable.icon2);
-        //test = dbHelper.addTask("SpringBoot",R.drawable.icon3);
-        //test = dbHelper.addTask("mobileApp",R.drawable.icon4);
-        //test = dbHelper.addTask("CyberSecurity",R.drawable.icon5);
-        //del = dbHelper.deleteTask("testWeb");
-        FromDatabase = dbHelper.getAllTaskNames();
-
-       // Toast.makeText(getApplicationContext(),"adding Success",Toast.LENGTH_LONG).show();
+        Projects = dbHelper.getAllTaskNames();
 
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
         setTitle("10000 Hours");
 
         navigateBar();
-
-        //------------------------
-        testPNames.add("robotics");
-        testPNames.add("mobile apps");
-        testPNames.add("Web Development");
-        testPNames.add("watching tutorials");
-        testPNames.add("play chess");
-
-        testHours.add("10.5");
-        testHours.add("20.4");
-        testHours.add("9.8");
-        testHours.add("1.5");
-        testHours.add("17.3");
-
         initRecyclerView();
-        //initRecyclerView2();
-
     }
 
     private void initRecyclerView() {
-        //Log.d(TAG,"initRecyclerView methoed called");
         RecyclerView recyclerView = findViewById(R.id.homeRecyclerView);
-        HomeRVAdapter homeRVAdapter = new HomeRVAdapter(this,FromDatabase);
+        HomeRVAdapter homeRVAdapter = new HomeRVAdapter(this,Projects);
         recyclerView.setAdapter(homeRVAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
-
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        Toolbar toolbar = findViewById(R.id.historyToolbar);
-//        setSupportActionBar(toolbar);
-//        setTitle("10000 Hours");
-//
-//
-//        navigateBar();
-////        addActivity();
-//
-//        //------------------------
-//        testPNames.add("robotics");
-//        testPNames.add("mobile apps");
-//        testPNames.add("Web Development");
-//        testPNames.add("watching tutorials");
-//        testPNames.add("play chess");
-//
-//        initRecyclerView();
-//
-//    }
-//
-//
-//    private void initRecyclerView() {
-//        //Log.d(TAG,"initRecyclerView methoed called");
-//        RecyclerView recyclerView = findViewById(R.id.homeRecyclerView);
-//        HomeRVAdapter homeRVAdapter = new HomeRVAdapter(this,testPNames);
-//        recyclerView.setAdapter(homeRVAdapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//    }
 
     private void navigateBar() {
 

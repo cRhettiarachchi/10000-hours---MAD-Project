@@ -23,8 +23,6 @@ import Database.DBHelper;
 
 public class AllProjects extends AppCompatActivity {
 
-    private ArrayList<String> testPNames = new ArrayList<>();
-    private ArrayList<String> testHours = new ArrayList<>();
     private List<String> AllTasks = new  ArrayList<>();
     private List<String> AllTimes = new  ArrayList<>();
     private List<Integer> AllIcons = new  ArrayList<>();
@@ -40,48 +38,20 @@ public class AllProjects extends AppCompatActivity {
         AllTimes = dbHelper.getAllTotalTimes();
         AllIcons = dbHelper.getAllTaskImages();
 
-        testPNames.add("robotics");
-        testPNames.add("mobile apps");
-        testPNames.add("Web Development");
-        testPNames.add("watching tutorials");
-        testPNames.add("play chess");
-
-        testHours.add("10.5");
-        testHours.add("20.4");
-        testHours.add("9.8");
-        testHours.add("1.5");
-        testHours.add("17.3");
-
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
         setTitle("All Projects");
         navigateBar();
-        projectInfo();
-        initRecyclerView2();
+        InitRecyclerView();
     }
 
-    private void initRecyclerView2() {
-        //Log.d(TAG,"initRecyclerView2 methoed called");
+    private void InitRecyclerView() {
         RecyclerView infoRecyclerView = findViewById(R.id.proInfoRV);
         ProjectInfoRVAdapter infoAdapter = new ProjectInfoRVAdapter(this,AllTasks,AllTimes,AllIcons);
         infoRecyclerView.setAdapter(infoAdapter);
         infoRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void projectInfo() {
-
-        //ImageView proInfo = (ImageView) findViewById(R.id.imageView1);
-
-        //proInfo.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View view) {
-
-         //       Intent intent = new Intent(AllProjects.this, ProjectInfo.class);
-           //     startActivity(intent);
-            //}
-        //});
-
-    }
 
     private void navigateBar() {
 
