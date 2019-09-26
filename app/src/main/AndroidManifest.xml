@@ -13,6 +13,21 @@
         <activity android:name=".createProject" />
         <activity android:name=".AllProjects" />
         <activity android:name=".ProjectInfo" />
+        <activity android:name=".userAccount">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Sasika UI -->
+        <activity android:name=".Userprofile" />
+        <activity android:name=".ResetPassword" />
+        <activity android:name=".editUserProfile"/>
+        <activity android:name=".SignIn" />
+        <activity
+            android:name=".Signup"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,22 +36,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Userprofile" /> <!-- Sasika UI -->
-        <activity android:name=".ResetPassword" />
-        <activity android:name=".editUserProfile"/>
-        <activity android:name=".SignIn" />
-        <activity
-            android:name=".Signup"
-            android:parentActivityName=".userAccount">
 
-            <!--
-        The meta-data tag is required if you support API level 15
-        and lower
-            -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".userAccount" />
-        </activity>
         <activity android:name=".EditGoal" />
         <activity android:name=".AddGoal" />
         <activity android:name=".Dashboard">
@@ -46,13 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".userAccount">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".EditHistory"
             android:parentActivityName=".History">
