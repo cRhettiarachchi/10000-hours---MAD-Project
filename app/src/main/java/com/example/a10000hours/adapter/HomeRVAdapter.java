@@ -21,6 +21,7 @@ import com.example.a10000hours.AddPop;
 import com.example.a10000hours.MainActivity;
 import com.example.a10000hours.R;
 import java.util.ArrayList;
+import java.util.List;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
@@ -28,10 +29,10 @@ public class HomeRVAdapter extends RecyclerView.Adapter<HomeRVAdapter.HomeViewHo
 
     private static final String TAG = "HomeRVAdapter";
 
-    private ArrayList<String> projectNames = new ArrayList<>();
+    private List<String> projectNames = new ArrayList<>();
     private Context nContext;
 
-    public HomeRVAdapter(Context context,ArrayList<String> projectNames) {
+    public HomeRVAdapter(Context context,List<String> projectNames) {
         this.projectNames = projectNames;
         this.nContext = context;
     }

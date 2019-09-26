@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABSE_NAME = "timetrack.db";
@@ -28,7 +31,8 @@ public class DBHelper extends SQLiteOpenHelper {
         String Task_Table = "CREATE TABLE " + AppDBMaster.Tasks.TABLE_NAME + " (" +
                 AppDBMaster.Tasks._ID + " INTEGER PRIMARY KEY, " +
                 AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT, " +
-                AppDBMaster.Tasks.COLOMN_TASK_DATE + " TEXT);";
+                AppDBMaster.Tasks.ICON_NAME + " INTEGER, " +
+                AppDBMaster.Tasks.COLOMN_TASK_TIME + " REAL);";
 
 //        AppDBMaster.Records.TASK_ID + " INTEGER",
         String Records_Table = "CREATE TABLE " + AppDBMaster.Records.TABLE_NAME + " (" +
@@ -219,5 +223,121 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // -------------------------------------------------------------------- //
 
+    //start dna ==================================================================================================================
+    public boolean addTask(String taskName,int iconName){
+
+        float totalTime = 0;
+
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(AppDBMaster.Tasks.COLOMN_TASK_NAME,taskName);
+        values.put(AppDBMaster.Tasks.COLOMN_TASK_TIME,totalTime);
+        values.put(AppDBMaster.Tasks.ICON_NAME,iconName);
+
+        long result = db.insert(AppDBMaster.Tasks.TABLE_NAME,null,values);
+
+        if (result > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public int deleteTask(String name){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String select = AppDBMaster.Tasks.COLOMN_TASK_NAME+" Like ? ";
+        String[] selectionArgs = {name};
+
+        int result = db.delete(AppDBMaster.Tasks.TABLE_NAME,select,selectionArgs);
+
+        if (result > 0){
+            return 1;
+        }else{
+            return -1;
+        }
+    }
+
+
+    public List getAllTaskNames(){
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] columns = {AppDBMaster.User._ID,
+                AppDBMaster.Tasks.COLOMN_TASK_NAME};
+
+        Cursor cursor = db.query(AppDBMaster.Tasks.TABLE_NAME,
+                columns,
+                null,
+                null,
+                null,
+                null,
+                null);
+
+        List taskNames = new ArrayList<>();
+        while(cursor.moveToNext()) {
+            String taskName = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_NAME));
+            taskNames.add(taskName);
+        }
+        cursor.close();
+
+
+        return taskNames;
+    }
+
+    public List getAllTaskImages(){
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] columns = {AppDBMaster.User._ID,
+                AppDBMaster.Tasks.ICON_NAME};
+
+        Cursor cursor = db.query(AppDBMaster.Tasks.TABLE_NAME,
+                columns,
+                null,
+                null,
+                null,
+                null,
+                null);
+
+        List<Integer> iconNames = new ArrayList<>();
+        while(cursor.moveToNext()) {
+            //String taskImages = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_NAME));
+            int taskImages = cursor.getInt(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.ICON_NAME));
+            iconNames.add(taskImages);
+        }
+        cursor.close();
+
+
+        return iconNames;
+    }
+
+    public List getAllTotalTimes(){
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] columns = {AppDBMaster.User._ID,
+                AppDBMaster.Tasks.COLOMN_TASK_NAME};
+
+        Cursor cursor = db.query(AppDBMaster.Tasks.TABLE_NAME,
+                columns,
+                null,
+                null,
+                null,
+                null,
+                null);
+
+        List totalTime = new ArrayList<>();
+        while(cursor.moveToNext()) {
+            String Time = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_NAME));
+            totalTime.add(Time);
+        }
+        cursor.close();
+
+        return totalTime;
+    }
+
+    //end dna ===========================================================================================================================
 
 }

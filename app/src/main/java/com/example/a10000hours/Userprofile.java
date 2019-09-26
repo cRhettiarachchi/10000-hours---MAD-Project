@@ -37,7 +37,8 @@ public class Userprofile extends AppCompatActivity {
 
         dbh = new DBHelper(this);
         Intent intent = getIntent();
-        Email = intent.getStringExtra(SignIn.EXTRA_EMAIL);
+//        Email = intent.getStringExtra(SignIn.EXTRA_EMAIL);
+        Email = SignIn.Email;
         deleteButton = findViewById(R.id.btn_delete);
         editButton = findViewById(R.id.btn_edit);
 
@@ -56,7 +57,7 @@ public class Userprofile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                AlertDialog.Builder abuilder = new AlertDialog.Builder(Userprofile.this);
-               abuilder.setMessage("Do You Want to Delete User!!!")
+               abuilder.setMessage("Do You Want to Remove this Account!!!")
                        .setCancelable(false)
                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                            @Override
