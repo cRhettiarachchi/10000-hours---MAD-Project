@@ -57,7 +57,8 @@ public class Userprofile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                AlertDialog.Builder abuilder = new AlertDialog.Builder(Userprofile.this);
-               abuilder.setMessage("Do You Want to Remove this Account!!!")
+               abuilder.setMessage("Do You Want to Remove this Account!!! " +
+                       "If you remove,all your account details will be deleted.")
                        .setCancelable(false)
                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                            @Override
