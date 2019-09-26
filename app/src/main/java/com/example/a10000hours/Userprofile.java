@@ -37,7 +37,8 @@ public class Userprofile extends AppCompatActivity {
 
         dbh = new DBHelper(this);
         Intent intent = getIntent();
-        Email = intent.getStringExtra(SignIn.EXTRA_EMAIL);
+//        Email = intent.getStringExtra(SignIn.EXTRA_EMAIL);
+        Email = SignIn.Email;
         deleteButton = findViewById(R.id.btn_delete);
         editButton = findViewById(R.id.btn_edit);
 

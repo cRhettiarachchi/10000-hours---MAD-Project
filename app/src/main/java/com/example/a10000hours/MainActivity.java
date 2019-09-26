@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> testPNames = new ArrayList<>();
     boolean doubleBackToExitPressedOnce = false;
-    String Email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("10000 Hours");
 
-        Intent intent = getIntent();
-        Email = intent.getStringExtra(SignIn.EXTRA_EMAIL);
 
         navigateBar();
 //        addActivity();
@@ -77,15 +74,6 @@ public class MainActivity extends AppCompatActivity {
         ImageView dashboard = (ImageView) findViewById(R.id.dashboardImg);
 
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent1 = new Intent(MainActivity.this, MainActivity.class);
-
-                startActivity(intent1);
-            }
-        });
 
         allProjects.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,9 +98,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
                 Intent intent4 = new Intent(MainActivity.this, Userprofile.class);
-                intent4.putExtra(EXTRA_EMAIL,Email);
                 startActivity(intent4);
             }
         });

@@ -8,6 +8,7 @@ import androidx.core.app.NavUtils;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class AllProjects extends AppCompatActivity {
-
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,10 @@ public class AllProjects extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
         setTitle("All Projects");
+
+//        Intent intent = getIntent();
+//        isLogged = intent.getBooleanExtra("isLogged", isLogged);
+
         navigateBar();
         projectInfo();
     }
@@ -62,15 +67,6 @@ public class AllProjects extends AppCompatActivity {
             }
         });
 
-        allProjects.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent2 = new Intent(AllProjects.this, AllProjects.class);
-                startActivity(intent2);
-            }
-        });
-
         addProjects.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +81,7 @@ public class AllProjects extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent4 = new Intent(AllProjects.this, userAccount.class);
+                Intent intent4 = new Intent(AllProjects.this, Userprofile.class);
                 startActivity(intent4);
             }
         });

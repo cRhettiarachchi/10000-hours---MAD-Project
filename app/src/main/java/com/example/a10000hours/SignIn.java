@@ -19,6 +19,7 @@ import Database.DBHelper;
 public class SignIn extends AppCompatActivity {
     public static final String EXTRA_EMAIL =
             "send email";
+    public static String Email;
     EditText txt_Email,txt_password;
     String email,password;
     Button btn_signIn;
@@ -83,7 +84,8 @@ public class SignIn extends AppCompatActivity {
 
     public void userProfile(){
         Intent intent = new Intent(this,MainActivity.class);
-        intent.putExtra(EXTRA_EMAIL,email);
+//        intent.putExtra(EXTRA_EMAIL,email);
+        Email = email;
         startActivity(intent);
     }
 }
