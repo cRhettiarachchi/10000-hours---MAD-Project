@@ -6,22 +6,20 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import Database.DBHelper;
 
 import com.example.a10000hours.adapter.HomeRVAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
     boolean doubleBackToExitPressedOnce = false;
     private List<String> Projects = new  ArrayList<>();
     DBHelper dbHelper;
-    Boolean test;
-    int del;
+    TextView mDate,mTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +40,26 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DBHelper(this);
         Projects = dbHelper.getAllTaskNames();
 
+        mDate = findViewById(R.id.txtDate);
+        mTime = findViewById(R.id.txtTime);
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
         setTitle("10000 Hours");
 
         navigateBar();
         initRecyclerView();
+        setDataTime();
+    }
+
+    private void setDataTime(){
+        SimpleDateFormat formatterTime = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat formatterDate = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        String showDate = formatterDate.format(date);
+        String showTime = formatterTime.format(date);
+        mDate.setText(showDate);
+        mTime.setText(showTime);
+
     }
 
     private void initRecyclerView() {

@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a10000hours.adapter.ProjectInfoRVAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,18 +48,12 @@ public class AllProjects extends AppCompatActivity {
             AllTasks.add(taskName);
             AllIcons.add(cursor.getInt(2));
 
-            Log.d(TAG, "1st task name is:"+taskName);
-
             TOTAL = 0.0;
             cursorTime = dbHelper.viewAllRecords();
-            Log.d(TAG,"before 2nd while loop,total is:"+TOTAL);
 
             while (cursorTime.moveToNext()){
                 String mHistory_titles = cursorTime.getString(1);
                 String mHistory_time = cursorTime.getString(3);
-
-                Log.d(TAG, "2nd task name is:"+mHistory_titles);
-                Log.d(TAG, "2nd task name's time is:"+mHistory_time);
 
                 if(taskName.equals(mHistory_titles)){
                     double value = Double.parseDouble(mHistory_time);
@@ -70,15 +63,8 @@ public class AllProjects extends AppCompatActivity {
 
             }
             cursorTime.close();
-
-
-            Log.d(TAG,"at the end of both while loop,total is:"+TOTAL);
             AllTimes.add(Double.toString(TOTAL));
         }
-
-        //AllTasks = dbHelper.getAllTaskNames();
-        //AllTimes = dbHelper.getAllTotalTimes();
-        //AllIcons = dbHelper.getAllTaskImages();
 
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);

@@ -13,10 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.a10000hours.ProjectInfo;
 import com.example.a10000hours.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,9 +57,6 @@ public class ProjectInfoRVAdapter extends RecyclerView.Adapter<ProjectInfoRVAdap
         holder.projectName.setText(projectNames.get(position));
         holder.totHours.setText(totalHours.get(position));
         holder.projectImg.setImageResource(AllIcons.get(position));
-
-        //id = Integer.toString(taskIDs.get(position));
-        //holder.totHours.setText(taskIDs.get(position));
 
         holder.infoCard.setOnClickListener(new View.OnClickListener() {
             @Override
