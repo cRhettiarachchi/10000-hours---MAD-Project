@@ -43,9 +43,16 @@ public class DBHelper extends SQLiteOpenHelper {
                 AppDBMaster.Records.COLOMN_RECORD_TIME + " LONG," +
                 AppDBMaster.Records.COLOMN_RECORD_DESCRIPTION + " TEXT);";
 
+        String Goal_Table = "CREATE TABLE " + AppDBMaster.Goals.TABLE_NAME + " (" +
+                AppDBMaster.Goals._ID + " INTEGER PRIMARY KEY," +
+                AppDBMaster.Goals.COLUMN_GOAL_PROJECT_NAME + " TEXT," +
+                AppDBMaster.Goals.COLUMN_GOAL_HOURS + " TEXT," +
+                AppDBMaster.Goals.COLUMN_GOAL_DUE_DATE + " TEXT);";
+
                 db.execSQL(Users_Table);
                 db.execSQL(Task_Table);
                 db.execSQL(Records_Table);
+                db.execSQL(Goal_Table);
     }
 
 
@@ -62,6 +69,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Records_Table);
 
     }
+
     public boolean addUser(String username,String password,String email){
         SQLiteDatabase db = getWritableDatabase();
 
@@ -116,15 +124,16 @@ public class DBHelper extends SQLiteOpenHelper {
 
   public Cursor readData(String email){
         SQLiteDatabase db = getReadableDatabase();
+
         String[] columns = {AppDBMaster.User._ID, AppDBMaster.User.COLUMN_NAME_USERNAME, AppDBMaster.User.COLUMN_NAME_EMAIL, AppDBMaster.User.COLUMN_NAME_PASSWORD};
+
         String select = AppDBMaster.User.COLUMN_NAME_EMAIL+" Like ? ";
+
         String[] selectionArgs = {email};
+
         Cursor cursor = db.query(AppDBMaster.User.TABLE_NAME,columns,select,selectionArgs,null,null,null);
 
         return cursor;
-
-
-
     }
 
     public int updateUser(String UserIdU,String nameU, String emailU,String passwordU){
@@ -403,4 +412,55 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //end dna ===========================================================================================================================
 
+
+    //Codes by SM
+
+    //Add goal
+    public boolean addGoal ( String ProjectName, String Hours, String Date ) {
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(AppDBMaster.Goals.COLUMN_GOAL_PROJECT_NAME, ProjectName);
+        values.put(AppDBMaster.Goals.COLUMN_GOAL_HOURS, Hours);
+        values.put(AppDBMaster.Goals.COLUMN_GOAL_DUE_DATE, Date);
+
+        long result = db.insert(AppDBMaster.Goals.TABLE_NAME,null, values);
+
+        if ( result > 0 ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //View goal
+    public Cursor viewGoal() {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + AppDBMaster.Goals.TABLE_NAME, null);
+
+        return cursor;
+    }
+
+    public Cursor noRecords() {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(" + AppDBMaster.Records.TASK_ID +")" + "FROM" + AppDBMaster.Records.TABLE_NAME, null);
+        return cursor;
+    }
+
+    public int deleteGoal(String id){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String select = AppDBMaster.Goals.COLUMN_GOAL_HOURS+" Like ? ";
+        String[] selectionArgs = {id};
+
+        int result = db.delete(AppDBMaster.Goals.TABLE_NAME, select, selectionArgs);
+
+        if ( result > 0 ){
+            return 1;
+        } else {
+            return -1;
+        }
+    }
 }

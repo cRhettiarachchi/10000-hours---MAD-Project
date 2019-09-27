@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/noRecordsView"
         android:layout_width="90dp"
         android:layout_height="30dp"
         android:layout_marginStart="32dp"
@@ -127,7 +127,9 @@
         android:background="#FFFFFF"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView23"
@@ -188,72 +190,114 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
-        android:layout_marginTop="282dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon13" />
-
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/dashboardProjectName"
         android:layout_width="92dp"
         android:layout_height="19dp"
         android:layout_marginStart="90dp"
-        android:layout_marginLeft="90dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="282dp"
-        android:text="Game"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/goalHoursView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="172dp"
         android:layout_marginLeft="172dp"
         android:layout_marginTop="284dp"
-        android:text="40 hrs"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/dashboardDueDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="248dp"
         android:layout_marginLeft="248dp"
         android:layout_marginTop="284dp"
-        android:text="25hr"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView24"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="332dp"
-        android:layout_marginLeft="332dp"
-        android:layout_marginTop="280dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/remove" />
 
-    <ImageView
-        android:id="@+id/imageView25"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView25"-->
+<!--        android:layout_width="25dp"-->
+<!--        android:layout_height="25dp"-->
+<!--        android:layout_marginStart="297dp"-->
+<!--        android:layout_marginLeft="297dp"-->
+<!--        android:layout_marginTop="280dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/edit" />-->
+
+    <ImageButton
+        android:id="@+id/btnDeleteGoal"
+        android:layout_width="33dp"
+        android:layout_height="36dp"
         android:layout_marginStart="297dp"
-        android:layout_marginLeft="297dp"
+        android:layout_marginLeft="140dp"
         android:layout_marginTop="280dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/edit" />
+        app:srcCompat="@android:drawable/ic_delete" />
 
+<<<<<<< HEAD
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/homeImage"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/allProjectsImg"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/newproject" />
+
+        <ImageView
+            android:id="@+id/newProjectImg"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/addproject" />
+
+        <ImageView
+            android:id="@+id/userAccImg"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/user" />
+
+        <ImageView
+            android:id="@+id/settingsImg"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            app:srcCompat="@drawable/setting" />
+    </LinearLayout>
+
+=======
+>>>>>>> 97dde53dbc6dc86e7a74bac93048eee1e27488e5
     <Button
         android:id="@+id/button2"
         android:layout_width="146dp"

@@ -63,15 +63,30 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="390dp"
-        android:layout_height="256dp"
+        android:layout_height="332dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="85dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
         android:background="#FFFFFF"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnAddGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="161dp"
+            android:layout_marginLeft="161dp"
+            android:layout_marginTop="253dp"
+            android:text="@string/dashboardAddGoal" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView30"
@@ -84,13 +99,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="220dp"
-        android:layout_height="29dp"
+    <EditText
+        android:id="@+id/goalProjectName"
+        android:layout_width="222dp"
+        android:layout_height="39dp"
         android:layout_marginStart="161dp"
         android:layout_marginLeft="161dp"
-        android:layout_marginTop="101dp"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,25 +123,37 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/goalHours"
         android:layout_width="222dp"
         android:layout_height="39dp"
         android:layout_marginStart="161dp"
         android:layout_marginLeft="161dp"
         android:layout_marginTop="152dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button7"
+    <TextView
+        android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="230dp"
+        android:text="@string/dashboardDueDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/goalDate"
+        android:layout_width="222dp"
+        android:layout_height="39dp"
         android:layout_marginStart="161dp"
         android:layout_marginLeft="161dp"
-        android:layout_marginTop="253dp"
-        android:text="@string/dashboardAddGoal"
+        android:layout_marginTop="215dp"
+        android:ems="10"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

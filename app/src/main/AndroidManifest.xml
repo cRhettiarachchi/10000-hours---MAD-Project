@@ -11,18 +11,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".EditProject"></activity>
         <!-- <activity android:name=".add_records_dialog"></activity> -->
         <activity android:name=".createProject" />
         <activity android:name=".AllProjects" />
         <activity android:name=".ProjectInfo" />
         <activity android:name=".userAccount">
+=======
+        <activity android:name=".EditGoal"></activity>
+        <activity android:name=".AddGoal" />
+        <activity android:name=".Dashboard">
+>>>>>>> 8f14c7cdcb94c8066f859ea6911be84565c47bf2
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<<<<<<< HEAD
         </activity> <!-- Sasika UI -->
+=======
+        </activity>
+        <activity android:name=".createProject" />
+        <activity android:name=".AllProjects" />
+        <activity android:name=".ProjectInfo" />
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" /> <!-- Sasika UI -->
+>>>>>>> 8f14c7cdcb94c8066f859ea6911be84565c47bf2
         <activity android:name=".Userprofile" />
         <activity android:name=".ResetPassword" />
         <activity android:name=".editUserProfile" />
@@ -31,7 +49,24 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".EditGoal" />
         <activity android:name=".AddGoal" />
+<<<<<<< HEAD
         <activity android:name=".Dashboard"></activity>
+=======
+        <activity android:name=".Dashboard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".userAccount">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- charith manifest files -->
+>>>>>>> 8f14c7cdcb94c8066f859ea6911be84565c47bf2
         <activity
             android:name=".EditHistory"
             android:parentActivityName=".History">

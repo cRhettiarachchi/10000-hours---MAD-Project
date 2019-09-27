@@ -29,4 +29,11 @@ public final class AppDBMaster {
         protected static final String COLOMN_RECORD_DATE = "date";
         protected static final String COLOMN_RECORD_TIME = "time";
     }
+
+    protected static class Goals implements BaseColumns {
+        protected static final String TABLE_NAME = "goals";
+        protected static final String COLUMN_GOAL_PROJECT_NAME = "goal_project_name";
+        protected static final String COLUMN_GOAL_HOURS = "goal_hours";
+        protected static final String COLUMN_GOAL_DUE_DATE = "goal_due_date";
+    }
 }

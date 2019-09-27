@@ -93,6 +93,7 @@ public class Userprofile extends AppCompatActivity {
             LoginPage();
         }
     }
+
     public void LoginPage(){
         Intent intent = new Intent(this,SignIn.class);
         startActivity(intent);

@@ -31,6 +31,8 @@
     <string name="addItem">Add Item</string>
     <string name="showHistory">Show History</string>
 
+<<<<<<< HEAD
+=======
 
     <!--<<<<<<< HEAD-->
     <!--Add Time Record -->
@@ -58,6 +60,7 @@
     <string name="passworderror">Enter valid passowrd</string>
 
 
+>>>>>>> 97dde53dbc6dc86e7a74bac93048eee1e27488e5
     <!-- Dashboard strings -->
     <string name="tashboardTitle">Dashboard</string>
     <string name="dashboardRecords">Records</string>
@@ -66,10 +69,14 @@
     <string name="dashboardGoals">Goals</string>
     <string name="dashboardProject">Project</string>
     <string name="dashboardGoal">Goal</string>
-    <string name="dashboardComplete">Completed</string>
+    <string name="dashboardDueDate">Due date</string>
+    <string name="dashboardComplete">Due Date</string>
     <string name="dashboardAddGoal">ADD GOAL</string>
-    <string name="dashboardSelectProject">Select Project</string>
+    <string name="dashboardSelectProject">Project Name</string>
     <string name="dashboardSaveGoal">SAVE GOAL</string>
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 97dde53dbc6dc86e7a74bac93048eee1e27488e5
 </resources>
