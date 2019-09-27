@@ -1,23 +1,20 @@
 package com.example.a10000hours;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.NavUtils;
-
 import Database.DBHelper;
 
-public class createProject extends AppCompatActivity {
+public class EditProject extends AppCompatActivity {
 
     EditText projectName;
     ImageView projectImage1,projectImage2,projectImage3,projectImage4;
@@ -25,18 +22,20 @@ public class createProject extends AppCompatActivity {
     ImageView projectImage9,projectImage10,projectImage11,projectImage12;
     ImageView projectImage13,projectImage14,projectImage15,projectImage16;
     String name;
-    static int icon = R.drawable.icon1;
+    static int icon;
     Button saveBtn;
     DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_project);
-
+        setContentView(R.layout.activity_edit_project);
 
         projectName = findViewById(R.id.proName);
         db = new DBHelper(this);
+        name = getIntent().getStringExtra("Task_Name");
+        projectName.setText(name);
+        icon = db.getAproject(name);
 
         projectImage1 = findViewById(R.id.tIcon1);
         projectImage2 = findViewById(R.id.tIcon2);
@@ -189,39 +188,17 @@ public class createProject extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
-        setTitle("Create Project");
+        setTitle("Edit Project");
+
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
+    public void updateInfo(View view){
+        boolean result = db.updateTask(name,projectName.getText().toString(),icon);
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId()){
-
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-
-            case R.id.showHistory:
-                startActivity(new Intent(this, History.class));
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void saveProject(View view){
-
-        name = projectName.getText().toString();
-
-        boolean result = db.addTask(name,icon);
 
         if(result){
-            Toast.makeText(getApplicationContext(),"Adding Success",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Update Success",Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
         }

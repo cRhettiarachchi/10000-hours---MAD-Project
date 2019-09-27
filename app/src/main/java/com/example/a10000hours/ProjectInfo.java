@@ -1,6 +1,7 @@
 package com.example.a10000hours;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -38,6 +39,10 @@ public class ProjectInfo extends AppCompatActivity {
         dbHelper = new DBHelper(this);
         setValues();
         navigateBar();
+
+        Toolbar toolbar = findViewById(R.id.historyToolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Project Info");
     }
 
     private void setValues(){
@@ -57,9 +62,9 @@ public class ProjectInfo extends AppCompatActivity {
     }
 
     public void editProject(View view){
-        //Intent intentX = new Intent(this, MainActivity.class);
-        //intentX.putExtra("Task_Name", TaskName);
-        //startActivity(intentX);
+        Intent intentX = new Intent(this, EditProject.class);
+        intentX.putExtra("Task_Name", TaskName);
+        startActivity(intentX);
     }
 
     private void navigateBar() {

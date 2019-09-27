@@ -372,6 +372,31 @@ public class DBHelper extends SQLiteOpenHelper {
         return taskImages;
     }
 
+    public boolean updateTask(String projectName, String newName,int icon){
+
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(AppDBMaster.Tasks.COLOMN_TASK_NAME, newName);
+        contentValues.put(AppDBMaster.Tasks.ICON_NAME, icon);
+
+        String selection = AppDBMaster.Tasks.COLOMN_TASK_NAME + " LIKE ?";
+        String[] SelectionArgs = {projectName};
+
+        int update = db.update(
+                AppDBMaster.Tasks.TABLE_NAME,
+                contentValues,
+                selection,
+                SelectionArgs
+        );
+
+        if(update > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     //end dna ===========================================================================================================================
 
 }
