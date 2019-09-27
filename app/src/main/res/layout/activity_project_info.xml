@@ -133,6 +133,22 @@
             app:srcCompat="@drawable/icon6" />
 
         <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:gravity="center"
+            android:text='when talent fails to work hard"' />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="170dp"
+            android:gravity="center"
+            android:text='"Hard work beats talent' />
+
+        <TextView
             android:id="@+id/taskName"
             android:layout_width="@dimen/projectNameWidthPrf"
             android:layout_height="@dimen/projectNameHeightPrf"
@@ -148,7 +164,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="200dp"
             android:gravity="center_horizontal"
             android:text="@string/dummyHours" />
 

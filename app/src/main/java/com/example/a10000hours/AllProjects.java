@@ -31,7 +31,8 @@ public class AllProjects extends AppCompatActivity {
     private List<String> AllTimes = new  ArrayList<>();
     private List<Integer> AllIcons = new  ArrayList<>();
     DBHelper dbHelper;
-    Cursor cursor;
+    Cursor cursor,cursorTime;
+    static double TOTAL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +41,39 @@ public class AllProjects extends AppCompatActivity {
 
         dbHelper = new DBHelper(this);
         cursor = dbHelper.getAllTasks();
+        cursorTime = dbHelper.viewAllRecords();
 
         while (cursor.moveToNext()){
             AllTaskIDs.add(cursor.getInt(0));
-            AllTasks.add(cursor.getString(1));
+            String taskName = cursor.getString(1);
+            AllTasks.add(taskName);
             AllIcons.add(cursor.getInt(2));
-            AllTimes.add(cursor.getString(3));
-            Log.d(TAG, "cursor working");
+
+            Log.d(TAG, "1st task name is:"+taskName);
+
+            TOTAL = 0.0;
+            cursorTime = dbHelper.viewAllRecords();
+            Log.d(TAG,"before 2nd while loop,total is:"+TOTAL);
+
+            while (cursorTime.moveToNext()){
+                String mHistory_titles = cursorTime.getString(1);
+                String mHistory_time = cursorTime.getString(3);
+
+                Log.d(TAG, "2nd task name is:"+mHistory_titles);
+                Log.d(TAG, "2nd task name's time is:"+mHistory_time);
+
+                if(taskName.equals(mHistory_titles)){
+                    double value = Double.parseDouble(mHistory_time);
+                    TOTAL = TOTAL + value;
+                    Log.d(TAG,"Inside 2nd while Loop,total is:"+TOTAL);
+                }
+
+            }
+            cursorTime.close();
+
+
+            Log.d(TAG,"at the end of both while loop,total is:"+TOTAL);
+            AllTimes.add(Double.toString(TOTAL));
         }
 
         //AllTasks = dbHelper.getAllTaskNames();

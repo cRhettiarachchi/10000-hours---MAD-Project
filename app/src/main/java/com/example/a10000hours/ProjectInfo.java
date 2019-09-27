@@ -23,6 +23,8 @@ public class ProjectInfo extends AppCompatActivity {
     TextView proName,totHours;
     DBHelper dbHelper;
     Boolean test;
+    static double TOTAL;
+    Cursor cursorTime;
     int del;
 
 
@@ -47,7 +49,27 @@ public class ProjectInfo extends AppCompatActivity {
 
     private void setValues(){
         taskIcon = dbHelper.getAproject(TaskName);
+        cursorTime = dbHelper.viewAllRecords();
         totalTime = "0.0";
+        TOTAL = 0;
+
+        while (cursorTime.moveToNext()){
+            String mHistory_titles = cursorTime.getString(1);
+            String mHistory_time = cursorTime.getString(3);
+
+            Log.d(TAG, "2nd task name is:"+mHistory_titles);
+            Log.d(TAG, "2nd task name's time is:"+mHistory_time);
+
+            if(TaskName.equals(mHistory_titles)){
+                double value = Double.parseDouble(mHistory_time);
+                TOTAL = TOTAL + value;
+                Log.d(TAG,"Inside 2nd while Loop,total is:"+TOTAL);
+            }
+
+        }
+        cursorTime.close();
+
+        totalTime = Double.toString(TOTAL);
 
         proName.setText(TaskName);
         mainIcon.setImageResource(taskIcon);
