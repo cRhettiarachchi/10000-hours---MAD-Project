@@ -75,7 +75,7 @@ public class editUserProfile extends AppCompatActivity{
 
     }
     public void LoginPage(){
-        Intent intent = new Intent(this,SignIn.class);
+        Intent intent = new Intent(this,userAccount.class);
         startActivity(intent);
     }
 
