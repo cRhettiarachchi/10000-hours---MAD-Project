@@ -15,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Database.DBHelper;
 
 public class createProject extends AppCompatActivity {
@@ -27,7 +30,9 @@ public class createProject extends AppCompatActivity {
     String name;
     static int icon = R.drawable.icon1;
     Button saveBtn;
+    int validate;
     DBHelper db;
+    List<String> pNames = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,21 +219,35 @@ public class createProject extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void saveProject(View view){
+    public int saveProject(View view){
 
         name = projectName.getText().toString();
+        validate = projectName.getText().toString().trim().length();
+        pNames = db.getAllTaskNames();
 
-        boolean result = db.addTask(name,icon);
-
-        if(result){
-            Toast.makeText(getApplicationContext(),"Adding Success",Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+        for(String nameInArray : pNames){
+            if(name.equals(nameInArray)){
+                projectName.setError("Project Name already exists");
+                return -1;
+            }
         }
 
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        if(validate != 0) {
+            boolean result = db.addTask(name, icon);
 
+            if (result) {
+                Toast.makeText(getApplicationContext(), "Adding Success", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+            }
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }else{
+            projectName.setError("Project Name cannot be empty");
+        }
+
+        return 0;
     }
 
     @Override

@@ -374,6 +374,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public boolean updateTask(String projectName, String newName,int icon){
 
+        if(projectName.equals(newName)){
+            return false;
+        }
+
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(AppDBMaster.Tasks.COLOMN_TASK_NAME, newName);

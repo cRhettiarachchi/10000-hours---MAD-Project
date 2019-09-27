@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Database.DBHelper;
 
 public class EditProject extends AppCompatActivity {
@@ -24,7 +27,9 @@ public class EditProject extends AppCompatActivity {
     String name;
     static int icon;
     Button saveBtn;
+    int validate;
     DBHelper db;
+    List<String> pNames = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -193,19 +198,26 @@ public class EditProject extends AppCompatActivity {
 
     }
 
-    public void updateInfo(View view){
-        boolean result = db.updateTask(name,projectName.getText().toString(),icon);
+    public int updateInfo(View view){
+        validate = projectName.getText().toString().trim().length();
 
+        if(validate != 0) {
+            boolean result = db.updateTask(name, projectName.getText().toString(), icon);
 
-        if(result){
-            Toast.makeText(getApplicationContext(),"Update Success",Toast.LENGTH_LONG).show();
+            if (result) {
+                Toast.makeText(getApplicationContext(), "Update Success", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+                projectName.setError("Project Name already exists");
+                return -1;
+            }
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }else{
-            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+            projectName.setError("Project Name cannot be empty");
         }
-
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-
+        return 0;
     }
 
     @Override
