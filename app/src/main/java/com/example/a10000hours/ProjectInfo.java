@@ -22,7 +22,6 @@ public class ProjectInfo extends AppCompatActivity {
     ImageView mainIcon;
     TextView proName,totHours;
     DBHelper dbHelper;
-    Boolean test;
     static double TOTAL;
     Cursor cursorTime;
     int del;

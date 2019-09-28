@@ -27,7 +27,6 @@ public class ProjectInfoRVAdapter extends RecyclerView.Adapter<ProjectInfoRVAdap
     private List<String> totalHours = new ArrayList<>();
     private List<Integer> AllIcons = new ArrayList<>();
     private List<Integer> taskIDs = new ArrayList<>();
-    private String id;
 
 
     public ProjectInfoRVAdapter(Context mContext, List<Integer>IDs, List<String> proNames, List<String> hours, List<Integer>Icons) {
@@ -43,7 +42,7 @@ public class ProjectInfoRVAdapter extends RecyclerView.Adapter<ProjectInfoRVAdap
     @NonNull
     @Override
     public PInfoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Log.d(TAG,"test1 called!!");
+        Log.d(TAG,"Recycle view called!!");
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.project_info,parent,false);
         PInfoViewHolder holder = new PInfoViewHolder(view);
@@ -52,7 +51,7 @@ public class ProjectInfoRVAdapter extends RecyclerView.Adapter<ProjectInfoRVAdap
 
     @Override
     public void onBindViewHolder(@NonNull PInfoViewHolder holder, final int position) {
-        Log.d(TAG,"2nd onBindViewHolder called!!");
+        Log.d(TAG,"onBindViewHolder called!!");
 
         holder.projectName.setText(projectNames.get(position));
         holder.totHours.setText(totalHours.get(position));

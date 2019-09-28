@@ -29,7 +29,6 @@ public class createProject extends AppCompatActivity {
     ImageView projectImage13,projectImage14,projectImage15,projectImage16;
     String name;
     static int icon = R.drawable.icon1;
-    Button saveBtn;
     int validate;
     DBHelper db;
     List<String> pNames = new ArrayList<>();
