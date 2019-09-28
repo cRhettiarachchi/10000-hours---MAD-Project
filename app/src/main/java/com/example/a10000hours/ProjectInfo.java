@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import Database.DBHelper;
 
 public class ProjectInfo extends AppCompatActivity {
@@ -20,7 +23,7 @@ public class ProjectInfo extends AppCompatActivity {
     private static Double total;
     private static int taskIcon;
     ImageView mainIcon;
-    TextView proName,totHours;
+    TextView proName,totHours,mDate,mTime;
     DBHelper dbHelper;
     static double TOTAL;
     Cursor cursorTime;
@@ -35,15 +38,29 @@ public class ProjectInfo extends AppCompatActivity {
         mainIcon = findViewById(R.id.taskIcon);
         proName = findViewById(R.id.taskName);
         totHours = findViewById(R.id.totalHours);
+        mDate = findViewById(R.id.txtDate);
+        mTime = findViewById(R.id.txtTime);
 
         TaskName = getIntent().getStringExtra("Task_Name");
         dbHelper = new DBHelper(this);
         setValues();
         navigateBar();
+        setDataTime();
 
         Toolbar toolbar = findViewById(R.id.historyToolbar);
         setSupportActionBar(toolbar);
         setTitle("Project Info");
+    }
+
+    private void setDataTime(){
+        SimpleDateFormat formatterTime = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat formatterDate = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        String showDate = formatterDate.format(date);
+        String showTime = formatterTime.format(date);
+        mDate.setText(showDate);
+        mTime.setText(showTime);
+
     }
 
     private void setValues(){
