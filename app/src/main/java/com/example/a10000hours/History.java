@@ -53,14 +53,6 @@ public class History extends AppCompatActivity {
     private void initImageBitmaps(){
         Log.d("", "working Init Bitmaps");
 
-//        int i = 0;
-//        while(i < 100){
-//            mHistory_dates.add("11/05");
-//            mHistory_titles.add("Android : " + i);
-//            mHistory_time.add("4.00 hrs");
-//            i++;
-//        }
-
         while (cursor.moveToNext()){
             mHistory_id.add(cursor.getInt(0));
             mHistory_dates.add(cursor.getString(2));

@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a10000hours.adapter.DeleteHistoryAdapter;
-import com.example.a10000hours.adapter.HistoryListAdapter;
 import Database.DBHelper;
 
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ public class DeleteHistory extends AppCompatActivity {
 
         db = new DBHelper(this);
 
-        cursor = db.viewAllRecords();
+        cursor = db.viewAllRecords(); // read all records from the database
 
         initImageBitmaps();
 

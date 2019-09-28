@@ -1,10 +1,6 @@
 package com.example.a10000hours;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -23,12 +19,16 @@ import java.util.Calendar;
 
 public class AddPop extends AppCompatActivity {
 
+    // Declaring layout variables
     TextView taskName, displayDate;
     EditText time_txt, description_text;
-    DBHelper db;
-    String description, TaskName, dateFull, dateNoYear;
     Button btn;
+
+    DBHelper db;
+
+    String description, TaskName, dateFull, dateNoYear; //
     double time;
+
     Calendar calendar = Calendar.getInstance();
 
     @Override
@@ -68,16 +68,16 @@ public class AddPop extends AppCompatActivity {
                 // Add data to String variables
 
                 // validate count
-                int validate = time_txt.getText().toString().trim().length();
+                int validate = time_txt.getText().toString().trim().length(); // variable to validate time data
 
-                if(validate != 0){
-                    description = description_text.getText().toString();
-                    time = Double.parseDouble(time_txt.getText().toString());
+                if(validate != 0){ // check if time data is not empty
+                    description = description_text.getText().toString(); // read description from the view
+                    time = Double.parseDouble(time_txt.getText().toString()); // read the time data from the view
 
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM");
-                    dateNoYear = simpleDateFormat.format(calendar.getTime());
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM"); // format date
+                    dateNoYear = simpleDateFormat.format(calendar.getTime()); // get date
 
-                    if(db.addRecord(dateNoYear, time, description, TaskName)){
+                    if(db.addRecord(dateNoYear, time, description, TaskName)){ // enter date to the database
                         onBackPressed();
                     }else {
                         Toast.makeText(getApplicationContext(), "Data insert Fail", Toast.LENGTH_SHORT).show();
