@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +34,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 AppDBMaster.Tasks.ICON_NAME + " INTEGER, " +
                 AppDBMaster.Tasks.COLOMN_TASK_TIME + " REAL);";
 
-//        AppDBMaster.Records.TASK_ID + " INTEGER",
         String Records_Table = "CREATE TABLE " + AppDBMaster.Records.TABLE_NAME + " (" +
                 AppDBMaster.Records._ID + " INTEGER PRIMARY KEY," +
                 AppDBMaster.Tasks.COLOMN_TASK_NAME + " TEXT," +
@@ -224,7 +222,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // -------------------------------------------------------------------- //
 
-    //start dna ==================================================================================================================
+    //task management ==================================================================================================================
     public boolean addTask(String taskName,int iconName){
 
         float totalTime = 0;
@@ -285,58 +283,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         return taskNames;
-    }
-
-    public List getAllTaskImages(){
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        String[] columns = {AppDBMaster.User._ID,
-                AppDBMaster.Tasks.ICON_NAME};
-
-        Cursor cursor = db.query(AppDBMaster.Tasks.TABLE_NAME,
-                columns,
-                null,
-                null,
-                null,
-                null,
-                null);
-
-        List<Integer> iconNames = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            //String taskImages = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_NAME));
-            int taskImages = cursor.getInt(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.ICON_NAME));
-            iconNames.add(taskImages);
-        }
-        cursor.close();
-
-
-        return iconNames;
-    }
-
-    public List getAllTotalTimes(){
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        String[] columns = {AppDBMaster.User._ID,
-                AppDBMaster.Tasks.COLOMN_TASK_NAME};
-
-        Cursor cursor = db.query(AppDBMaster.Tasks.TABLE_NAME,
-                columns,
-                null,
-                null,
-                null,
-                null,
-                null);
-
-        List totalTime = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String Time = cursor.getString(cursor.getColumnIndexOrThrow(AppDBMaster.Tasks.COLOMN_TASK_TIME));
-            totalTime.add(Time);
-        }
-        cursor.close();
-
-        return totalTime;
     }
 
     public Cursor getAllTasks(){
@@ -401,6 +347,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    //end dna ===========================================================================================================================
+    //end task ===========================================================================================================================
 
 }

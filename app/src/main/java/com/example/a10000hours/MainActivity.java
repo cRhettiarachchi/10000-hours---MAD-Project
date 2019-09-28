@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void navigateBar() {
 
-        ImageView home = (ImageView) findViewById(R.id.homeImage);
         ImageView allProjects = (ImageView) findViewById(R.id.allProjectsImg);
         ImageView addProjects = (ImageView) findViewById(R.id.newProjectImg);
         ImageView userAcc = (ImageView) findViewById(R.id.userAccImg);
